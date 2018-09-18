@@ -18,44 +18,84 @@ under the License.
 ////////////////////////////////////////////////////////////////////////////////
 // CUSTOMIZE SLATE
 ////////////////////////////////////////////////////////////////////////////////
-// Use these settings to help adjust the appearance of Slate
 
+$NAV_FG: #373e42;
+$NAV_BG: #f8f8f8;
+$NAV_HI: #18aaff;
 
-// BACKGROUND COLORS
+$MAIN_FG: #373e42;
+$MAIN_BG: #fcfcf9;
+
+$EXAMPLES_FG: #cccccc;
+//$EXAMPLES_BG: #272b2d;
+$EXAMPLES_BG: #2d3134;
+
 ////////////////////
-$nav-bg: #2E3336 !default;
-$examples-bg: #2E3336 !default;
-$code-bg: #1E2224 !default;
-$code-annotation-bg: #191D1F !default;
-$nav-subitem-bg: #1E2224 !default;
-$nav-active-bg: #0F75D4 !default;
-$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
-$lang-select-border: #000 !default;
-$lang-select-bg: #1E2224 !default;
-$lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
-$lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #F3F7F9 !default;
-$aside-notice-bg: #8fbcd4 !default;
+// MAIN
+////////////////////
+
+$main-text: $MAIN_FG !default;
+$main-bg:   $MAIN_BG !default;
+
+////////////////////
+// NAV
+////////////////////
+
+$nav-text:               $NAV_FG !default;
+$nav-bg:                 $NAV_BG !default;
+
+$nav-active-text:        $NAV_HI !default;
+$nav-active-bg:          $nav-bg   !default;
+
+$nav-subitem-bg:         $nav-bg !default;
+
+$nav-active-parent-text: $nav-active-bg   !default;
+$nav-active-parent-bg:   $nav-active-text !default;
+
+////////////////////
+// EXAMPLES
+////////////////////
+
+$examples-bg:          $EXAMPLES_BG             !default;
+$code-bg:              darken($examples-bg, 2%) !default;
+$code-annotation-text: $examples-bg             !default;
+$code-annotation-bg:   $examples-bg             !default;
+
+////////////////////
+// LANG SELET
+////////////////////
+
+$lang-select-text:   #ffffff !default;
+$lang-select-bg:     #667b88 !default;
+$lang-select-border: #000000 !default;
+
+$lang-select-active-text: $lang-select-text !default;
+$lang-select-active-bg:   #000000 !default;
+
+$lang-select-pressed-text: $lang-select-active-text !default;
+$lang-select-pressed-bg:   $lang-select-active-bg   !default;
+
+////////////////////
+// ASIDE
+////////////////////
+
+$aside-notice-bg:  lighten($NAV_HI, 30%) !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
+
+
+////////////////////
+// SEARCH
+////////////////////
+
 $search-notice-bg: #c97a7e !default;
 
-
-// TEXT COLORS
 ////////////////////
-$main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
-$nav-active-text: #fff !default;
-$nav-active-parent-text: #fff !default; // parent links of the current section
-$lang-select-text: #fff !default; // color of unselected language tab text
-$lang-select-active-text: #fff !default; // color of selected language tab text
-$lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
-
-
 // SIZES
 ////////////////////
+
 $nav-width: 230px !default; // width of the navbar
-$examples-width: 50% !default; // portion of the screen taken up by code examples
+$examples-width: 40% !default; // portion of the screen taken up by code examples
 $logo-margin: 0px !default; // margin below logo
 $main-padding: 28px !default; // padding to left and right of content & examples
 $nav-padding: 15px !default; // padding to left and right of navbar
@@ -67,8 +107,10 @@ $tablet-width: 930px !default; // min width before reverting to tablet size
 $phone-width: $tablet-width - $nav-width !default; // min width before reverting to mobile size
 
 
+////////////////////
 // FONTS
 ////////////////////
+
 %default-font {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -85,9 +127,10 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
   line-height: 1.5;
 }
 
-
+////////////////////
 // OTHER
 ////////////////////
+
 $nav-footer-border-color: #666 !default;
 $search-box-border-color: #666 !default;
 
@@ -95,6 +138,7 @@ $search-box-border-color: #666 !default;
 ////////////////////////////////////////////////////////////////////////////////
 // INTERNAL
 ////////////////////////////////////////////////////////////////////////////////
+
 // These settings are probably best left alone.
 
 %break-words {

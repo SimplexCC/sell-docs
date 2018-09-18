@@ -545,7 +545,7 @@ html, body {
     &>p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: $code-annotation-text;
     }
   }
 }
@@ -613,3 +613,8 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+.highlight .p  { color: #d0d4d7; }
+.highlight .s2 { color: #c1ef65; }
+.highlight .mi { color: #77bcd7; }
+
