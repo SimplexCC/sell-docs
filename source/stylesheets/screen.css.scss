@@ -344,9 +344,9 @@ html, body {
     clear:both;
   }
 
-	h1, h2, h3, h4 {
+  h1, h2, h3, h4 {
     @extend %header-font;
-	}
+  }
 
   h1 {
     font-size: 25px;
@@ -377,38 +377,38 @@ html, body {
     margin-left: $main-padding;
     padding-left: 0;
 
-		padding-top: 1.5em;
+    padding-top: 1.5em;
 
     padding-bottom: 0.3em;
     border-bottom: 1px solid #ddd;
-		margin-bottom: 1em;
+    margin-bottom: 1em;
   }
 
   // h3's are parameters
   h3 {
     font-size: 15px;
 
-		margin-left: $main-padding;
-		padding-left: 0;
+    margin-left: $main-padding;
+    padding-left: 0;
 
-		margin-top: 1em;
-	  border-top: 1px solid #ccc;
-	  padding-top: 1em;
+    margin-top: 1em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
 
-		margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
   }
 
   // I use h4 for "(integer, optional)" comments for parameters (which are themselves h3)
-	h3 + h4 {
-		margin-top: -1em;
-	}
+  h3 + h4 {
+    margin-top: -1em;
+  }
 
   h4 {
-		font-size: 13px;
-		font-weight: 450;
-		color: #999;
+    font-size: 13px;
+    font-weight: 450;
+    color: #999;
 
-		margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   hr {
@@ -540,7 +540,7 @@ html, body {
       font-size: 14px;
       font-weight: bold;
       line-height: 1.5;
-	  margin-right: 1em;
+      margin-right: 1em;
   }
 
   .http-verb.http-get {
@@ -599,11 +599,12 @@ html, body {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
+//
 // RESPONSIVE DESIGN
-////////////////////////////////////////////////////////////////////////////////
+//
 // These are the styles for phones and tablets
 // There are also a couple styles disperesed
+//
 
 @media (max-width: $tablet-width) {
   .toc-wrapper {
