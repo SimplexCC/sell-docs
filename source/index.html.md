@@ -15,6 +15,10 @@ includes:
   - concepts
   - types
   - get-quote
+  - initiate-sell
+  - send-crypto
+  - txn-event-notify
+  - get-dst-crypto-addr
   - transports
 
 search: false

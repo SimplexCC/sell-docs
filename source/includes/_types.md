@@ -14,11 +14,21 @@ No guarantees are made regarding the case (upper/lower) of the contents, or for 
 <b>You have been warned.</b>
 </aside>
 
-### currency_symbol ###
+### fiat_currency ###
 
 3-letter upper-case string.
 
-One of { "USD", "EUR", "BTC", "BCH", "LTC" }.
+One of { "USD", "EUR" }.
+
+### crypto_currency ###
+
+3-letter upper-case string.
+
+One of { "BTC", "BCH", "LTC" }.
+
+### currency ###
+
+May be either a `fiat_currency` or a `crypto_currency`.
 
 ### money_amount ###
 
@@ -28,3 +38,7 @@ An integer. Used for holding amounts of money, be it crypto or fiat. The units u
 This is <i>not</i> floating point parameter. Rather, this is an integer counting millionths of the whole.<br>
 An amount of 100.0, for example, is represented as 100000000 (one hundred million); and a value of 30000 (thirty thousand) represents the amount 0.03.
 </aside>
+
+### crypto_addr ###
+
+A string, denoting a crypto address.

@@ -20,9 +20,9 @@ License for the specific language governing permissions and limitations
 under the License.
 */
 
-////////////////////////////////////////////////////////////////////////////////
+//
 // GENERAL STUFF
-////////////////////////////////////////////////////////////////////////////////
+//
 
 html, body {
   color: $main-text;
@@ -37,9 +37,9 @@ html, body {
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
-////////////////////////////////////////////////////////////////////////////////
+//
 // TABLE OF CONTENTS
-////////////////////////////////////////////////////////////////////////////////
+//
 
 #toc > ul > li > a > span {
   float: right;
@@ -133,7 +133,6 @@ html, body {
       }
     }
   }
-
 
   // The Table of Contents is composed of multiple nested
   // unordered lists.  These styles remove the default
@@ -243,10 +242,9 @@ html, body {
   &.open {left: $nav-width}
 }
 
-
-////////////////////////////////////////////////////////////////////////////////
+//
 // PAGE LAYOUT AND CODE SAMPLE BACKGROUND
-////////////////////////////////////////////////////////////////////////////////
+//
 
 .page-wrapper {
   margin-left: $nav-width;
@@ -309,9 +307,9 @@ html, body {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
+//
 // CONTENT STYLES
-////////////////////////////////////////////////////////////////////////////////
+//
 // This is all the stuff with the light background in the left half of the page
 
 .content {
@@ -391,10 +389,11 @@ html, body {
     margin-bottom: 0.8em;
   }
 
-  h5, h6 {
+  h4, h5, h6 {
     font-size: 10px;
   }
 
+  // I use h4 for "(integer, optional)" comments for parameters (which are themselves h3)
   h4 {
 	  font-size: 12px;
 	  font-weight: normal;
@@ -467,15 +466,18 @@ html, body {
   }
 
   aside {
-	max-width: 50em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-	margin-left: $main-padding;
-	padding-left: 1em;
+    background: $aside-notice-bg;
+
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    background: $aside-notice-bg;
+	margin-left: $main-padding;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+	padding-left: 1em;
+
     line-height: 1.6;
+	max-width: 50em;
 
     &.warning {
       background-color: $aside-warning-bg;
@@ -504,6 +506,14 @@ html, body {
     @extend %icon-ok-sign;
   }
 
+  .search-highlight {
+    padding: 2px;
+    margin: -3px;
+    border-radius: 4px;
+    border: 1px solid #F7E633;
+    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+  }
+
   .http-get {
 	  background-color: #00f;
 	  padding: 5px 10px;
@@ -513,13 +523,6 @@ html, body {
 	  font-size: 16px;
   }
 
-  .search-highlight {
-    padding: 2px;
-    margin: -3px;
-    border-radius: 4px;
-    border: 1px solid #F7E633;
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
-  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

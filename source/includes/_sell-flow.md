@@ -24,7 +24,7 @@ This user experience is typically provided by you in your mobile app / webapp. I
 
 ## Crypto and fiat change hands ##
 
-* call liquidity/wallet send-coins
+* call liquidity/wallet send-crypto
 * monitor blockchain
 * send fiat to user
 

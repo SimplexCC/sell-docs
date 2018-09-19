@@ -24,12 +24,12 @@ Transports: **REST, JWT**
 
 Name | Type | Required?
 ---- | ---- | ---------
-source_currency | currency_symbol | required
+source_currency | currency | required
 source_amount | money_amount | required
-requested_currency | currency_symbol | required
+requested_currency | currency | required
 
 ### source_currency ###
-#### (currency_symbol, required)
+#### (currency, required)
 
 The currency to convert from.
 
@@ -43,7 +43,7 @@ SellCrypto currently supports only EUR as a fiat currency.
 The amount of `source_currency` units, in millionths of a unit, to convert.
 
 ### requested_currency ###
-#### (currency_symbol, required)
+#### (currency, required)
 
 The currency to convert to.
 
@@ -53,7 +53,7 @@ SellCrypto currently supports only EUR as a fiat currency.
 
 If `source_currency` represents a fiat currency then `requested_currency` must represent a crypto currency, and vise versa.
 
-## Returns ##
+## Response ##
 
 > An example response:
 
@@ -69,11 +69,13 @@ Name | Type
 rate | float
 quote_id | uuid
 
-### rate (float) ###
+### rate ###
+#### (float)
 
 The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
 
-### quote_id (uuid) ###
+### quote_id ###
+#### (uuid)
 
 An id generated for this quote. Keep this id and pass it back to Simplex when creating a transaction based on it.
 
