@@ -1,8 +1,8 @@
-# Transaction Flow #
+# SellCrypto Flow #
 
-A description of the flow of a SellCrypto transaction, from the end-user's point of view, follows. It is important that you read this section in order to understand the various API messages, their meaning, and the contexts in which they are relevant.
+A description of the flow of a SellCrypto transaction, from the end-user's point of view, follows. It is important that you read this section in order to understand the meaning and context of the various API messages.
 
-## qet-quote ##
+## Quote ##
 
 SellCrypto transactions are transactions in which your end-user sells their crypto currency in exchange for fiat money. The first thing to establish, then, is how much crypto currnecy the end-user wishes to sell (and consequentially how much fiat they will receive for it), or figure out how much crypto currency the end-user needs to sell in order to receive a certain amount of fiat money.
 
@@ -10,9 +10,9 @@ In a typical flow the user is presented with a screen where they may enter/selec
 
 This user experience is typically provided by you in your mobile app / webapp. If you don't provide that, Simplex will provide it for you as the very first step of the transaction flow.
 
-## initiate ##
+## Initiate ##
 
-## checkout ##
+## Checkout ##
 
 * quote if needed
 * "login" screen
@@ -22,12 +22,12 @@ This user experience is typically provided by you in your mobile app / webapp. I
 * credit card details
 * checks: aml, pep, ...
 
-## liquidity ##
+## Crypto and fiat change hands ##
 
 * call liquidity/wallet send-coins
 * monitor blockchain
 * send fiat to user
 
-## notification ##
+## Notification ##
 
 * notify wallet

@@ -2,13 +2,13 @@
 
 Convert between crypto and fiat money.
 
-In order for you to provide the "get quote" experience, where the user makes the decision of how much crypto currency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the "get-quote" API is for.
+In order for you to provide the "Quote" experience described in the "Flow" section, where the user makes the decision of how much crypto currency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the "get-quote" API is for.
 
- | |
--|-|
-Message Name | get-quote
-Direction | You -> Simplex
-Transports | REST, JWT
+## Synopsis ##
+
+Message name: **`get-quote`**  
+Direction: **You &rarr; Simplex**  
+Transports: **REST, JWT**
 
 ## Parameters ##
 
@@ -22,23 +22,14 @@ Transports | REST, JWT
 }
 ```
 
-> Another example:
-
-```javascript--json
-{
-  "source_currency": "BTC",
-  "source_amount": 223630, // 0.22363 BTC
-  "requested_currency": "EUR",
-}
-```
-
 Name | Type | Required?
 ---- | ---- | ---------
 source_currency | currency_symbol | required
 source_amount | money_amount | required
 requested_currency | currency_symbol | required
 
-### source_currency (currency_symbol, mandatory) ###
+### source_currency ###
+#### (currency_symbol, required)
 
 The currency to convert from.
 
@@ -46,15 +37,13 @@ The currency to convert from.
 SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
-### source_amount (money_amount, mandatory) ###
+### source_amount ###
+#### (money_amount, required)
 
 The amount of `source_currency` units, in millionths of a unit, to convert.
 
-<aside class="notice">
-Reminder: the parameter is integer, and represents millionths of the whole. (See the secion "Types")
-</aside>
-
-### requested_currency (currency_symbol, mandatory) ###
+### requested_currency ###
+#### (currency_symbol, required)
 
 The currency to convert to.
 
@@ -64,7 +53,7 @@ SellCrypto currently supports only EUR as a fiat currency.
 
 If `source_currency` represents a fiat currency then `requested_currency` must represent a crypto currency, and vise versa.
 
-## Response ##
+## Returns ##
 
 > An example response:
 
@@ -86,14 +75,14 @@ The exchange rate: how much to multiply `source_amount` by in order to get the e
 
 ### quote_id (uuid) ###
 
-An id generated for this quote; you should keep this id and pass it to Simplex when creating a transaction based on this quote.
-
-Some notes on semantics, use cases, tips, ...
+An id generated for this quote. Keep this id and pass it back to Simplex when creating a transaction based on it.
 
 ## Transports ##
 
 ### REST ###
 
-GET `/get_quote`
+<span class="http-get">GET</span>`https://api.simplexcc.com/v1/rest/get_quote`
 
 ### JWT ###
+
+<span class="http-get">GET</span>`https://api.simplexcc.com/v1/jwt/get_quote`

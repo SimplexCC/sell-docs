@@ -11,10 +11,11 @@ toc_footers:
 
 includes:
   - introduction
-  - flow
-  - elements
+  - sell-flow
+  - concepts
   - types
   - get-quote
+  - transports
 
 search: false
 ---

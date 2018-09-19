@@ -1,0 +1,31 @@
+[ MUST ]
+
+* same URL for GET and POST in REST? Needs auth change
+* allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
+
+* check for typos
+* check for style
+* finish "sell-flow"
+* fill in "types"
+
+[ PREETIFY ]
+
+* aside -- add "title", right edge finish before example; add narrow vertical line at left edge
+* add screenshots to "sell-flow"
+* nav -- make current bold
+* aside colors -- a little brighter, pastel
+* aside -- rounded corners
+* REST methods -- pretty GET and POST verbs
+* syntax highlighting - diff key/val in json
+
+[ NICE-TO-HAVE ]
+
+* add internal links
+* erb variable for base_url
+
+[ BUY SUPPORT ]
+
+* refactor "types" so that it is not sell-specific
+* refactor "get-quote" so that it is not sell-specific
+* "introduction" --> "intro_sell", and create "intro_buy"
+* create "buy_flow"

@@ -19,23 +19,15 @@ under the License.
 // CUSTOMIZE SLATE
 ////////////////////////////////////////////////////////////////////////////////
 
-$NAV_FG: #373e42;
-$NAV_BG: #f8f8f8;
-$NAV_HI: #18aaff;
+$NAV_FG: hsl(202,  10%, 25%);
+$NAV_BG: hsl(  0,   0%, 97%);
+$NAV_HI: hsl(202, 100%, 55%);
 
-$MAIN_FG: #373e42;
-$MAIN_BG: #fcfcf9;
+$MAIN_FG: hsl(202, 10%, 25%);
+$MAIN_BG: hsl( 60, 25%, 98%);
 
-$EXAMPLES_FG: #cccccc;
-//$EXAMPLES_BG: #272b2d;
-$EXAMPLES_BG: #2d3134;
-
-////////////////////
-// MAIN
-////////////////////
-
-$main-text: $MAIN_FG !default;
-$main-bg:   $MAIN_BG !default;
+$EXAMPLES_FG: hsl(  0,   0%,  80%);
+$EXAMPLES_BG: hsl(202,   7%,  20%);
 
 ////////////////////
 // NAV
@@ -53,12 +45,19 @@ $nav-active-parent-text: $nav-active-bg   !default;
 $nav-active-parent-bg:   $nav-active-text !default;
 
 ////////////////////
+// MAIN
+////////////////////
+
+$main-text: $MAIN_FG !default;
+$main-bg:   $MAIN_BG !default;
+
+////////////////////
 // EXAMPLES
 ////////////////////
 
 $examples-bg:          $EXAMPLES_BG             !default;
-$code-bg:              darken($examples-bg, 2%) !default;
-$code-annotation-text: $examples-bg             !default;
+$code-bg:              darken($examples-bg, 3%) !default;
+$code-annotation-text: $EXAMPLES_FG             !default;
 $code-annotation-bg:   $examples-bg             !default;
 
 ////////////////////
@@ -79,9 +78,9 @@ $lang-select-pressed-bg:   $lang-select-active-bg   !default;
 // ASIDE
 ////////////////////
 
-$aside-notice-bg:  lighten($NAV_HI, 30%) !default;
-$aside-warning-bg: #c97a7e !default;
-$aside-success-bg: #6ac174 !default;
+$aside-notice-bg:  hsl(202, 100%, 85%) !default;
+$aside-warning-bg: hsl(  0, 100%, 85%) !default;
+$aside-success-bg: hsl(128, 100%, 85%) !default;
 
 
 ////////////////////
