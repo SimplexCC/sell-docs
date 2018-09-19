@@ -1,5 +1,10 @@
 # Transports #
 
+* Construct a URL
+* Build the request
+* Interpret response
+* Errors
+
 ## REST ##
 
 Base URL: `https://api.simplexcc.com/v1/rest/:msg?_partner=:partner&_apikey=:apikey&...`

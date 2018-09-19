@@ -5,18 +5,13 @@
 
 * check for typos
 * check for style
-* finish "sell-flow"
-* fill in "types"
 
 [ PREETIFY ]
 
-* aside -- add "title", right edge finish before example; add narrow vertical line at left edge
 * add screenshots to "sell-flow"
-* nav -- make current bold
-* aside colors -- a little brighter, pastel
-* aside -- rounded corners
-* REST methods -- pretty GET and POST verbs
+* aside -- add "title"
 * syntax highlighting - diff key/val in json
+* "Required" --> bg-color: hsl(39,88%, 59%); text-shadown 0 1px rgba(0, 0, 0, 0.2)
 
 [ NICE-TO-HAVE ]
 

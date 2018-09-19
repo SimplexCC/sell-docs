@@ -4,7 +4,7 @@ An instruction, from Simplex, that you are to send crypto currency to a specifie
 
 If you are the entity providing liquidity for a Simplex transaction, then after Simplex approves that transaction you will be instructed to make blockchain transaction; one that results in the transfer of a specified amount of crypto currency to a specified destination crypto address.
 
-In case of a refund, if you are the entity that received the crypto currency you will be instructed to send it "back" (albeit to a different crypto address from which it was sent).
+In case of a refund, if you are the entity that received the crypto currency you will be instructed to send it "back" (albeit to a possibly different crypto address from which it was sent).
 
 ## Synopsis ##
 
@@ -86,8 +86,10 @@ Explanation.
 
 ### REST ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
+
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/rest/:msg_name`
 
 ### JWT ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/jwt/:msg_name`

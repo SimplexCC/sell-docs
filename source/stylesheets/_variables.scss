@@ -19,37 +19,37 @@ under the License.
 // CUSTOMIZE SLATE
 ////////////////////////////////////////////////////////////////////////////////
 
-$NAV_FG: hsl(202,  10%, 25%);
 $NAV_BG: hsl(  0,   0%, 97%);
+$NAV_FG: hsl(202,   5%, 45%);
 $NAV_HI: hsl(202, 100%, 55%);
 
-$MAIN_FG: hsl(202, 10%, 25%);
-$MAIN_BG: hsl( 60, 25%, 98%);
+$MAIN_BG: hsl( 60, 10%, 95%);
+$MAIN_FG: hsl(  0,  0%, 20%);
 
+$EXAMPLES_BG: hsl(202,  17%,  20%);
 $EXAMPLES_FG: hsl(  0,   0%,  80%);
-$EXAMPLES_BG: hsl(202,   7%,  20%);
 
 ////////////////////
 // NAV
 ////////////////////
 
-$nav-text:               $NAV_FG !default;
 $nav-bg:                 $NAV_BG !default;
+$nav-text:               $NAV_FG !default;
 
-$nav-active-text:        $NAV_HI !default;
 $nav-active-bg:          $nav-bg   !default;
+$nav-active-text:        $NAV_HI !default;
 
 $nav-subitem-bg:         $nav-bg !default;
 
-$nav-active-parent-text: $nav-active-bg   !default;
 $nav-active-parent-bg:   $nav-active-text !default;
+$nav-active-parent-text: $nav-active-bg   !default;
 
 ////////////////////
 // MAIN
 ////////////////////
 
-$main-text: $MAIN_FG !default;
 $main-bg:   $MAIN_BG !default;
+$main-text: $MAIN_FG !default;
 
 ////////////////////
 // EXAMPLES
@@ -57,30 +57,30 @@ $main-bg:   $MAIN_BG !default;
 
 $examples-bg:          $EXAMPLES_BG             !default;
 $code-bg:              darken($examples-bg, 3%) !default;
-$code-annotation-text: $EXAMPLES_FG             !default;
 $code-annotation-bg:   $examples-bg             !default;
+$code-annotation-text: $EXAMPLES_FG             !default;
 
 ////////////////////
 // LANG SELET
 ////////////////////
 
-$lang-select-text:   #ffffff !default;
-$lang-select-bg:     #667b88 !default;
-$lang-select-border: #000000 !default;
+$lang-select-bg:     hsl(120,  10%,  45%) !default;
+$lang-select-text:   hsl(  0,   0%, 100%) !default;
+$lang-select-border: $examples-bg         !default;
 
-$lang-select-active-text: $lang-select-text !default;
 $lang-select-active-bg:   #000000 !default;
+$lang-select-active-text: $lang-select-text !default;
 
-$lang-select-pressed-text: $lang-select-active-text !default;
 $lang-select-pressed-bg:   $lang-select-active-bg   !default;
+$lang-select-pressed-text: $lang-select-active-text !default;
 
 ////////////////////
 // ASIDE
 ////////////////////
 
-$aside-notice-bg:  hsl(202, 100%, 85%) !default;
-$aside-warning-bg: hsl(  0, 100%, 85%) !default;
-$aside-success-bg: hsl(128, 100%, 85%) !default;
+$aside-notice-bg:  hsl(202, 100%, 90%) !default;
+$aside-warning-bg: hsl(  0, 100%, 90%) !default;
+$aside-success-bg: hsl(128, 100%, 90%) !default;
 
 
 ////////////////////
@@ -122,7 +122,7 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 
 %code-font {
   font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 

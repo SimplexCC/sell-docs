@@ -24,12 +24,12 @@ Transports: **REST, JWT**
 
 Name | Type | Required?
 ---- | ---- | ---------
-source_currency | currency | required
+source_currency | currency | __required__
 source_amount | money_amount | required
 requested_currency | currency | required
 
 ### source_currency ###
-#### (currency, required)
+#### (currency, **required**)
 
 The currency to convert from.
 
@@ -38,12 +38,12 @@ SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
 ### source_amount ###
-#### (money_amount, required)
+#### (money_amount, **required**)
 
 The amount of `source_currency` units, in millionths of a unit, to convert.
 
 ### requested_currency ###
-#### (currency, required)
+#### (currency, **required**)
 
 The currency to convert to.
 
@@ -83,8 +83,8 @@ An id generated for this quote. Keep this id and pass it back to Simplex when cr
 
 ### REST ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/rest/get_quote`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/get_quote`
 
 ### JWT ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/jwt/get_quote`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/get_quote`

@@ -66,8 +66,8 @@ Explanation.
 
 ### REST ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
 
 ### JWT ###
 
-<span class="http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`

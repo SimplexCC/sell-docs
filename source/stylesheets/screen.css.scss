@@ -155,6 +155,7 @@ html, body {
   .toc-link.active {
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    font-weight: bold;
   }
 
   // this is parent links of the currently selected ToC entry
@@ -272,7 +273,7 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    //border-bottom: 5px solid $lang-select-active-bg;
   }
 }
 
@@ -343,8 +344,11 @@ html, body {
     clear:both;
   }
 
-  h1 {
+	h1, h2, h3, h4 {
     @extend %header-font;
+	}
+
+  h1 {
     font-size: 25px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -360,45 +364,51 @@ html, body {
     margin-top: 0;
   }
 
-  h2 {
-    @extend %header-font;
-    font-size: 19px;
-
-    padding-top: 2.5em;
-
-	margin-left: $main-padding;
-	padding-left: 0;
-
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #ddd;
-
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
-  }
-
-  // h2s right after h1s should bump right up
-  // against the h1s.
+  // h2s right after h1s should bump right up against the h1s.
   h1 + h2, h1 + div + h2 {
     margin-top: $h1-margin-bottom * -1;
     border-top: none;
   }
 
-  h3, h4, h5, h6 {
-    @extend %header-font;
-    font-size: 15px;
-    margin-top: 2.5em;
-    margin-bottom: 0.8em;
+  // h2's are main sub-topics
+  h2 {
+    font-size: 19px;
+
+    margin-left: $main-padding;
+    padding-left: 0;
+
+		padding-top: 1.5em;
+
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #ddd;
+		margin-bottom: 1em;
   }
 
-  h4, h5, h6 {
-    font-size: 10px;
+  // h3's are parameters
+  h3 {
+    font-size: 15px;
+
+		margin-left: $main-padding;
+		padding-left: 0;
+
+		margin-top: 1em;
+	  border-top: 1px solid #ccc;
+	  padding-top: 1em;
+
+		margin-bottom: 1.5em;
   }
 
   // I use h4 for "(integer, optional)" comments for parameters (which are themselves h3)
+	h3 + h4 {
+		margin-top: -1em;
+	}
+
   h4 {
-	  font-size: 12px;
-	  font-weight: normal;
-	  color: #aaa;
-	  margin-top: -0.5em;
+		font-size: 13px;
+		font-weight: 450;
+		color: #999;
+
+		margin-bottom: 0.5em;
   }
 
   hr {
@@ -411,26 +421,24 @@ html, body {
     margin-bottom: 1em;
     overflow: auto;
 
+    code {
+      white-space: nowrap;
+    }
+
+    tr {
+      border: 1px solid #ddd;
+    }
+
+    thead {
+      background-color: lighten($main-bg, 3%);
+      vertical-align: bottom;
+    }
+
     th, td {
       text-align: left;
       vertical-align: top;
-	  padding: 4px 16px;
+      padding: 4px 16px;
       line-height: 1.6;
-      code {
-        white-space: nowrap;
-      }
-    }
-
-	thead {
-		background-color: lighten($main-bg, 2%);
-	}
-
-    tr {
-      border: 1px solid #ccc;
-    }
-
-    th {
-      vertical-align: bottom;
     }
 
   }
@@ -453,9 +461,9 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
-    padding: 3px;
-    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.07);
+    padding: 3px 6px;
+    border-radius: 4px;
     @extend %break-words;
     @extend %code-font;
   }
@@ -466,25 +474,36 @@ html, body {
   }
 
   aside {
-    background: $aside-notice-bg;
+    border-width: 1px;
+    border-left-width: 6px;
+    border-style: solid;
+    border-radius: 6px;
+
+    background-color: $aside-notice-bg;
+    border-color:     darken(desaturate($aside-notice-bg, 20%), 20%);
+    color:            darken(  saturate($aside-notice-bg, 10%), 60%);
 
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-	margin-left: $main-padding;
+    margin-left: $main-padding;
+    margin-right: calc(#{$examples-width} + #{$main-padding});
 
     padding-top: 1em;
     padding-bottom: 1em;
-	padding-left: 1em;
+    padding-left: 1em;
 
     line-height: 1.6;
-	max-width: 50em;
 
     &.warning {
       background-color: $aside-warning-bg;
+      border-color:     darken(desaturate($aside-warning-bg, 20%), 20%);
+      color:            darken(  saturate($aside-warning-bg, 10%), 60%);
     }
 
     &.success {
       background-color: $aside-success-bg;
+      border-color:     darken(desaturate($aside-success-bg, 20%), 20%);
+      color:            darken(  saturate($aside-success-bg, 10%), 60%);
     }
   }
 
@@ -514,21 +533,31 @@ html, body {
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
 
-  .http-get {
-	  background-color: #00f;
-	  padding: 5px 10px;
-	  border-radius: 6px;
+  .http-verb {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.5;
 	  margin-right: 1em;
-	  color: #fff;
-	  font-size: 16px;
+  }
+
+  .http-verb.http-get {
+      color: #fff;
+      background-color: #080;
+  }
+
+  .http-verb.http-post {
+      color: #fff;
+      background-color: #008;
   }
 
 }
 
-////////////////////////////////////////////////////////////////////////////////
+//
 // CODE SAMPLE STYLES
-////////////////////////////////////////////////////////////////////////////////
-// This is all the stuff that appears in the right half of the page
+//
 
 .content {
   pre, blockquote {
@@ -625,6 +654,10 @@ html, body {
     margin-top: $main-padding;
   }
 }
+
+//
+// SYNTAX HIGHLIGHTING
+//
 
 .highlight, .highlight .w {
   background-color: $code-bg;
