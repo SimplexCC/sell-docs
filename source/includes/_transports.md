@@ -44,7 +44,20 @@ Only GET
 
 TODO
 
-## Message Queue Polling ##
+## Partner REST ##
+
+You provide a BASE_URL, and we invoke methods.
+
+* Must be https
+* Provide a key as part of the URL, or as a query parameter
+
+### GET ###
+
+### POST ###
+
+### Errors ###
+
+## Message Queue ##
 
 Base URL: `https://api.simplexcc.com/v1/q`
 
@@ -56,11 +69,11 @@ GET `/msg`
 
 ### ACK a message ###
 
-PUT `/msg/:id`
+POST `/msg/:id/ack`
 
-### Post a message ###
+### Respond to a previous message ###
 
-POST `/msg`
+POST `/msg/:id/response`
 
 ### Errors ###
 

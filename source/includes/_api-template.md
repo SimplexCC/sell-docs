@@ -8,7 +8,7 @@ Longer explanation of when to use and what for.
 
 Message name: **`msg-name`**  
 Direction: **You &larr; &rarr; Simplex**  
-Transports: **REST, JWT, Message Queue Polling**
+Transports: **REST, JWT, Message Queue**
 
 ## Parameters ##
 

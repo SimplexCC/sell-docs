@@ -273,7 +273,7 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    //border-bottom: 5px solid $lang-select-active-bg;
+    border-bottom: 5px solid $lang-select-active-bg;
   }
 }
 
@@ -396,6 +396,10 @@ html, body {
     padding-top: 1em;
 
     margin-bottom: 1.5em;
+  }
+
+  h2 + h3 {
+    border-top: none;
   }
 
   // I use h4 for "(integer, optional)" comments for parameters (which are themselves h3)
