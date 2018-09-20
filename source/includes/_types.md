@@ -4,12 +4,12 @@
 
 ### float ###
 
-### uuid ###
+### id ###
 
-An opaque string (i.e.: do not assume anything about its contents). Currently used to hold UUID4's.
+An opaque string (i.e.: do not assume anything about its contents).
 
 <aside class="warning">
-No guarantees are made regarding the format of the contents, or for that matter that the string actually contains a UUID4 or is of any certain length. <strong>You have been warned.</strong>
+No guarantees are made regarding the internal format, and it may change in the future. <strong>You have been warned.</strong>
 </aside>
 
 ### fiat_currency ###

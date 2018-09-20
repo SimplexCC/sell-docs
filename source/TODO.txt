@@ -2,6 +2,8 @@
 
 * same URL for GET and POST in REST? Needs auth change
 * allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
+* maybe we should decide on the uuid of the xo?
+* uniformity in "_id" and "_uuid"
 
 * check for typos
 * check for style

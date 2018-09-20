@@ -67,7 +67,7 @@ If `source_currency` represents a fiat currency then `requested_currency` must r
 Name | Type
 ---- | ----
 rate | float
-quote_id | uuid
+quote_id | id
 
 ### rate ###
 #### (float)
@@ -75,9 +75,9 @@ quote_id | uuid
 The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
 
 ### quote_id ###
-#### (uuid)
+#### (id)
 
-An id generated for this quote. Keep this id and pass it back to Simplex when creating a transaction based on it.
+An identifier generated for this quote. Keep this identifier and pass it back to Simplex when creating a transaction based on it.
 
 ## Transports ##
 

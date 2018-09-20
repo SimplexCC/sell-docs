@@ -1,73 +1,107 @@
 # get-dst-crypto-addr #
 
-One line summary.
+A query from Simplex to you, asking where you would like your crypto currencies to be sent.
 
-Longer explanation of when to use and what for.
+If you are the entity:
+ * Representing the end-user in a BuyCrypto  transaction (a aallet application, an exchange, etc.), OR
+ * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet application, an exchange, etc.), OR
+ * Buying crypto currencies from end-users in a SellCrypto transaction (a "Liquidity Receiver")
+... then we need to know where to send your crypto currencies to.
+
+In all cases, you may choose any of the following:
+ * If you are the entity initiating the Simplex transaction (a wallet application, an exchange, etc.), send the relevant destination crypto address as part of `initiate`
+ * Use a pre-configured crypto address
+ * We may get a bulk of destination addresses from you ahead of time
+ * We may ask you specifically per transaction
+
+`get-dst-crypto-addr` is used by Simplex for the latter two cases.
 
 ## Synopsis ##
 
-Message name: **`msg-name`**  
-Direction: **You &larr; &rarr; Simplex**  
-Transports: **REST, JWT, Message Queue**
+Message name: **`get-dst-crypto-addr`**  
+Direction: **Simplex &rarr; You**
+Transports: **Partner REST, Message Queue**
 
 ## Parameters ##
 
-> Example request
+> Simplex querying you ahead of time for a bulk of addresses:
 
 ```javascript--json
 {
-  "param_a": 1,
-  "param_b": 2,
+  "currency": "BTC",
+  "n": 100,
+}
+```
+
+> Simplex querying you for a specific transaction:
+
+```javascript--json
+{
+  "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+  "currency": "BTC",
+  "n": 1,
 }
 ```
 
 Name | Type | Required?
 ---- | ---- | ---------
-param_a | type1 | required/optional
-param_b | type2 | required/optional
+txn_id | id | optional
+reason | string | required
+currency | crypto_currency | required
+n | integer | required
 
-### param_a ###
-#### (type1, required/optional)
+### txn_id ###
+#### (id, optional)
 
-Explanation.
+The identifier of the Simplex transaction for which the destination crypto address is requested.
 
-### param_b ###
-#### (type2, required/optional)
+If no specific transaction is involved (e.g. Simplex is asking for a bulk of addresses ahead of time), this will not be passed.
 
-Explanation.
+### reason ###
+#### (string, required)
+
+What the address will be used for.
+
+One of { `"refund"`, `"buy"` }.
+
+ * `"buy"`: you are buying the crypto currency to be received. You are either a Liquidity Receiver in a SellCypto transaction, or a wallet/exchange/etc. in a BuyCrypto transaction.
+ * `"refund"`: the reverse of "buy" -- we want to return crypto currencies that you have previously sent.
+
+### currency ###
+#### (crypto_currency, required)
+
+The type of crypto currencies that will be sent to the crypto address you supply.
+
+### n ###
+#### (integer, required)
+
+The number of requested destination crypto addresses.
 
 ## Response ##
 
-> An example response:
+> You responding to a Simplex query:
 
 ```javascript--json
 {
-    "c": 3,
-    "d": 4,
+  "addresses": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
 }
 ```
 
 Name | Type
 ---- | ----
-ret_c | tyep3
-ret_d | type4
+addresses | Array<string>
 
-### ret_c ###
-#### (type3)
+### addresses ###
+#### (Array<string>)
 
-Explanation.
-
-### ret_d ###
-#### (type4)
-
-Explanation.
+An array of strings, each representing a destination crypto address.
 
 ## Transports ##
 
-### REST ###
+### Partner REST ###
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
+<span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/get-dst-crypto-addr`
 
-### JWT ###
+### Message Queue ###
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+[modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

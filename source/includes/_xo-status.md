@@ -1,6 +1,6 @@
 # xo-status #
 
-A query from Simplex about the status of an execution order previously created by `send-crypto`.
+A query from Simplex to you regarding the status of an execution order previously created by `send-crypto`.
 
 Alternatively: a notification from you to Simplex that the status of an execution order has changed.
 
@@ -37,7 +37,7 @@ status | string | required when you notify Simplex, missing when Simplex queries
 ### xo_id ###
 #### (string, required)
 
-The id of an execution order previously created by you in response to `send-crypto`.
+The identifier of an execution order previously created by you in response to `send-crypto`.
 
 ### status ###
 #### (string, required when you notify Simplex, missing when Simplex queries you)
