@@ -16,10 +16,10 @@ includes:
   - types
   - get-quote
   - initiate-sell
+  - get-dst-crypto-addr
   - send-crypto
   - xo-status
   - txn-event-notify
-  - get-dst-crypto-addr
   - transports
 
 search: false

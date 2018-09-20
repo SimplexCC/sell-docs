@@ -71,3 +71,5 @@ Explanation.
 ### JWT ###
 
 <span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+
+[modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

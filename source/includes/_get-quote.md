@@ -88,3 +88,5 @@ An identifier generated for this quote. Keep this identifier and pass it back to
 ### JWT ###
 
 <span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/get_quote`
+
+[modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

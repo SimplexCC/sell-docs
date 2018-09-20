@@ -39,3 +39,5 @@ This is <em>not</em> floating point parameter. Rather, this is an integer counti
 ### crypto_addr ###
 
 A string, denoting a crypto address.
+
+[modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
