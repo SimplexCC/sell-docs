@@ -1,6 +1,6 @@
 # get-dst-crypto-addr #
 
-A query from Simplex to you, asking where you would like your crypto currencies to be sent.
+A query from Simplex to you, asking where you would like your crypto currencies sent to.
 
 If you are the entity:
  * Representing the end-user in a BuyCrypto  transaction (a aallet application, an exchange, etc.), OR
@@ -19,7 +19,7 @@ In all cases, you may choose any of the following:
 ## Synopsis ##
 
 Message name: **`get-dst-crypto-addr`**  
-Direction: **Simplex &rarr; You**
+Direction: **Simplex &rarr; You**  
 Transports: **Partner REST, Message Queue**
 
 ## Parameters ##
@@ -33,11 +33,12 @@ Transports: **Partner REST, Message Queue**
 }
 ```
 
-> Simplex querying you for a specific transaction:
+> Simplex querying you for a destination crypto address for a specific transaction:
 
 ```javascript--json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+  "reason": "buy",
   "currency": "BTC",
   "n": 1,
 }
@@ -58,22 +59,22 @@ The identifier of the Simplex transaction for which the destination crypto addre
 If no specific transaction is involved (e.g. Simplex is asking for a bulk of addresses ahead of time), this will not be passed.
 
 ### reason ###
-#### (string, required)
+#### (string, **required**)
 
 What the address will be used for.
 
-One of { `"refund"`, `"buy"` }.
+One of { `"delivery"`, `"refund"` }.
 
- * `"buy"`: you are buying the crypto currency to be received. You are either a Liquidity Receiver in a SellCypto transaction, or a wallet/exchange/etc. in a BuyCrypto transaction.
- * `"refund"`: the reverse of "buy" -- we want to return crypto currencies that you have previously sent.
+ * `"delivery"`: you are buying the crypto currency to be received. You are either a Liquidity Receiver in a SellCypto transaction, or a wallet/exchange/etc. in a BuyCrypto transaction.
+ * `"refund"`: the reverse of "delivery" -- we want to return crypto currencies that you have previously sent.
 
 ### currency ###
-#### (crypto_currency, required)
+#### (crypto_currency, **required**)
 
 The type of crypto currencies that will be sent to the crypto address you supply.
 
 ### n ###
-#### (integer, required)
+#### (integer, **required**)
 
 The number of requested destination crypto addresses.
 

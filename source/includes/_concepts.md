@@ -1,21 +1,21 @@
 # Concepts #
 
-## Environments ##
+## Sandbox vs. Production ##
 
-Simplex provides a Sandbox environment, which you use while developing and testing your integration. When your testing is complete and you are ready to go live, all you do is switch to the Production environment.
+Simplex provides a sandbox environment, which you use while developing and testing your integration. When you are ready to go live, you simply switch to the production environment.
 
-Each environment is accessed with a different URL, and requires a different API key (see below).
+Environments are accessed with different URLs and require different API keys (see below).
 
 ## API key ##
 
-As part of your onboarding with Simplex you receive two API keys, which are for authentication. One key is used when running against the Sandbox environment, and the other is used for the Production environment.
+As part of your onboarding with Simplex you receive two API keys, which you will use for authentication your API calls. Note that the keys for the sandbox and production environments are different.
 
-## Messages ##
+## API Messages ##
 
-Foo
+(TODO)
 
 ## Transports ##
 
-Bar
+(TODO)
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

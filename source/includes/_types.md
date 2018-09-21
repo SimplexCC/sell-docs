@@ -4,6 +4,10 @@
 
 ### float ###
 
+### timestamp ###
+
+Float, Unix timestamp, millisecond resultion.
+
 ### id ###
 
 An opaque string (i.e.: do not assume anything about its contents).

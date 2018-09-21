@@ -1,75 +1,62 @@
 # txn-event-notify #
 
-One line summary.
+Notifications about major transaction lifecycle events.
 
-Longer explanation of when to use and what for.
+You receive notifications when certain events occur during the lifecycle of transactions. You can use these notifications, for example, for your internal analytics; or if you would like the end-user to perform a certain action you may choose to prompt them.
 
 ## Synopsis ##
 
-Message name: **`msg-name`**  
-Direction: **You &larr; &rarr; Simplex**  
-Transports: **REST, JWT, Message Queue**
+Message name: **`txn-event-notify`**  
+Direction: **Simplex &rarr; You**  
+Transports: **Message Queue**
 
 ## Parameters ##
 
-> Example request
+> Example:
 
 ```javascript--json
 {
-  "param_a": 1,
-  "param_b": 2,
+  "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+  "timestamp": 1537540352.012,
+  "event": "approved",
 }
 ```
 
-Name | Type | Required?
----- | ---- | ---------
-param_a | type1 | required/optional
-param_b | type2 | required/optional
+Name | Type |
+---- | ---- |
+txn_id | id |
+ts | timestamp |
+event | string |
 
-### param_a ###
-#### (type1, required/optional)
+### txn_id ###
+#### (id)
 
-Explanation.
+Identifier of the Simplex transaction.
 
-### param_b ###
-#### (type2, required/optional)
+### ts ###
+#### (timestamp)
 
-Explanation.
+Timestamp of when the event occured.
+
+### event ###
+#### (string)
+
+The type of event that occured in the transaction.
+
+One of { `"txn-approved"`, `"txn-declined"`, `"txn-refunded"` }.
+
+ * `"txn-approved"`: The transaction was approved. The end-user's payment method has either been charged (BuyCrypto) or been credited (SellCrypto; though it may take up to 3 days to show on their statement).
+
+ * `"txn-declined"`: The transaction was declined, for policy or risk reasons. Simplex does not divulge exact reasons to end-users. No fiat has been charged, and any holds on the end-user's card have been released (though some of the users' banks may take time to show that).
+
+ * `"txn-refunded"`: The transaction has been refunded. In a BuyCrypto transaction this means the fiat was returned to the end-user, while in a SellCrypto transaction this means the crypto currencies have been returned.
 
 ## Response ##
 
-> An example response:
-
-```javascript--json
-{
-    "c": 3,
-    "d": 4,
-}
-```
-
-Name | Type
----- | ----
-ret_c | tyep3
-ret_d | type4
-
-### ret_c ###
-#### (type3)
-
-Explanation.
-
-### ret_d ###
-#### (type4)
-
-Explanation.
+No response is required.
 
 ## Transports ##
 
-### REST ###
-
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/:msg_name`
-
-### JWT ###
-
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+### Message Queue ###
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

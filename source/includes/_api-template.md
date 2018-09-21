@@ -7,7 +7,7 @@ Longer explanation of when to use and what for.
 ## Synopsis ##
 
 Message name: **`msg-name`**  
-Direction: **You &larr; &rarr; Simplex**  
+Direction: **You &rarr; Simplex**  
 Transports: **REST, JWT, Message Queue**
 
 ## Parameters ##

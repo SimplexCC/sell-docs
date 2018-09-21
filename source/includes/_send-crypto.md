@@ -21,7 +21,7 @@ Transports: **Partner REST, Message Queue**
 
 ## Parameters ##
 
-> Example
+> Example:
 
 ```javascript--json
 {

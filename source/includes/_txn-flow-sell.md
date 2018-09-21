@@ -31,3 +31,5 @@ This user experience is typically provided by you in your mobile app / webapp. I
 ## Notification ##
 
 * notify wallet
+
+[modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

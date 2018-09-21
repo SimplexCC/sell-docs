@@ -1,24 +1,47 @@
-[ MUST ]
+[ TO COMPLETE ]
 
-* same URL for GET and POST in REST? Needs auth change
-* allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
-* maybe we should decide on the uuid of the xo?
-* uniformity in "_id" and "_uuid"
+* txn-event-notify
+* initiate-sell
+* transports
+* txn-flow-sell
+* intro-sell
+* types
+
+[ MUST ]
 
 * check for typos
 * check for style
 
+[ BETTER API ]
+
+* same URL for GET and POST in REST? Needs auth change
+* allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
+* maybe WE create the the uuid of the xo?
+* add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
+
+[ BETTER DOC ]
+
+* uniformity in "_id" and "_uuid"
+* add "roles" in "concepts", and thus simplify the text is some API messages documentation
+* uniformity in "message" / "call" / "endpoint" / "method" / with-or-without "API" / "api"
+* find a way to explain "currency of cryptocurrency"; maybe "currency of crypto coins" or "... of crypto money"?
+* find a way to diffrentiate between a "Simplex txn" and a "Blockchain txn" (for e.g. send-crypto)
+* change H2 in API chapters to h3, so they don't show up in TOC
+* uniformity in "crypto currency" or "... cryptocurrencies" or "crypto currencies"
+* fixed-font (``) for "API_STRINGS"
+* add internal links
+
+[ BETTER DOC INFRA ]
+
+* macros for base_url, etc.
+* erb variable for base_url
+
 [ PREETIFY ]
 
 * add screenshots to "sell-flow"
-* aside -- add "title"
+* nicer-looking param tables
 * syntax highlighting - diff key/val in json
 * "Required" --> bg-color: hsl(39,88%, 59%); text-shadown 0 1px rgba(0, 0, 0, 0.2)
-
-[ NICE-TO-HAVE ]
-
-* add internal links
-* erb variable for base_url
 
 [ BUY SUPPORT ]
 
