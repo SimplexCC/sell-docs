@@ -3,7 +3,8 @@
 A query from Simplex to you, asking where you would like your crypto currencies sent to.
 
 If you are the entity:
- * Representing the end-user in a BuyCrypto  transaction (a aallet application, an exchange, etc.), OR
+
+ * Representing the end-user in a BuyCrypto  transaction (a wallet application, an exchange, etc.), OR
  * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet application, an exchange, etc.), OR
  * Buying crypto currencies from end-users in a SellCrypto transaction (a "Liquidity Receiver")
 ... then we need to know where to send your crypto currencies to.
@@ -84,15 +85,15 @@ The number of requested destination crypto addresses.
 
 ```javascript--json
 {
-  "addresses": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
+  "crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
 }
 ```
 
 Name | Type
 ---- | ----
-addresses | Array<string>
+crypto_addrs | Array<string>
 
-### addresses ###
+### crypto_addrs ###
 #### (Array<string>)
 
 An array of strings, each representing a destination crypto address.

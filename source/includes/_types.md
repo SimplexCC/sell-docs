@@ -44,4 +44,31 @@ This is <em>not</em> floating point parameter. Rather, this is an integer counti
 
 A string, denoting a crypto address.
 
+### addr ###
+
+An address in the real world
+
+```
+{
+  "line1":   String, // [REQUIRED]
+  "line2":   String, // [OPTIONAL]
+  "city":    String, // [REQUIRED]
+  "zip":     String, // [OPTIONAL]
+  "country": String, // [REQUIRED] ISO 3166-1 ALPHA-2
+  "state":   String, // [OPTIONAL] minimum 2 chars
+}
+```
+
+### WebSessionInfo ###
+
+```
+WebSessionInfo: {
+  "ip":                   String,    // [REQUIRED] IPv4 or IPv6 format
+  "timestamp":            Timestamp, // [REQUIRED]
+  "user_agent":           String,    // [OPTIONAL]
+  "uaid":                 String,    // [OPTIONAL]
+  "http_accept_language": String,    // [OPTIONAL]
+}
+```
+
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

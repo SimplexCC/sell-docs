@@ -10,9 +10,9 @@
 
 * initiate-sell
 * transports
+* types
 * txn-flow-sell
 * intro-sell
-* types
 
 [ MUST ]
 
@@ -22,11 +22,14 @@
 
 [ BETTER API ]
 
+* add "refund_crypto_addr"
+* add "phone country" to type "phone"
+* maybe WE should create the uuid for the txn? OR: prepend the partner id to the txn_id.
+* maybe WE create the the uuid of the xo?
 * add refund_crypto_addr to sell-crypto
 * maybe WE should be the ones creating the txn_id, and simply ask them for their number as well?
 * same URL for GET and POST in REST? Needs auth change
 * allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
-* maybe WE create the the uuid of the xo?
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
 
 [ BETTER DOC ]
