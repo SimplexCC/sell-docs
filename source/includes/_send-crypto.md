@@ -23,7 +23,7 @@ Transports: **Partner REST, Message Queue**
 
 > Example:
 
-```javascript--json
+```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "dst_crypto_addr": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp",
@@ -67,7 +67,7 @@ The amount of `currency` to send.
 
 > An example response:
 
-```javascript--json
+```json
 {
   "xo_id": "xo:7791528",
   "status": "completed",

@@ -14,7 +14,7 @@ Transports: **REST, JWT, Message Queue**
 
 > Example request
 
-```javascript--json
+```json
 {
   "param_a": 1,
   "param_b": 2,
@@ -40,7 +40,7 @@ Explanation.
 
 > An example response:
 
-```javascript--json
+```json
 {
     "c": 3,
     "d": 4,

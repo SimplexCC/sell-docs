@@ -2,7 +2,7 @@
 title: Simplex SellCrypto API documentation
 
 language_tabs:
-  - javascript--node: node.js
+  - json
 
 toc_footers:
   - <a href="http://www.simplex.com/">Simplex</a>

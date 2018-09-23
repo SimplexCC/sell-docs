@@ -24,7 +24,7 @@ Transports: **REST, JWT**
 
 > Example request
 
-```javascript--json
+```json
 {
   "txn_details": {
     "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
@@ -94,7 +94,7 @@ error | String | optional |
 
 > An example response of a successful call:
 
-```javascript--json
+```json
 {
   "txn_url": "https://checkout.simplexcc.com/sell?t=af492cb2-5b07-4318-8ece-be34f479e23b"
 }
@@ -109,7 +109,7 @@ In case of an error `txn_url` will not be returned.
 
 > Example error scenario:
 
-```javascript--json
+```json
 {
   "error": "duplicate txn_id"
 }

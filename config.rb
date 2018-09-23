@@ -21,9 +21,29 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
 # Activate the syntax highlighter
+
 activate :syntax
 ready do
   require './lib/multilang.rb'
+end
+
+module ::Middleman::Syntax::Highlighter
+  def self.highlight(code, language=nil, opts={})
+
+    opts_css_class = opts['css_class']
+    opts_css_class = 'highlight' if opts_css_class.nil?
+
+    css_classes = [opts_css_class]
+    css_classes.push('language-' + language) if !language.nil?
+
+    Pygments.highlight(
+      code,
+      :lexer => language,
+      :options => {
+        :cssclass => css_classes.join(' ')
+      }
+    )
+  end
 end
 
 activate :sprockets
@@ -52,6 +72,9 @@ end
 # Deploy Configuration
 # If you want Middleman to listen on a different port, you can set that below
 set :port, 4567
+
+# Live Reload
+#activate :livereload
 
 helpers do
   require './lib/toc_data.rb'

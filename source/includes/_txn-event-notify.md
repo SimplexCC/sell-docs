@@ -14,7 +14,7 @@ Transports: **Message Queue**
 
 > Example:
 
-```javascript--json
+```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "timestamp": 1537540352.012,

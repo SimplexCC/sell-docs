@@ -27,7 +27,7 @@ Transports: **Partner REST, Message Queue**
 
 > Simplex querying you ahead of time for a bulk of addresses:
 
-```javascript--json
+```json
 {
   "currency": "BTC",
   "n": 100,
@@ -36,7 +36,7 @@ Transports: **Partner REST, Message Queue**
 
 > Simplex querying you for a destination crypto address for a specific transaction:
 
-```javascript--json
+```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "reason": "buy",
@@ -83,7 +83,7 @@ The number of requested destination crypto addresses.
 
 > You responding to a Simplex query:
 
-```javascript--json
+```json
 {
   "crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
 }

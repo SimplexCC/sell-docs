@@ -14,7 +14,7 @@ Transports: **REST, JWT**
 
 > Example request
 
-```javascript--json
+```json
 {
   "source_currency": "EUR",
   "source_amount": 100000000, // EUR 100.00
@@ -57,7 +57,7 @@ If `source_currency` represents a fiat currency then `requested_currency` must r
 
 > An example response:
 
-```javascript--json
+```json
 {
     "rate": 8000.5,
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",

@@ -14,7 +14,7 @@ Transports: **Partner REST, Message Queue**
 
 > Simplex querying you for the status of an execution order:
 
-```javascript--json
+```json
 {
   "xo_id": "xo:7791528",
 }
@@ -22,7 +22,7 @@ Transports: **Partner REST, Message Queue**
 
 > You notifying Simplex of an execution order status change:
 
-```javascript--json
+```json
 {
   "xo_id": "xo:7791528",
   "status": "completed",
@@ -50,7 +50,7 @@ One of { `"completed"`, `"failed"` }.
 
 > You responding to a Simplex query:
 
-```javascript--json
+```json
 {
   "status": "completed",
 }
