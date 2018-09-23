@@ -647,6 +647,6 @@ html, body {
 // SYNTAX HIGHLIGHTING
 //
 
-@import 'pygments-hopscotch.css';
+@import 'pygments/pygments-hopscotch.css';
 
 .highlight.language-json .err { background-color: inherit; color: #909090; } // json "errors" are really my comments
