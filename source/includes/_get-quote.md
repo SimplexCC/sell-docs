@@ -22,14 +22,14 @@ Transports: **REST, JWT**
 }
 ```
 
-Name | Type | Required?
----- | ---- | ---------
-source_currency | currency | __required__
-source_amount | money_amount | required
-requested_currency | currency | required
+Name               | Type        | Notes
+------------------ | ----------- | -----
+source_currency    | Currency    | **required**
+source_amount      | MoneyAmount | **required**
+requested_currency | Currency    | **required**
 
 ### source_currency ###
-#### (currency, **required**)
+#### (Currency, **required**)
 
 The currency to convert from.
 
@@ -38,12 +38,12 @@ SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
 ### source_amount ###
-#### (money_amount, **required**)
+#### (MoneyAmount, **required**)
 
 The amount of `source_currency` units, in millionths of a unit, to convert.
 
 ### requested_currency ###
-#### (currency, **required**)
+#### (Currency, **required**)
 
 The currency to convert to.
 
@@ -59,25 +59,25 @@ If `source_currency` represents a fiat currency then `requested_currency` must r
 
 ```json
 {
-    "rate": 8000.5,
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
+    "rate": 8000.5,
 }
 ```
 
-Name | Type
----- | ----
-rate | float
-quote_id | id
-
-### rate ###
-#### (float)
-
-The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
+Name     | Type
+-------- | ----
+quote_id | Id
+rate     | Float
 
 ### quote_id ###
-#### (id)
+#### (Id)
 
 An identifier generated for this quote. Keep this identifier and pass it back to Simplex when creating a transaction based on it.
+
+### rate ###
+#### (Float)
+
+The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
 
 ## Transports ##
 

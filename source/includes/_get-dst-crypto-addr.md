@@ -29,7 +29,7 @@ Transports: **Partner REST, Message Queue**
 
 ```json
 {
-  "currency": "BTC",
+  "crypto_currency": "BTC",
   "n": 100,
 }
 ```
@@ -40,27 +40,27 @@ Transports: **Partner REST, Message Queue**
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "reason": "buy",
-  "currency": "BTC",
+  "crypto_currency": "BTC",
   "n": 1,
 }
 ```
 
-Name | Type | Required?
----- | ---- | ---------
-txn_id | id | optional
-reason | string | required
-currency | crypto_currency | required
-n | integer | required
+Name            | Type           | Notes
+--------------- | -------------- | -----
+txn_id          | Id             |
+reason          | String         | **required**
+crypto_currency | CryptoCurrency | **required**
+n               | Integer        | **required**
 
 ### txn_id ###
-#### (id, optional)
+#### (Id, optional)
 
 The identifier of the Simplex transaction for which the destination crypto address is requested.
 
 If no specific transaction is involved (e.g. Simplex is asking for a bulk of addresses ahead of time), this will not be passed.
 
 ### reason ###
-#### (string, **required**)
+#### (String, **required**)
 
 What the address will be used for.
 
@@ -69,13 +69,13 @@ One of { `"delivery"`, `"refund"` }.
  * `"delivery"`: you are buying the crypto currency to be received. You are either a Liquidity Receiver in a SellCypto transaction, or a wallet/exchange/etc. in a BuyCrypto transaction.
  * `"refund"`: the reverse of "delivery" -- we want to return crypto currencies that you have previously sent.
 
-### currency ###
-#### (crypto_currency, **required**)
+### crypto_currency ###
+#### (CryptoCurrency, **required**)
 
 The type of crypto currencies that will be sent to the crypto address you supply.
 
 ### n ###
-#### (integer, **required**)
+#### (Integer, **required**)
 
 The number of requested destination crypto addresses.
 
@@ -89,14 +89,14 @@ The number of requested destination crypto addresses.
 }
 ```
 
-Name | Type
----- | ----
-crypto_addrs | Array<string>
+Name         | Type
+------------ | ----
+crypto_addrs | List\<CryptoAddr\>
 
 ### crypto_addrs ###
-#### (Array<string>)
+#### (List\<CryptoAddr\>)
 
-An array of strings, each representing a destination crypto address.
+An list of destination crypto addresses.
 
 ## Transports ##
 

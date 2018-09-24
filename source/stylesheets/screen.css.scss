@@ -11,8 +11,6 @@ html, body {
   color: $main-text;
   padding: 0;
   margin: 0;
-  X-webkit-font-smoothing: antialiased;
-  X-moz-osx-font-smoothing: grayscale;
   @extend %default-font;
   background-color: $main-bg;
   height: 100%;
@@ -149,7 +147,7 @@ html, body {
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
+    font-weight: normal;
   }
 
   .toc-h2 {
@@ -391,7 +389,7 @@ html, body {
 
   h4 {
     font-size: 15px;
-    font-weight: 450;
+    font-weight: normal;
     color: #888;
 
     margin-bottom: 0.5em;
@@ -407,24 +405,33 @@ html, body {
     margin-bottom: 1em;
     overflow: auto;
 
-    code {
-      white-space: nowrap;
-    }
-
-    tr {
-      border: 1px solid #ddd;
-    }
+    text-align: left;
+    line-height: 1.0;
 
     thead {
-      background-color: lighten($main-bg, 3%);
       vertical-align: bottom;
+	  font-weight: normal;
+
+      th {
+        padding: 5px 10px;
+	    font-weight: normal;
+      }
+    }
+
+    tbody {
+      border-top:    2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      vertical-align: top;
+
+      tr:nth-child(odd)  { background-color: hsl(hue($main-bg), 0%, 98%); }
+      tr:nth-child(even) { background-color: hsl(hue($main-bg), 0%, 96%); }
+
+      td {
+        padding: 10px;
+      }
     }
 
     th, td {
-      text-align: left;
-      vertical-align: top;
-      padding: 4px 16px;
-      line-height: 1.6;
     }
 
   }

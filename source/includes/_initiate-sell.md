@@ -44,7 +44,7 @@ Transports: **REST, JWT**
       "http_accept_language": "en-US,en;q=0.9",
     }, {
       "ip": "74.115.209.61",
-      "timestamp": 1536831882.900,
+      "timestamp": 1536831495.900,
       "user_agent": "Mozilla/5.0 (Acme Laptop) AcmeWebKit/128 (KHTML, like Gecko) Chrome/65.0.1024.100",
       "uaid": "VHJhY2tpbmdDb29raWU",
       "http_accept_language": "en-US,en;q=0.9",
@@ -56,12 +56,12 @@ Transports: **REST, JWT**
       "emails": [ "wile.e@rr.com" ],
       "phones": [ "+16085559103" ],
       "addrs": [{
-        "line1":   "42 Desert Road",
-        "line2":   "Apt. 314",
-        "city":    "San Diego",
-        "zip":     "22434",
+        "line1": "42 Desert Road",
+        "line2": "Apt. 314",
+        "city": "San Diego",
+        "zip": "22434",
         "country": "US",
-        "state":   "CA",
+        "state": "CA",
       }]
     }
 
@@ -69,28 +69,73 @@ Transports: **REST, JWT**
 }
 ```
 
-Name | Type | Required? |
----- | ---- | --------- |
+Name                      | Type                   | Required? |
+------------------------- | ---------------------- | --------- |
+                          |                        |           |
+txn_details               |                        |           |
+&emsp; txn_id             | Id                     | required  |
+&emsp; ref_url            | String                 | required  |
+&emsp; quote_id           | Id                     |           |
+&emsp; src_crypto_addrs   | List\<CryptoAddr\>     |           |
+&emsp; refund_crypto_addr | CryptoAddr             |           |
+                          |                        |           |
+account_details           |                        |           |
+&emsp; account_id         | String                 |           |
+&emsp; web_sessions       | List\<WebSessionInfo\> |           |
+&emsp; personal_details   |                        |           |
+&emsp; &emsp; first_name  | String                 |           |
+&emsp; &emsp; last_name   | String                 |           |
+&emsp; &emsp; emails      | List\<String\>         |           |
+&emsp; &emsp; phones      | List\<String\>         |           |
+&emsp; &emsp; addrs       | List\<Addr\>           |           |
 
-### param_a ###
-#### (type1, required/optional)
+Type `WebSessionInfo`
 
-Explanation.
+Name                 | Type                  | Required? | Description
+-------------------- | --------------------- | --------- | -----------
+ip                   | String                | required  | IPv4 of end-user's device
+timestamp            | Timestamp             | required  | Timestamp of session start
+user_agent           | String                |           | The `User-Agent` HTTP header from the end-user
+uaid                 | String                |           | The value of a per-device tracking cookie that is managed by you; the requirement here is that if `uaid` values are the same then it's the same end-user device.
+http_accept_language | String                |           | The `Accept-Language` HTTP header from the end-user
 
-### param_b ###
-#### (type2, required/optional)
+### txn_id ###
+#### (Id, **required**)
 
-Explanation.
+### ref_url ###
+#### (String, **required**)
+
+### quote_id ###
+#### (Id, optional)
+
+### src_crypto_addrs ###
+#### (List\<CryptoAddr\>, optional)
+
+### refund_crypto_addr ###
+#### (CryptoAddr, optional)
+
+### account_id ###
+#### (String, optional)
+
+### web_sessions ###
+#### (List\<WebSessionInfo\>, optional)
+
+### first_name ###
+#### (String, optional)
+
+### last_name ###
+#### (String, optional)
+
+### emails ###
+#### (List\<String\>, optional)
+
+### phones ###
+#### (List\<String\>, optional)
+
+### addrs ###
+#### (List\<Addr\>, optional)
 
 ## Response ##
-
-Name | Type | Required? |
----- | ---- | --------- |
-txn_url | String | optional |
-error | String | optional |
-
-### txn_url ###
-#### (String)
 
 > An example response of a successful call:
 
@@ -100,13 +145,6 @@ error | String | optional |
 }
 ```
 
-The URL where the checkout process will occur. You should direct the end-user's browser there, either in a new tab, an iframe, or a webview in your app.
-
-In case of an error `txn_url` will not be returned.
-
-### error ###
-#### (String)
-
 > Example error scenario:
 
 ```json
@@ -114,6 +152,21 @@ In case of an error `txn_url` will not be returned.
   "error": "duplicate txn_id"
 }
 ```
+
+Name | Type | Required? |
+---- | ---- | --------- |
+txn_url | String | optional |
+error | String | optional |
+
+### txn_url ###
+#### (String)
+
+The URL where the checkout process will occur. You should direct the end-user's browser there, either in a new tab, an iframe, or a webview in your app.
+
+In case of an error `txn_url` will not be returned.
+
+### error ###
+#### (String)
 
 In case of an error creating the transaction, `error` will be set to a short string describing the error, and `txn_url` will will not be returned. The error string is short and technical, and is not meant for end-users.
 

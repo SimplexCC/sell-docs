@@ -34,6 +34,9 @@
 
 [ BETTER DOC ]
 
+* param table:
+  * move "required" column to be an added word in the 1st col descr
+  * only write "required", not "optional" (which will be the default)
 * "address"/"Address" --> "addr"/"Addr"
 * "source" --> "src"
 * "destination" --> "dst"
@@ -58,9 +61,8 @@
 
 [ PREETIFY ]
 
+* Examples should be inline mostly, not on right (?)
 * add screenshots to "sell-flow"
-* nicer-looking param tables
-* syntax highlighting - diff key/val in json
 * "Required" --> bg-color: hsl(39,88%, 59%); text-shadown 0 1px rgba(0, 0, 0, 0.2)
 
 [ BUY SUPPORT ]

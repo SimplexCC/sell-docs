@@ -1,14 +1,14 @@
 # Types #
 
-### integer ###
+### Integer ###
 
-### float ###
+### Float ###
 
-### timestamp ###
+### Timestamp ###
 
-Float, Unix timestamp, millisecond resultion.
+A float, Unix timestamp, millisecond resultion.
 
-### id ###
+### Id ###
 
 An opaque string (i.e.: do not assume anything about its contents).
 
@@ -16,23 +16,23 @@ An opaque string (i.e.: do not assume anything about its contents).
 No guarantees are made regarding the internal format, and it may change in the future. <strong>You have been warned.</strong>
 </aside>
 
-### fiat_currency ###
+### FiatCurrency ###
 
 3-letter upper-case string.
 
 One of { "USD", "EUR" }.
 
-### crypto_currency ###
+### CryptoCurrency ###
 
 3-letter upper-case string.
 
 One of { "BTC", "BCH", "LTC" }.
 
-### currency ###
+### Currency ###
 
-May be either a `fiat_currency` or a `crypto_currency`.
+May be either a `FiatCurrency` or a `CryptoCurrency`.
 
-### money_amount ###
+### MoneyAmount ###
 
 An integer. Used for holding amounts of money, be it crypto or fiat. The units used are millionths of a whole currency unit.
 
@@ -40,11 +40,11 @@ An integer. Used for holding amounts of money, be it crypto or fiat. The units u
 This is <em>not</em> floating point parameter. Rather, this is an integer counting millionths of the whole. An amount of 100.0, for example, is represented as 100000000 (one hundred million), while a value of 30000 (thirty thousand) represents the amount 0.03.
 </aside>
 
-### crypto_addr ###
+### CryptoAddr ###
 
 A string, denoting a crypto address.
 
-### addr ###
+### Addr ###
 
 An address in the real world
 
@@ -56,18 +56,6 @@ An address in the real world
   "zip":     String, // [OPTIONAL]
   "country": String, // [REQUIRED] ISO 3166-1 ALPHA-2
   "state":   String, // [OPTIONAL] minimum 2 chars
-}
-```
-
-### WebSessionInfo ###
-
-```
-WebSessionInfo: {
-  "ip":                   String,    // [REQUIRED] IPv4 or IPv6 format
-  "timestamp":            Timestamp, // [REQUIRED]
-  "user_agent":           String,    // [OPTIONAL]
-  "uaid":                 String,    // [OPTIONAL]
-  "http_accept_language": String,    // [OPTIONAL]
 }
 ```
 

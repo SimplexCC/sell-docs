@@ -29,18 +29,18 @@ Transports: **Partner REST, Message Queue**
 }
 ```
 
-Name | Type | Required?
----- | ---- | ---------
-xo_id | string | required
-status | string | required when you notify Simplex, missing when Simplex queries you
+Name   | Type   | Notes
+------ | ------ | -----
+xo_id  | String | **required**
+status | String | **required** (you &rarr; Simplex) / **missing** (Simplex &rarr; you)
 
 ### xo_id ###
-#### (string, required)
+#### (String, **required**)
 
 The identifier of an execution order previously created by you in response to `send-crypto`.
 
 ### status ###
-#### (string, required when you notify Simplex, missing when Simplex queries you)
+#### (String, **required** (you &rarr; Simplex) / **missing** (Simplex &rarr; you)
 
 The status of the execution order.
 
@@ -56,16 +56,16 @@ One of { `"completed"`, `"failed"` }.
 }
 ```
 
-Name | Type
----- | ----
-status | string
+Name   | Type
+------ | ----
+status | String
 
 ### status ###
-#### (string)
+#### (String)
 
 The status of the execution order.
 
-One of { "completed", "failed", "pending" }.
+One of { `"completed"`, `"failed"`, `"pending"` }.
 
 ## Transports ##
 

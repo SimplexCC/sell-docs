@@ -22,24 +22,24 @@ Transports: **Message Queue**
 }
 ```
 
-Name | Type |
----- | ---- |
-txn_id | id |
-ts | timestamp |
-event | string |
+Name      | Type      | Notes
+--------- | --------- | -----
+txn_id    | Id        |
+timestamp | Timestamp |
+event     | String    |
 
 ### txn_id ###
-#### (id)
+#### (Id)
 
 Identifier of the Simplex transaction.
 
-### ts ###
-#### (timestamp)
+### timestamp ###
+#### (Timestamp)
 
 Timestamp of when the event occured.
 
 ### event ###
-#### (string)
+#### (String)
 
 The type of event that occured in the transaction.
 
