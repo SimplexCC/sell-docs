@@ -1,62 +1,72 @@
 # Types #
 
+We bring here a description of the common types used throught the API.
+
 ### Integer ###
+
+A plain old integer: whole (no fraction, no decimal point), positive or negative.
 
 ### Float ###
 
+A plain old floating-point number. A `number` in JSON parlance.
+
 ### Timestamp ###
 
-A float, Unix timestamp, millisecond resultion.
+A floating-point number representing the number of seconds since the Epoch (Jan 1, 1970 at 0:00am). Millisecond resolution.
+
+E.g. 1537078623.305 is Sep 16, 2018 at 06:17:03.305 UTC.
 
 ### Id ###
 
-An opaque string (i.e.: do not assume anything about its contents).
+An opaque string.
+
+When you receive `Id`'s from Simplex you may only store them and later send them back in subsequent API messages.
 
 <aside class="warning">
-No guarantees are made regarding the internal format, and it may change in the future. <strong>You have been warned.</strong>
+"Opaque" as is: assume nothing about the contents; it may change in the future.
 </aside>
 
 ### FiatCurrency ###
 
-3-letter upper-case string.
+A 3-letter upper-case string.
 
-One of { "USD", "EUR" }.
+One of { `"USD"`, `"EUR"` }.
 
 ### CryptoCurrency ###
 
-3-letter upper-case string.
+A 3-letter upper-case string.
 
-One of { "BTC", "BCH", "LTC" }.
+One of { `"BTC"`, `"BCH"`, `"LTC"` }.
 
 ### Currency ###
 
-May be either a `FiatCurrency` or a `CryptoCurrency`.
+Either a `FiatCurrency` or a `CryptoCurrency`.
 
 ### MoneyAmount ###
 
-An integer. Used for holding amounts of money, be it crypto or fiat. The units used are millionths of a whole currency unit.
+An integer, representing amounts of money of a certain currency, be it crypto or fiat.
+
+The integer counts _millionths of a whole currency unit_.
 
 <aside class="notice">
-This is <em>not</em> floating point parameter. Rather, this is an integer counting millionths of the whole. An amount of 100.0, for example, is represented as 100000000 (one hundred million), while a value of 30000 (thirty thousand) represents the amount 0.03.
+An amount of 100.0 (a hundred "somethings") is represented as 100000000 (one hundred million), while a value of 30000 (thirty thousand) represents the amount 0.03.
 </aside>
 
 ### CryptoAddr ###
 
-A string, denoting a crypto address.
+A string, representing a crypto address.
 
 ### Addr ###
 
-An address in the real world
+An address in the real world:
 
-```
-{
-  "line1":   String, // [REQUIRED]
-  "line2":   String, // [OPTIONAL]
-  "city":    String, // [REQUIRED]
-  "zip":     String, // [OPTIONAL]
-  "country": String, // [REQUIRED] ISO 3166-1 ALPHA-2
-  "state":   String, // [OPTIONAL] minimum 2 chars
-}
-```
+Name    | Type   | Notes                     | Description
+------- | ------ | ------------------------- | -----------
+line1   | String | **required**              |
+line2   | String |                           |
+city    | String | **required**              |
+zip     | String |                           |
+country | String | **required**              | ISO 3166-1 ALPHA-2
+state   | String | (min. 2 chars if present) |
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

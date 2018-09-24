@@ -1,3 +1,13 @@
+[ TO COMPLETE ]
+
+* transports
+* txn-flow-sell
+
+* initiate-sell params
+* fill in missing details in "Transpots" sections of all pages
+* check for typos
+* check for style
+
 [ NOTES FOR DAN ]
 
 * account_details: all keys inside are optional, as well as inside
@@ -6,20 +16,6 @@
 * renamed fields (source->src, transaction->txn, source->src, address->addr, referer->ref, ...)
 * rename address_line_1 to line1 etc
 * refund_addr
-
-[ TO COMPLETE ]
-
-* initiate-sell
-* transports
-* types
-* txn-flow-sell
-* intro-sell
-
-[ MUST ]
-
-* fill in missing details in "Transpots" sections of all pages
-* check for typos
-* check for style
 
 [ BETTER API ]
 

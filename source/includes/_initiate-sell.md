@@ -91,13 +91,13 @@ account_details           |                        |
 
 Type `WebSessionInfo`
 
-Name                 | Type      | Notes    | Description
--------------------- | --------- | -------- | -----------
-ip                   | String    | required | IPv4 of end-user's device
-timestamp            | Timestamp | required | Timestamp of session start
-user_agent           | String    |          | The `User-Agent` HTTP header from the end-user
-uaid                 | String    |          | The value of a per-device tracking cookie that is managed by you; two equal`uaid`'s mean the same end-user device.
-http_accept_language | String    |          | The `Accept-Language` HTTP header from the end-user
+Name                 | Type      | Notes        | Description
+-------------------- | --------- | ------------ | -----------
+ip                   | String    | **required** | IPv4 of end-user's device
+timestamp            | Timestamp | **required** | Timestamp of session start
+user_agent           | String    |              | The `User-Agent` HTTP header from the end-user
+uaid                 | String    |              | The value of a per-device tracking cookie that is managed by you; two equal`uaid`'s mean the same end-user device.
+http_accept_language | String    |              | The `Accept-Language` HTTP header from the end-user
 
 ### txn_id ###
 #### (Id, **required**)
