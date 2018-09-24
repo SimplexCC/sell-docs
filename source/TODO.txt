@@ -38,7 +38,6 @@
 * rename types to CamelCase, to diff from param names
 * incorporate (TM), "Grog" and "Leather Jackets" jokes
 * uniformity in "_id" and "_uuid"
-* add "roles" in "concepts", and thus simplify the text is some API messages documentation
 * uniformity in "message" / "call" / "endpoint" / "method" / with-or-without "API" / "api"
 * find a way to explain "currency of cryptocurrency"; maybe "currency of crypto coins" or "... of crypto money"?
 * find a way to diffrentiate between a "Simplex txn" and a "Blockchain txn" (for e.g. send-crypto)

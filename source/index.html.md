@@ -4,9 +4,6 @@ title: Simplex SellCrypto API documentation
 language_tabs:
   - json
 
-toc_footers:
-  - <a href="http://www.simplex.com/">Simplex</a>
-
 includes:
   - sell-intro
   - roles
@@ -23,6 +20,4 @@ includes:
   - txn-event-notify
   - sep
   - api-transports
-
-search: false
 ---

@@ -41,7 +41,6 @@ def toc_data(page_content)
       end
     end
   end
-  STDERR.puts(headers)
 
   headers
 end
