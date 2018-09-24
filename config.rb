@@ -23,6 +23,7 @@ set :fonts_dir, 'fonts'
 # Activate the syntax highlighter
 
 activate :syntax
+
 ready do
   require './lib/multilang.rb'
 end
@@ -30,10 +31,7 @@ end
 module ::Middleman::Syntax::Highlighter
   def self.highlight(code, language=nil, opts={})
 
-    opts_css_class = opts['css_class']
-    opts_css_class = 'highlight' if opts_css_class.nil?
-
-    css_classes = [opts_css_class]
+    css_classes = [opts.fetch('css_class', 'highlight')]
     css_classes.push('language-' + language) if !language.nil?
 
     Pygments.highlight(
@@ -48,11 +46,11 @@ end
 
 activate :sprockets
 
-activate :autoprefixer do |config|
-  config.browsers = ['last 2 version', 'Firefox ESR']
-  config.cascade  = false
-  config.inline   = true
-end
+#activate :autoprefixer do |config|
+#  config.browsers = ['last 2 version', 'Firefox ESR']
+#  config.cascade  = false
+#  config.inline   = true
+#end
 
 # Github pages require relative links
 activate :relative_assets
@@ -72,9 +70,6 @@ end
 # Deploy Configuration
 # If you want Middleman to listen on a different port, you can set that below
 set :port, 4567
-
-# Live Reload
-#activate :livereload
 
 helpers do
   require './lib/toc_data.rb'

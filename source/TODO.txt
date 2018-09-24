@@ -4,10 +4,8 @@
 * concepts
 * initiate-sell params
 * fill in missing details in "Transpots" sections of all pages
-* transports
-
-* check for typos
-* check for style
+* transports: only Message Queue, REST and p/REST for now
+* typos
 
 [ P2 ]
 
@@ -26,18 +24,22 @@
 * don't require E.164 format for phone numbers
 * your examples of "US" state is wrong
 * renamed fields (source->src, transaction->txn, source->src, address->addr, referer->ref, ...)
-* rename address_line_1 to line1 etc
-* refund_addr
+* added refund_crypto_addr
 
 [ BETTER API ]
 
-* maybe WE should be the ones creating the txn_id, and simply ask them for their number as well?
-* maybe WE create the the uuid of the xo?
-* same URL for GET and POST in REST? Needs auth change
-* allow client-only in REST? In JWT? ==> requires _msg to be part of payload as well
+* errors: uniform error response: all responses should have or lack an "_error" field
+* errors: define error transport in JWT, REST, P/REST transports
+* we should be the ones creating the txn_id, and possibly ask them for their number as well?
+* we should be the ones creating the xo_id; we should ask for their number in the response, as optional convenience for them.
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
+* transport: make same URL for GET and POST in REST; ==> will require auth change
+* transport: allow client-only integrations in REST? In JWT? ==> requires _msg to be part of payload as well, so that it's signed
 
 [ BETTER DOC ]
+
+* add "FAQ" section
+* add diagram to "flow" section
 
 * param table:
   * move "required" column to be an added word in the 1st col descr
@@ -57,20 +59,40 @@
 * fixed-font (``) for "API_STRINGS"
 * add internal links
 
-[ BETTER DOC INFRA ]
-
-* macros for base_url, etc.
-* erb variable for base_url
-
 [ PREETIFY ]
 
-* Examples should be inline mostly, not on right (?)
-* add screenshots to "sell-flow"
+* add diagrams in "flow"
+* add screenshots to "sell flow"
+* examples should be inline, not on rhs
 * "Required" --> bg-color: hsl(39,88%, 59%); text-shadown 0 1px rgba(0, 0, 0, 0.2)
 
-[ BUY SUPPORT ]
+[ BETTER DOC INFRA ]
 
-* refactor "types" so that it is not sell-specific
-* refactor "get-quote" so that it is not sell-specific
-* "introduction" --> "intro_sell", and create "intro_buy"
-* create "buy_flow"
+* switch to flask-pages
+* markdown support for admonotion (info, notice, warning, error, success)
+* markdown support for generating "required"
+* markdown support for "comment" spans (for "optional, string" e.g.)
+* support for pre-processing "macros" (BASE_URL, e.g.)
+* support TOC with section breaks
+* configurable theme
+    * syntax highlighting theme
+    * base colors only, all the rest with hsl functions in scss
+* code-preview pane, with:
+    * configurable support for line numbers (yes/no), and whether user can toggle them
+    * configurable support for copy-to-clipboard
+    * multi languages
+    * expand
+
+[ GENERIC DOC ]
+
+* write instructions for how to write doc
+    * is this specific to some types of customers?
+        * you / your
+        * mention the minimum -- KYC's don't care about LQ, or who started the txn
+    * is this specific to some product? (buy/sell)
+* create style guide for each page.
+    * what products, and what customer types, is this page for?
+    * special considerations when writing documentation in the page -- what we want to tell, what we want to promise, etc.
+* define the product types are "Buy", "Sell", and consider "Withdrawal" as possible next
+* define the customer types as "KYC vendor", "Wallet / Exchange", "LQP", "LQR", "Affiliate"
+* write "intro sell for lqr", "intro sell for kyc", "intro buy", "txn flow buy"
