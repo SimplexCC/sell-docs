@@ -5,20 +5,34 @@ def toc_data(page_content)
 
   # get a flat list of headers
   headers = []
-  html_doc.css('h1, h2, h3').each do |header|
-    headers.push({
-      id: header.attribute('id').to_s,
-      content: header.children,
-      title: header.children.to_s.gsub(/<[^>]*>/, ''),
-      level: header.name[1].to_i,
-      children: []
-    })
+  html_doc.css('h1, h2').each do |header|
+
+    t = header.children.to_s.gsub(/<[^>]*>/, '')
+
+    if t == '---'
+      headers.push({
+        typ: 'sep'
+      })
+
+    else
+      headers.push({
+        typ: 'header',
+        id: header.attribute('id').to_s,
+        content: header.children,
+        title: t,
+        level: header.name[1].to_i,
+        children: []
+      })
+    end
+
   end
 
-  [3,2].each do |header_level|
+  [2].each do |header_level|
     header_to_nest = nil
     headers = headers.reject do |header|
-      if header[:level] == header_level
+      if header[:typ] == 'sep'
+        false
+      elsif header[:level] == header_level
         header_to_nest[:children].push header if header_to_nest
         true
       else
@@ -27,5 +41,7 @@ def toc_data(page_content)
       end
     end
   end
+  STDERR.puts(headers)
+
   headers
 end

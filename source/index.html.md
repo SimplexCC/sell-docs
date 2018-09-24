@@ -8,17 +8,21 @@ toc_footers:
   - <a href="http://www.simplex.com/">Simplex</a>
 
 includes:
-  - intro-sell
-  - txn-flow-sell
-  - concepts
-  - types
+  - sell-intro
+  - roles
+  - sell-txn-flow
+  - sep
+  - api-concepts
+  - api-types
+  - sep
   - get-quote
   - initiate-sell
   - get-dst-crypto-addr
   - send-crypto
   - xo-status
   - txn-event-notify
-  - transports
+  - sep
+  - api-transports
 
 search: false
 ---

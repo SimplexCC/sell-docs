@@ -1,4 +1,12 @@
-# Concepts #
+# API Concepts #
+
+## API Messages ##
+
+(TODO)
+
+## Transports ##
+
+(TODO)
 
 ## Sandbox vs. Production ##
 
@@ -9,13 +17,5 @@ Environments are accessed with different URLs and require different API keys (se
 ## API key ##
 
 As part of your onboarding with Simplex you receive two API keys, which you will use for authentication your API calls. Note that the keys for the sandbox and production environments are different.
-
-## API Messages ##
-
-(TODO)
-
-## Transports ##
-
-(TODO)
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
