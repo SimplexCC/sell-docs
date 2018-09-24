@@ -56,22 +56,22 @@ One of { `"completed"`, `"failed"` }.
 }
 ```
 
-Name   | Type
------- | ----
-status | String
+Name   | Type   | Notes
+------ | ------ | -----
+status | String |
 
 ### status ###
 #### (String)
 
 The status of the execution order.
 
-One of { `"completed"`, `"failed"`, `"pending"` }.
+One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ## Transports ##
 
 ### Partner REST ###
 
-<span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/xo-status/:xo-id`
+<span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/xo-status/:id`
 
 ### Message Queue ###
 

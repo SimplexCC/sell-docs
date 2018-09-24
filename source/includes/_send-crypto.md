@@ -76,10 +76,10 @@ The amount of `crypto_currency` to send.
 
 Your response includes an `xo_id`, which Simplex will later use to query you about the status (in case you respond with a `"pending"` status). Alternatively, you may notify Simplex (using the `xo-status` API message) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
 
-Name   | Type
------- | ----
-xo_id  | String
-status | String
+Name   | Type   | Notes
+------ | ------ | -----
+xo_id  | String |
+status | String |
 
 ### xo_id ###
 #### (String)
@@ -91,7 +91,7 @@ You may use this identifier to notify Simplex of the status of the execution ord
 ### status ###
 #### (String)
 
-One of { `"completed"`, `"failed"`, `"pending"` }.
+One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ## Transports ##
 

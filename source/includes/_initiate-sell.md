@@ -1,6 +1,6 @@
 # initiate-sell #
 
-Create a SellCrypto transaction and have the user start the "checkout".
+Create a SellCrypto transaction, and have the user start the checkout flow.
 
 A SellCrypto transaction is initiated by the entity representating the end-user, such as a wallet app, an exchange, etc.
 
@@ -8,7 +8,7 @@ Each transaction has an identifier, which you use when referring to the transact
 
 Other than `txn_id` and `ref_url` all parameters are optional:
 
- * When a parameter is required to complete the checkout process but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much crypto currency they wish to sell, and will present an appropriate fiat quote.
+ * When a parameter is required in order to complete the checkout flow, but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much crypto currency they wish to sell, and will present an appropriate fiat quote.
 
  * Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a wider range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
 
@@ -69,35 +69,35 @@ Transports: **REST, JWT**
 }
 ```
 
-Name                      | Type                   | Required? |
-------------------------- | ---------------------- | --------- |
-                          |                        |           |
-txn_details               |                        |           |
-&emsp; txn_id             | Id                     | required  |
-&emsp; ref_url            | String                 | required  |
-&emsp; quote_id           | Id                     |           |
-&emsp; src_crypto_addrs   | List\<CryptoAddr\>     |           |
-&emsp; refund_crypto_addr | CryptoAddr             |           |
-                          |                        |           |
-account_details           |                        |           |
-&emsp; account_id         | String                 |           |
-&emsp; web_sessions       | List\<WebSessionInfo\> |           |
-&emsp; personal_details   |                        |           |
-&emsp; &emsp; first_name  | String                 |           |
-&emsp; &emsp; last_name   | String                 |           |
-&emsp; &emsp; emails      | List\<String\>         |           |
-&emsp; &emsp; phones      | List\<String\>         |           |
-&emsp; &emsp; addrs       | List\<Addr\>           |           |
+Name                      | Type                   | Notes
+------------------------- | ---------------------- | -----
+                          |                        |
+txn_details               |                        |
+&emsp; txn_id             | Id                     | **required**
+&emsp; ref_url            | String                 | **required**
+&emsp; quote_id           | Id                     |
+&emsp; src_crypto_addrs   | List\<CryptoAddr\>     |
+&emsp; refund_crypto_addr | CryptoAddr             |
+                          |                        |
+account_details           |                        |
+&emsp; account_id         | String                 |
+&emsp; web_sessions       | List\<WebSessionInfo\> |
+&emsp; personal_details   |                        |
+&emsp; &emsp; first_name  | String                 |
+&emsp; &emsp; last_name   | String                 |
+&emsp; &emsp; emails      | List\<String\>         |
+&emsp; &emsp; phones      | List\<String\>         |
+&emsp; &emsp; addrs       | List\<Addr\>           |
 
 Type `WebSessionInfo`
 
-Name                 | Type                  | Required? | Description
--------------------- | --------------------- | --------- | -----------
-ip                   | String                | required  | IPv4 of end-user's device
-timestamp            | Timestamp             | required  | Timestamp of session start
-user_agent           | String                |           | The `User-Agent` HTTP header from the end-user
-uaid                 | String                |           | The value of a per-device tracking cookie that is managed by you; the requirement here is that if `uaid` values are the same then it's the same end-user device.
-http_accept_language | String                |           | The `Accept-Language` HTTP header from the end-user
+Name                 | Type      | Notes    | Description
+-------------------- | --------- | -------- | -----------
+ip                   | String    | required | IPv4 of end-user's device
+timestamp            | Timestamp | required | Timestamp of session start
+user_agent           | String    |          | The `User-Agent` HTTP header from the end-user
+uaid                 | String    |          | The value of a per-device tracking cookie that is managed by you; two equal`uaid`'s mean the same end-user device.
+http_accept_language | String    |          | The `Accept-Language` HTTP header from the end-user
 
 ### txn_id ###
 #### (Id, **required**)
@@ -153,15 +153,15 @@ http_accept_language | String                |           | The `Accept-Language`
 }
 ```
 
-Name | Type | Required? |
----- | ---- | --------- |
-txn_url | String | optional |
-error | String | optional |
+Name    | Type   | Notes
+------- | ------ | ---------
+txn_url | String |
+error   | String |
 
 ### txn_url ###
 #### (String)
 
-The URL where the checkout process will occur. You should direct the end-user's browser there, either in a new tab, an iframe, or a webview in your app.
+The URL where the checkout flow will take place. You should direct the end-user's browser there, either in a new tab, an iframe, or a webview in your app.
 
 In case of an error `txn_url` will not be returned.
 

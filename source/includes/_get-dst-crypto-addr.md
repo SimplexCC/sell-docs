@@ -89,9 +89,9 @@ The number of requested destination crypto addresses.
 }
 ```
 
-Name         | Type
------------- | ----
-crypto_addrs | List\<CryptoAddr\>
+Name         | Type               | Notes
+------------ | ------------------ | -----
+crypto_addrs | List\<CryptoAddr\> |
 
 ### crypto_addrs ###
 #### (List\<CryptoAddr\>)

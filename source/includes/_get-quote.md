@@ -64,10 +64,10 @@ If `source_currency` represents a fiat currency then `requested_currency` must r
 }
 ```
 
-Name     | Type
--------- | ----
-quote_id | Id
-rate     | Float
+Name     | Type  | Notes
+-------- | ----- | -----
+quote_id | Id    |
+rate     | Float |
 
 ### quote_id ###
 #### (Id)
