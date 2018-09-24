@@ -1,13 +1,13 @@
 # get-dst-crypto-addr #
 
-A query from Simplex to you, asking where you would like your crypto currencies sent to.
+A query from Simplex to you, asking where you would like crypto currencies sent to.
 
 If you are the entity:
 
  * Representing the end-user in a BuyCrypto  transaction (a wallet application, an exchange, etc.), OR
  * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet application, an exchange, etc.), OR
  * Buying crypto currencies from end-users in a SellCrypto transaction (a "Liquidity Receiver")
-... then we need to know where to send your crypto currencies to.
+... then we need to know where to send the crypto currencies to.
 
 In all cases, you may choose any of the following:
  * If you are the entity initiating the Simplex transaction (a wallet application, an exchange, etc.), send the relevant destination crypto address as part of `initiate`

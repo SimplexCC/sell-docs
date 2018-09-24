@@ -1,14 +1,24 @@
 [ TO COMPLETE ]
 
-* concepts
-* transports
 * txn-flow-sell
-
+* concepts
 * initiate-sell params
 * fill in missing details in "Transpots" sections of all pages
+* transports
 
 * check for typos
 * check for style
+
+[ P2 ]
+
+* discuss refund in flow
+* add screenshots/illustrations to "sell-txn-flow"
+* fix "sep" then re-add
+* complete "roles" then re-add
+* diff "intro" and "flow" for kyc_broker, lqp, lqr
+    * they need to include flow of only events that matter to them
+    * they need to include notifications
+    * they need to include settlement
 
 [ NOTES FOR DAN ]
 

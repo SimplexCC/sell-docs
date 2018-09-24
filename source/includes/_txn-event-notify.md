@@ -2,7 +2,7 @@
 
 Notifications about major transaction lifecycle events.
 
-You receive notifications when certain events occur during the lifecycle of transactions. You can use these notifications, for example, for your internal analytics; or if you would like the end-user to perform a certain action you may choose to prompt them.
+You receive notifications when certain events occur during the lifecycle of transactions. You can use these notifications, for example, for analytics; or if you would like the end-user to perform a certain action you may choose to prompt them.
 
 ## Synopsis ##
 
