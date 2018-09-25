@@ -1,4 +1,4 @@
-# API Concepts #
+# Concepts #
 
 ## Transports ##
 

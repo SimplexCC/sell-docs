@@ -1,4 +1,4 @@
-# API Types #
+# Types #
 
 We bring here a description of the common types used throughout the API.
 

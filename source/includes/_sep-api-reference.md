@@ -1,1 +1,1 @@
-<h1 class="toc-seperator">API Reference</h1>
+<h1 class="toc-seperator">Reference</h1>

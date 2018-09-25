@@ -18,5 +18,9 @@ includes:
   - xo-status
   - txn-event-notify
   - sep-api-transports
-  - api-transports
+  - transports-overview
+  - transports-rest
+  - transports-prest
+  - transports-jwt
+  - transports-q
 ---
