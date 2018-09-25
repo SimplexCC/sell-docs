@@ -2,7 +2,7 @@
 
 Convert between crypto and fiat money.
 
-In order for you to provide the "Quote" experience described in the "Flow" section, where the user makes the decision of how much crypto currency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the `get-quote` API is for.
+In order for you to provide the "Quote" experience described in the "Flow" section, where the user makes the decision of how much cryptocurrency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the `get-quote` API is for.
 
 ## Synopsis ##
 
@@ -87,6 +87,6 @@ The exchange rate: how much to multiply `source_amount` by in order to get the e
 
 ### JWT ###
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/get_quote`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

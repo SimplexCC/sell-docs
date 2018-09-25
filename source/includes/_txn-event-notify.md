@@ -49,11 +49,11 @@ One of { `"txn-approved"`, `"txn-declined"`, `"txn-refunded"` }.
 
  * `"txn-declined"`: The transaction was declined, for policy or risk reasons. Simplex does not divulge exact reasons to end-users. No fiat has been charged, and any holds on the end-user's card have been released (though some of the users' banks may take time to show that).
 
- * `"txn-refunded"`: The transaction has been refunded. In a BuyCrypto transaction this means the fiat was returned to the end-user, while in a SellCrypto transaction this means the crypto currencies have been returned.
+ * `"txn-refunded"`: The transaction has been refunded. In a BuyCrypto transaction this means the fiat money was returned to the end-user, while in a SellCrypto transaction this means the cryptocurrency has been returned.
 
 ## Response ##
 
-No response is required.
+No response is expected.
 
 ## Transports ##
 

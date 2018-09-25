@@ -71,7 +71,7 @@ One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ### p/REST ###
 
-<span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/xo-status/:id`
+<span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/xo-status/:id`
 
 ### MsgQueue ###
 

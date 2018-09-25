@@ -1,21 +1,23 @@
 # get-dst-crypto-addr #
 
-A query from Simplex to you, asking where you would like crypto currencies sent to.
+A query from Simplex to you, asking where you would like cryptocurrency sent to.
 
 If you are the entity:
 
- * Representing the end-user in a BuyCrypto  transaction (a wallet application, an exchange, etc.), OR
- * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet application, an exchange, etc.), OR
- * Buying crypto currencies from end-users in a SellCrypto transaction (a "Liquidity Receiver")
-... then we need to know where to send the crypto currencies to.
+ * Representing the end-user in a BuyCrypto transaction (a wallet app, an exchange, etc.), _or_
+ * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet app, an exchange, etc.), _or_
+ * Buying cryptocurrency from end-users in a SellCrypto transaction (a "Liquidity Receiver")
 
-In all cases, you may choose any of the following:
- * If you are the entity initiating the Simplex transaction (a wallet application, an exchange, etc.), send the relevant destination crypto address as part of `initiate`
- * Use a pre-configured crypto address
- * We may get a bulk of destination addresses from you ahead of time
- * We may ask you specifically per transaction
+... then we need to know where to send the cryptocurrency to.
 
-`get-dst-crypto-addr` is used by Simplex for the latter two cases.
+In either case, you may choose any of the following:
+
+ * If you are the entity initiating the Simplex transaction (a wallet app, an exchange, etc.), you can send the relevant destination crypto address as part of `initiate`.
+ * Use a pre-configured crypto address.
+ * We may get a bulk of destination addresses from you ahead of time.
+ * We may ask you specifically per transaction.
+
+Simplex uses `get-dst-crypto-addr` for the latter two cases.
 
 ## Synopsis ##
 
@@ -66,13 +68,13 @@ What the address will be used for.
 
 One of { `"delivery"`, `"refund"` }.
 
- * `"delivery"`: you are buying the crypto currency to be received. You are either a Liquidity Receiver in a SellCypto transaction, or a wallet/exchange/etc. in a BuyCrypto transaction.
- * `"refund"`: the reverse of "delivery" -- we want to return crypto currencies that you have previously sent.
+ * `"delivery"` : you are buying the cryptocurrency; you are either a Liquidity Receiver in a SellCypto transaction or a wallet/exchange/etc. in a BuyCrypto transaction.
+ * `"refund"` : the reverse of "delivery" -- we want to return cryptocurrency that you have previously sent.
 
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
 
-The type of crypto currencies that will be sent to the crypto address you supply.
+The crypto currency (the currency, not the amount) that will be sent to the crypto address you supply.
 
 ### n ###
 #### (Integer, **required**)
@@ -102,8 +104,20 @@ An list of destination crypto addresses.
 
 ### p/REST ###
 
-<span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/get-dst-crypto-addr`
+<span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/get-dst-crypto-addr`
 
 ### MsgQueue ###
+
+You receive the request as a message of type `get-dst-crypto-addr` in
+
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+
+You respond by
+
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
+
+Don't forget to also acknowledge the receipt of the message, by
+
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

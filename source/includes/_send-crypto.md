@@ -1,10 +1,10 @@
 # send-crypto #
 
-A request, from Simplex, for you to send crypto currency to a specified destination crypto address.
+A request, from Simplex, for you to send cryptocurrency to a specified destination crypto address.
 
-If you are the entity providing liquidity for a Simplex transaction, then after Simplex approves the transaction you will be asked to create a blockchain transaction that will result in the transfer of a specified amount of crypto currency to a specified destination crypto address.
+If you are the entity providing liquidity for a Simplex transaction, then after Simplex approves the transaction you will be asked to create a blockchain transaction that will result in the transfer of a specified amount of cryptocurrency to a specified destination crypto address.
 
-In case of a refund, if you are the entity that received the crypto currency you will be asked to send it "back" (albeit to a possibly different crypto address from which it was sent).
+In case of a refund, if you are the entity that received the cryptocurrency you will be asked to send it "back" (albeit to a possibly different crypto address from which it was sent).
 
 This request from Simplex results in a you creating an execution order ("xo"), for which you generate an identifier. Your response includes an identifier for this execution order, together with its status:
  * completed: you successfullly fulfilled the execution order by creating a blockchain transaction
@@ -51,17 +51,17 @@ Otherwise, if you did not initiate the Simplex transaction but are rather acting
 ### dst_crypto_addr ###
 #### (CryptoAddr, optional)
 
-The destination crypto address to which to send the crypto currency.
+The destination crypto address to which to send the cryptocurrency.
 
 ### crypto_currency ###
 #### (CryptoCurrency, optional)
 
-The type of crypto currencies to send.
+The crypto currency (the currency, not the amount) to send.
 
 ### amount ###
 #### (MoneyAmount, optional)
 
-The amount of `crypto_currency` to send.
+How much cryptocurrency of type `crypto_currency` to send.
 
 ## Response ##
 
@@ -74,7 +74,7 @@ The amount of `crypto_currency` to send.
 }
 ```
 
-Your response includes an `xo_id`, which Simplex will later use to query you about the status (in case you respond with a `"pending"` status). Alternatively, you may notify Simplex (using the `xo-status` API) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
+Your response includes an `xo_id`, which Simplex will later use to query you regarding the status (in case you respond with a `"pending"` status). Alternatively, you may notify Simplex (using the `xo-status` API) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
 
 Name   | Type   | Notes
 ------ | ------ | -----
@@ -97,12 +97,8 @@ One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ### p/REST ###
 
-<span class="http-verb http-post">POST</span>`https://${YOUR_API_BASE_URL}/send-crypto`
-
-You responsd synchronously, in the body of the POST reply.
+<span class="http-verb http-post">POST</span>`https://${YOUR_API_URL}/send-crypto`
 
 ### MsgQueue ###
-
-Your response as described above is delivered by `POST /msg/:id/response`.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

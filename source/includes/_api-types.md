@@ -4,7 +4,7 @@ We bring here a description of the common types used throught the API.
 
 ### Integer ###
 
-A plain old integer: whole (no fraction, no decimal point), positive or negative.
+A plain old integer: a whole number (no fraction), positive, zero or negative.
 
 ### Float ###
 
@@ -14,13 +14,13 @@ A plain old floating-point number. A `number` in JSON parlance.
 
 A floating-point number representing the number of seconds since the Epoch (Jan 1, 1970 at 0:00am). Millisecond resolution.
 
-E.g. 1537078623.305 is Sep 16, 2018 at 06:17:03.305 UTC.
+E.g. `1537078623.305` represents Sep 16, 2018 at 06:17:03.305 UTC.
 
 ### Id ###
 
 An opaque string.
 
-When you receive `Id`'s from Simplex you may only store them and later send them back in subsequent API's.
+When you receive `Id`'s from Simplex you may only store them and then send them back in subsequent API's.
 
 <aside class="warning">
 "Opaque" as is: assume nothing about the contents; it may change in the future.
@@ -44,17 +44,17 @@ Either a `FiatCurrency` or a `CryptoCurrency`.
 
 ### MoneyAmount ###
 
-An integer, representing amounts of money of a certain currency, be it crypto or fiat.
+An integer representing amounts of money of a certain currency, be it crypto or fiat.
 
 The integer counts _millionths of a whole currency unit_.
 
 <aside class="notice">
-An amount of 100.0 (a hundred "somethings") is represented as 100000000 (one hundred million), while a value of 30000 (thirty thousand) represents the amount 0.03.
+An amount of 100.0 (a hundred "somethings") is represented as the integer 100,000,000 (one hundred million), while the integer 30,000 (thirty thousand) represents the amount 0.03 of "something".
 </aside>
 
 ### CryptoAddr ###
 
-A string, representing a crypto address.
+A string representing a crypto address.
 
 ### Addr ###
 

@@ -23,11 +23,11 @@ The different transports are:
 Name     | Description
 -------- | -----------
 REST     | Plain old REST
-p/REST   | "Partner REST": You expose REST endpoints for Simplex to invoke
+p/REST   | Partner REST: You expose REST endpoints for Simplex to invoke
 JWT      | Single HTTP GET endpoint, parameters are a Base64-encoded JSON on the query string
-MsgQueue | "Message Queue": You poll Simplex for messages
+MsgQueue | Message Queue: You poll Simplex for messages
 
-These are all documented in the section "Transports" (you guesses it!), while the documentation for each API simply states what transports are available for that API.
+These are all documented in the section "Transports" (you guessed it!), while the documentation for each API simply states what transports are available for that API.
 
 ## Sandbox vs. Production ##
 

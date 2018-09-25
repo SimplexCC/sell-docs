@@ -6,13 +6,13 @@ A SellCrypto transaction is initiated by the entity representating the end-user,
 
 Each transaction has an identifier, which you use when referring to the transaction. This identifier is created by you, for your convenience, and passed to Simplex. It must be unique, so a good practice is to use a UUID4.
 
-Other than `txn_id` and `ref_url` all parameters are optional:
+Other than `txn_id` and `ref_url` **all parameters are optional**.
 
- * When a parameter is required in order to complete the checkout flow, but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much crypto currency they wish to sell, and will present an appropriate fiat quote.
+When a parameter is required in order to complete the checkout flow, but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much cryptocurrency they wish to sell, and will present an appropriate fiat quote.
 
- * Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a wider range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
+Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a wider range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
 
-The response includes a "transaction URL", which you use to send the end-user to the Simplex-managed checkout flow.
+The response includes a transaction URL which you use to send your end-user to the checkout flow.
 
 ## Synopsis ##
 
@@ -89,7 +89,7 @@ account_details           |                        |
 &emsp; &emsp; phones      | List\<String\>         |
 &emsp; &emsp; addrs       | List\<Addr\>           |
 
-Type `WebSessionInfo`
+Type `WebSessionInfo` :
 
 Name                 | Type      | Notes        | Description
 -------------------- | --------- | ------------ | -----------
@@ -109,7 +109,9 @@ This is a convenience feature: you may use the unique identifier you already hav
 ### ref_url ###
 #### (String, **required**)
 
-The value of the `Referer` HTTP header with which the user first landed on your site. Basically: where did the user arrive at your site from?
+The value of the `Referer` HTTP header with which the user first landed on your site.
+
+We're asking: where did the user arrive at your site from?
 
 ### quote_id ###
 #### (Id, optional)
@@ -130,7 +132,7 @@ Simplex uses these to run preliminary risk, policy and compliance checks.
 
 The crypto address to which sent cryptocurrency will be returned in case of a refund.
 
-If this is not provided, and only in case a refund is required, Simplex will invoke the `get-dst-crypto-address` API with `"reason": "refund"`.
+If this is not provided, and only in case a refund is required, Simplex will invoke the `get-dst-crypto-addr` API with `"reason": "refund"`.
 
 ### account_id ###
 #### (String, optional)
@@ -143,9 +145,7 @@ Make sure to pass this parameter; your users will thank you.
 
 Simplex uses `account_id` to identify returning users, and to afford them the smoothest possible experience. They won't need to fill-in nor verify their email or billing information, for example.
 
-Instead of the actual account identifier you may send its hash, or anything else for which the following holds:
-
-_"if I send the same `account_id` then it's the same account"_.
+Instead of the actual account identifier you may send its hash, or anything else for which the following holds: _If I send the same `account_id` then it's the same account_.
 
 ### web_sessions ###
 #### (List\<WebSessionInfo\>, optional)
@@ -246,10 +246,10 @@ If the transaction was created successfully then `error` will not be returned.
 
 ### REST ###
 
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/rest/:msg_name`
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/rest/initiate-sell`
 
 ### JWT ###
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt/:msg_name`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

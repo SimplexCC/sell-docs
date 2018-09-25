@@ -4,9 +4,9 @@ Here is a description of all the stages involved in a SellCrypto transaction. Th
 
 ## Deciding How Much To Sell ##
 
-SellCrypto transactions are transactions in which your end-users sell their crypto currencies and receive fiat money in exchange. The first thing your end-users need to do, then, is to decide how much crypto currency they wish to sell.
+SellCrypto transactions are transactions in which your end-users sell their cryptocurrency and receive fiat money in exchange. The first thing your end-users need to do, then, is to decide how much cryptocurrency they wish to sell.
 
-In order to do that, your end-users are presented with a screen where they can choose a cryptocurrency amount (e.g. 1.5 BTC) and see how much fiat money they will receive for it (e.g. 12,000 USD), or alternatively choose a fiat amount and see how much crypto currency they need to sell in order to receive that fiat amount.
+In order to do that, your end-users are presented with a screen where they can choose a cryptocurrency amount (e.g. 1.5 BTC) and see how much fiat money they will receive for it (e.g. 12,000 USD), or alternatively choose a fiat amount and see how much cryptocurrency they need to sell in order to receive that fiat amount.
 
 This is called the "Quote" stage.
 
@@ -32,9 +32,9 @@ Simplex then runs its proprietary AI Risk Engine, and verifies that the transact
 
 ## Money Changes Hands ##
 
-After Simplex has approved the transaction it is time for crypto and fiat money to change hands. Simplex instructs you to send the cryptocurrencies by creating a blockchain transaction.
+After Simplex has approved the transaction it is time for crypto and fiat money to change hands. Simplex instructs you to send the cryptocurrency by creating a blockchain transaction.
 
-Once Simplex detects that blockchain transaction it verifies that the amount is correct (or else the cryptocurrencies are returned --- a "refund") and then sends the fiat money to your end-user.
+Once Simplex detects that blockchain transaction it verifies that the amount is correct (or else the cryptocurrency is returned --- a refund) and then sends the fiat money to your end-user.
 
 Both your end-user and you are notified at this point, and the transaction is finalized.
 

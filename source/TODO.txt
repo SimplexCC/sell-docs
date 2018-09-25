@@ -1,20 +1,14 @@
 [ TO COMPLETE ]
 
-* initiate-sell params
 * fill in missing details in "Transpots" sections of all pages
 * transports: only Message Queue, REST and p/REST for now
-* disable "JSON" side bar
+* change column name "Notes" to (onthing)
 * typos
 
 [ P2 ]
 
 * add screenshots/illustrations to "sell-txn-flow"
 * fix "sep" then re-add
-* complete "roles" then re-add
-* diff "intro" and "flow" for kyc_broker, lqp, lqr
-    * they need to include flow of only events that matter to them
-    * they need to include notifications
-    * they need to include settlement
 
 [ NOTES FOR DAN ]
 
@@ -31,13 +25,24 @@
 * we should be the ones creating the txn_id, and possibly ask them for their number as well?
 * we should be the ones creating the xo_id; we should ask for their number in the response, as optional convenience for them.
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
+* timestamp: uniform handling in msgs/transports in order to sequence events
 * transport: make same URL for GET and POST in REST; ==> will require auth change
 * transport: allow client-only integrations in REST? In JWT? ==> requires _msg to be part of payload as well, so that it's signed
 
 [ BETTER DOC ]
 
+* add actual Transport examples to each API
+* more API's
+* complete "roles" then re-add
+* diff "intro" and "flow" for kyc_broker, lqp, lqr
+    * they need to include flow of only events that matter to them
+    * they need to include notifications
+    * they need to include settlement
+
 * add "FAQ" section
 * add diagram to "flow" section
+
+* disable "JSON" examples bar, move examples to main body of text
 
 * param table:
   * move "required" column to be an added word in the 1st col descr
@@ -94,6 +99,7 @@
         * you / your
         * mention the minimum -- KYC's don't care about LQ, or who started the txn
     * is this specific to some product? (buy/sell)
+	* crypto currency  --vs--  cryptocurrency  --vs--  crypto currencies  --vs--  cryptocurrencies
 * create style guide for each page.
     * what products, and what customer types, is this page for?
     * special considerations when writing documentation in the page -- what we want to tell, what we want to promise, etc.

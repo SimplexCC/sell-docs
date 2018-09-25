@@ -11,6 +11,8 @@ Base URL: `https://api.simplexcc.com/v1/rest/:msg?_partner=:partner&_apikey=:api
 
 Parameter names that start with `_` are special
 
+### Responses ###
+
 ### GET ###
 
 * api-name: part of URL
@@ -32,11 +34,11 @@ TODO
 
 ## JWT ##
 
-Base URL: `https://api.simplexcc.com/v1/jwt/:msg?_partner=:partner&jwt=:jwt`
+Base URL: `https://api.simplexcc.com/v1/jwt?_partner=:partner&jwt=:jwt`
 
 Only GET
 
-* api-name: part of URL
+* api-name: pass in JWT as "_msg_name="
 * auth: pass "\_partner=" query parameter, and sign JWT with api key
 * parameters are passed JWT-encoded on the "jwt=" query parameter
 
@@ -48,12 +50,16 @@ TODO
 
 You provide a BASE_URL, and we invoke methods.
 
-* Must be https
-* Provide a key as part of the URL, or as a query parameter
+* https only
+* auth is a query parameter
 
 ### GET ###
 
 ### POST ###
+
+### Responses ###
+
+You responsd synchronously, in the body of the POST reply.
 
 ### Errors ###
 
@@ -78,5 +84,17 @@ POST `/msg/:id/response`
 ### Errors ###
 
 TODO
+
+You receive the request as a message of type `get-dst-crypto-addr` in
+
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+
+You respond by
+
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
+
+Don't forget to also acknowledge the receipt of the message, by
+
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
