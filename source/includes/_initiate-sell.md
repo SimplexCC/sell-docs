@@ -34,7 +34,7 @@ Transports: **REST, JWT**
   },
 
   "account_details": {
-    "account_id": "acme:Tm9TcG9vbg",
+    "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38",
 
     "web_sessions": [{
       "ip": "74.115.209.58",

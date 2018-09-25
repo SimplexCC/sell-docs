@@ -1,7 +1,7 @@
 [ TO COMPLETE ]
 
+* complete "transports"
 * typos
-ansports: only Message Queue, REST and p/REST for now
 
 [ P2 ]
 
