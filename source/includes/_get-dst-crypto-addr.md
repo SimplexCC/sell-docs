@@ -39,7 +39,7 @@ Transports: **p/REST, MsgQueue**
 ```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
-  "reason": "buy",
+  "reason": "delivery",
   "crypto_currency": "BTC",
   "n": 1,
 }

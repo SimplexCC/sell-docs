@@ -354,11 +354,11 @@ html, body {
 
     thead {
       vertical-align: bottom;
-	  font-weight: normal;
+      font-weight: normal;
 
       th {
         padding: 5px 10px;
-	    font-weight: normal;
+        font-weight: normal;
       }
     }
 
@@ -398,9 +398,10 @@ html, body {
   }
 
   code {
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: rgba(0, 0, 0, 0.08);
+	color: #333;
     padding: 2px 4px;
-    border-radius: 3px;
+    border-radius: 4px;
     @extend %break-words;
     @extend %code-font;
   }
@@ -408,7 +409,7 @@ html, body {
   pre>code {
     background-color: transparent;
     padding: 0;
-	font-size: 13px;
+    font-size: 13px;
   }
 
   aside {
@@ -445,21 +446,21 @@ html, body {
     }
   }
 
-  aside:before {
+  X-aside:before {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 14px;
   }
 
-  aside.notice:before {
+  X-aside.notice:before {
     @extend %icon-info-sign;
   }
 
-  aside.warning:before {
+  X-aside.warning:before {
     @extend %icon-exclamation-sign;
   }
 
-  aside.success:before {
+  X-aside.success:before {
     @extend %icon-ok-sign;
   }
 

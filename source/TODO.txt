@@ -58,6 +58,7 @@
 * add internal links
 
 * change to active, rather than passive, voice
+* "end-users" ==> "users" where possible
 
 [ PREETIFY ]
 
