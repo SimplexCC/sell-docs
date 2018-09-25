@@ -65,10 +65,12 @@ under the License.
 
       <ul id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
-          <% if h1[:typ] == 'sep' %>
-            <div style="margin-bottom:2em;"></div>
+
+          <% if h1[:type] == 'seperator' %>
+            <div class="toc-seperator"><%= h1[:title] %></div>
             <% next %>
           <% end %>
+
           <li>
             <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%= h1[:title] %>"><%= h1[:content] %></a>
             <% if h1[:children].length > 0 %>

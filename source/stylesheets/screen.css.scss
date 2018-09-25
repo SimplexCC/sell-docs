@@ -76,6 +76,10 @@ html, body {
     transition-duration: 200ms;
   }
 
+  li.toc-seperator {
+    margin-top: 1em;
+  }
+
   // This is the currently selected ToC entry
   .toc-link.active {
     background-color: $nav-active-bg;
@@ -120,6 +124,18 @@ html, body {
       text-decoration: none;
     }
   }
+}
+
+.toc-seperator {
+  font-variant: small-caps;
+  font-size: 120%;
+  padding: 1.5em $nav-padding 0 $nav-padding;
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  color: lighten($nav-text, 20%);
 }
 
 .toc-link, .toc-footer li {
@@ -293,6 +309,10 @@ html, body {
   h1 + h2, h1 + div + h2 {
     margin-top: $h1-margin-bottom * -1;
     border-top: none;
+  }
+
+  h1.toc-seperator {
+    display: none;
   }
 
   // h2's are main sub-topics
