@@ -2,11 +2,11 @@
 
 Convert between crypto and fiat money.
 
-In order for you to provide the "Quote" experience described in the "Flow" section, where the user makes the decision of how much crypto currency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the "get-quote" API is for.
+In order for you to provide the "Quote" experience described in the "Flow" section, where the user makes the decision of how much crypto currency to sell, you need to be able to convert back and forth between crypto and fiat money. This is what the `get-quote` API is for.
 
 ## Synopsis ##
 
-Message name: **`get-quote`**  
+API name: **`get-quote`**  
 Direction: **You &rarr; Simplex**  
 Transports: **REST, JWT**
 

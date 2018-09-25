@@ -1,15 +1,13 @@
 [ TO COMPLETE ]
 
-* txn-flow-sell
-* concepts
 * initiate-sell params
 * fill in missing details in "Transpots" sections of all pages
 * transports: only Message Queue, REST and p/REST for now
+* disable "JSON" side bar
 * typos
 
 [ P2 ]
 
-* discuss refund in flow
 * add screenshots/illustrations to "sell-txn-flow"
 * fix "sep" then re-add
 * complete "roles" then re-add
@@ -59,6 +57,8 @@
 * fixed-font (``) for "API_STRINGS"
 * add internal links
 
+* change to active, rather than passive, voice
+
 [ PREETIFY ]
 
 * add diagrams in "flow"
@@ -86,6 +86,9 @@
 [ GENERIC DOC ]
 
 * write instructions for how to write doc
+	* API's are not "invoked", "called", "methods", "messages", "event" --> they are simply API's
+		* this, in order to avoid confusion about messages and return messages in Message Queue transport
+		* the plural is API's, not APIs.
     * is this specific to some types of customers?
         * you / your
         * mention the minimum -- KYC's don't care about LQ, or who started the txn

@@ -20,7 +20,7 @@ E.g. 1537078623.305 is Sep 16, 2018 at 06:17:03.305 UTC.
 
 An opaque string.
 
-When you receive `Id`'s from Simplex you may only store them and later send them back in subsequent API messages.
+When you receive `Id`'s from Simplex you may only store them and later send them back in subsequent API's.
 
 <aside class="warning">
 "Opaque" as is: assume nothing about the contents; it may change in the future.

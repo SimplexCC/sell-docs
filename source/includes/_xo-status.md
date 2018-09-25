@@ -7,8 +7,8 @@ Alternatively: a notification from you to Simplex that the status of an executio
 ## Synopsis ##
 
 Message name: **`xo-status`**  
-Direction: **Simplex &rarr; You** (Partner REST), or **You &rarr; Simplex** (Message Queue)  
-Transports: **Partner REST, Message Queue**
+Direction: **Simplex &rarr; You** (p/REST), or **You &rarr; Simplex** (MsgQueue)  
+Transports: **p/REST, MsgQueue**
 
 ## Parameters ##
 
@@ -69,10 +69,10 @@ One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ## Transports ##
 
-### Partner REST ###
+### p/REST ###
 
 <span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/xo-status/:id`
 
-### Message Queue ###
+### MsgQueue ###
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

@@ -22,15 +22,19 @@ Simplex then creates the transaction and returns a transaction URL. You then sen
 
 ## Checkout ##
 
-* quote if needed
-* "login" screen / email verification
-* payment method selection / payment method details / billing info details
-* checks: aml, pep, ...
-* refund
+When your end-user is redirected to the transaction URL the checkout flow starts.
+
+As mentioned, if your end-user arrives without having gone through the "Quote" stage first, they will first choose how much cryptocurrency to sell.
+
+During the checkout flow the end-user is asked to fill in their email (or simply select it from a list if Simplex already knows them), their credit card details (or again simply select from a list), and their billing details. In some cases the end-user is already also asked for KYC documents.
+
+Simplex then runs its proprietary AI Risk Engine, and verifies that the transaction meets policy guidelines and AML rules. When all checks pass the transaction is approved.
 
 ## Money Changes Hands ##
 
-After Simplex has approved the transaction it is time for crypto and fiat money to change hands. Simplex instructs you to send the cryptocurrencies, and once that happens sends the fiat money to your end-user.
+After Simplex has approved the transaction it is time for crypto and fiat money to change hands. Simplex instructs you to send the cryptocurrencies by creating a blockchain transaction.
+
+Once Simplex detects that blockchain transaction it verifies that the amount is correct (or else the cryptocurrencies are returned --- a "refund") and then sends the fiat money to your end-user.
 
 Both your end-user and you are notified at this point, and the transaction is finalized.
 

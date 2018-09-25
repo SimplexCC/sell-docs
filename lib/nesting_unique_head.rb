@@ -1,7 +1,9 @@
 # Nested unique header generation
 require 'middleman-core/renderers/redcarpet'
+require 'redcarpet'
 
 class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
+include ::Redcarpet::Render::SmartyPants
   def initialize
     super
     @@headers_history = {} if !defined?(@@headers_history)

@@ -13,14 +13,14 @@ Parameter names that start with `_` are special
 
 ### GET ###
 
-* message-name: part of URL
+* api-name: part of URL
 * auth: pass "\_partner=" and "\apikey=" query parameters
 * parameters are passed as query parameters
 * nested parameters are passed like `a.b`
 
 ### POST ###
 
-* message-name: part of URL
+* api-name: part of URL
 * auth: pass "\_partner=" and "\apikey=" query parameters (??? - to make it same URL as GET)
 * auth: pass "X-Auth" http header ???
 * content-type: application/json
@@ -36,7 +36,7 @@ Base URL: `https://api.simplexcc.com/v1/jwt/:msg?_partner=:partner&jwt=:jwt`
 
 Only GET
 
-* message-name: part of URL
+* api-name: part of URL
 * auth: pass "\_partner=" query parameter, and sign JWT with api key
 * parameters are passed JWT-encoded on the "jwt=" query parameter
 
@@ -44,7 +44,7 @@ Only GET
 
 TODO
 
-## Partner REST ##
+## p/REST ##
 
 You provide a BASE_URL, and we invoke methods.
 
@@ -57,7 +57,7 @@ You provide a BASE_URL, and we invoke methods.
 
 ### Errors ###
 
-## Message Queue ##
+## MsgQueue ##
 
 Base URL: `https://api.simplexcc.com/v1/q`
 

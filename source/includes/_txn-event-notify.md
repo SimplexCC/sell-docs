@@ -8,7 +8,7 @@ You receive notifications when certain events occur during the lifecycle of tran
 
 Message name: **`txn-event-notify`**  
 Direction: **Simplex &rarr; You**  
-Transports: **Message Queue**
+Transports: **MsgQueue**
 
 ## Parameters ##
 
@@ -57,6 +57,6 @@ No response is required.
 
 ## Transports ##
 
-### Message Queue ###
+### MsgQueue ###
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

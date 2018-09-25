@@ -1,5 +1,5 @@
 ---
-title: Simplex SellCrypto API documentation
+title: Simplex SellCrypto API Documentation
 
 language_tabs:
   - json

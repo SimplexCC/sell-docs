@@ -19,9 +19,9 @@ In all cases, you may choose any of the following:
 
 ## Synopsis ##
 
-Message name: **`get-dst-crypto-addr`**  
+API name: **`get-dst-crypto-addr`**  
 Direction: **Simplex &rarr; You**  
-Transports: **Partner REST, Message Queue**
+Transports: **p/REST, MsgQueue**
 
 ## Parameters ##
 
@@ -100,10 +100,10 @@ An list of destination crypto addresses.
 
 ## Transports ##
 
-### Partner REST ###
+### p/REST ###
 
 <span class="http-verb http-get">GET</span>`https://${YOUR_API_BASE_URL}/get-dst-crypto-addr`
 
-### Message Queue ###
+### MsgQueue ###
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

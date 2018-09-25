@@ -15,9 +15,9 @@ In all cases your response must include an execution order identifier, which Sim
 
 ## Synopsis ##
 
-Message name: **`send-crypto`**  
+API name: **`send-crypto`**  
 Direction: **Simplex &rarr; You**  
-Transports: **Partner REST, Message Queue**
+Transports: **p/REST, MsgQueue**
 
 ## Parameters ##
 
@@ -46,7 +46,7 @@ The identifier of the Simplex transaction involved.
 
 If you the entity that initiated the Simplex transaction then this `txn_id` is known to you, and you can use it for your tracking.
 
-Otherwise, if you did not initiate the Simplex transaction but are rather acting the liquidity provider/receiver, you can use this `txn_id` to correlate `send-crypto` messages with their corresponding `txn-event-notify` messages, as well as for auditing purposes.
+Otherwise, if you did not initiate the Simplex transaction but are rather acting as the liquidity provider/receiver, you can use the `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing purposes.
 
 ### dst_crypto_addr ###
 #### (CryptoAddr, optional)
@@ -74,7 +74,7 @@ The amount of `crypto_currency` to send.
 }
 ```
 
-Your response includes an `xo_id`, which Simplex will later use to query you about the status (in case you respond with a `"pending"` status). Alternatively, you may notify Simplex (using the `xo-status` API message) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
+Your response includes an `xo_id`, which Simplex will later use to query you about the status (in case you respond with a `"pending"` status). Alternatively, you may notify Simplex (using the `xo-status` API) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
 
 Name   | Type   | Notes
 ------ | ------ | -----
@@ -95,13 +95,13 @@ One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ## Transports ##
 
-### Partner REST ###
+### p/REST ###
 
 <span class="http-verb http-post">POST</span>`https://${YOUR_API_BASE_URL}/send-crypto`
 
 You responsd synchronously, in the body of the POST reply.
 
-### Message Queue ###
+### MsgQueue ###
 
 Your response as described above is delivered by `POST /msg/:id/response`.
 

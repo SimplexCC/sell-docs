@@ -16,7 +16,7 @@ The response includes a "transaction URL", which you use to send the end-user to
 
 ## Synopsis ##
 
-Message name: **`initiate-sell`**  
+API name: **`initiate-sell`**  
 Direction: **You &rarr; Simplex**  
 Transports: **REST, JWT**
 
@@ -137,7 +137,7 @@ http_accept_language | String    |              | The `Accept-Language` HTTP hea
 
 ## Response ##
 
-> An example response of a successful call:
+> Example response when a transaction is successfully created:
 
 ```json
 {
