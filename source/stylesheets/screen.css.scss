@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import 'normalize';
 @import 'variables';
-@import 'icon-font';
 
 //
 // GENERAL STUFF
@@ -135,7 +134,7 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  color: lighten($nav-text, 20%);
+  color: hsl(120,  50%,  40%);
 }
 
 .toc-link, .toc-footer li {
@@ -466,24 +465,6 @@ html, body {
       border-color:     darken(desaturate($aside-success-bg, 20%), 20%);
       color:            darken(  saturate($aside-success-bg, 10%), 60%);
     }
-  }
-
-  X-aside:before {
-    vertical-align: middle;
-    padding-right: 0.5em;
-    font-size: 14px;
-  }
-
-  X-aside.notice:before {
-    @extend %icon-info-sign;
-  }
-
-  X-aside.warning:before {
-    @extend %icon-exclamation-sign;
-  }
-
-  X-aside.success:before {
-    @extend %icon-ok-sign;
   }
 
   .http-verb {

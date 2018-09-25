@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files_to_check=$(comm -23 <(ls *.md | sort) <(cat spell/spell.ignore.files | sort))
+files_to_check=$(comm -23 <(find . -name \*.md | sort) <(cat spell/spell.ignore.files | sort))
 
 for f in ${files_to_check}
 do

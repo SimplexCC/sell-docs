@@ -5,22 +5,27 @@ title: Simplex SellCrypto API Documentation
 #  - json
 
 includes:
-  - sell-intro
-  - sell-txn-flow
-  - sep-api-overview
-  - api-concepts
-  - api-types
-  - sep-api-reference
-  - get-quote
-  - initiate-sell
-  - get-dst-crypto-addr
-  - send-crypto
-  - xo-status
-  - txn-event-notify
-  - sep-api-transports
-  - transports-overview
-  - transports-rest
-  - transports-prest
-  - transports-jwt
-  - transports-q
+
+  - introduction/sell-intro
+  - introduction/sell-txn-flow
+
+  - api-overview/sep
+  - api-overview/concepts
+  - api-overview/types
+
+  - reference/sep
+  - reference/get-quote
+  - reference/initiate-sell
+  - reference/get-dst-crypto-addr
+  - reference/send-crypto
+  - reference/xo-status
+  - reference/txn-event-notify
+
+  - transports/sep
+  - transports/overview
+  - transports/rest
+  - transports/prest
+  - transports/jwt
+  - transports/msg-queue
+
 ---
