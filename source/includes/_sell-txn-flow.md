@@ -28,7 +28,7 @@ As mentioned, if your end-user arrives without having gone through the "Quote" s
 
 During the checkout flow the end-user is asked to fill in their email (or simply select it from a list if Simplex already knows them), their credit card details (or again simply select from a list), and their billing details. In some cases the end-user is already also asked for KYC documents.
 
-Simplex then runs its proprietary AI Risk Engine, and verifies that the transaction meets policy guidelines and AML rules. When all checks pass the transaction is approved.
+Simplex then runs its proprietary AI Risk Engine, and verifies that the transaction meets policy guidelines and AML ("Anti Money Laundering") rules. When all checks pass the transaction is approved.
 
 ## Money Changes Hands ##
 

@@ -1,8 +1,7 @@
 [ TO COMPLETE ]
 
-* change column name "Notes" to (onthing)
 * typos
-* transports: only Message Queue, REST and p/REST for now
+ansports: only Message Queue, REST and p/REST for now
 
 [ P2 ]
 

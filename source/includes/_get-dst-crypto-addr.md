@@ -13,7 +13,7 @@ If you are the entity:
 In either case, you may choose any of the following:
 
  * If you are the entity initiating the Simplex transaction (a wallet app, an exchange, etc.), you can send the relevant destination crypto address as part of `initiate`.
- * Use a pre-configured crypto address.
+ * Use a preconfigured crypto address.
  * We may get a bulk of destination addresses from you ahead of time.
  * We may ask you specifically per transaction.
 
@@ -68,7 +68,7 @@ What the address will be used for.
 
 One of { `"delivery"`, `"refund"` }.
 
- * `"delivery"` : you are buying the cryptocurrency; you are either a Liquidity Receiver in a SellCypto transaction or a wallet/exchange/etc. in a BuyCrypto transaction.
+ * `"delivery"` : you are buying the cryptocurrency; you are either a Liquidity Receiver in a SellCrypto transaction or a wallet/exchange/etc. in a BuyCrypto transaction.
  * `"refund"` : the reverse of "delivery" -- we want to return cryptocurrency that you have previously sent.
 
 ### crypto_currency ###

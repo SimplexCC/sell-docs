@@ -2,5 +2,7 @@
 
 for f in *.md
 do
-	aspell --lang=en_US check $f
+	echo "===== ${f}"
+	cat ${f} | grep -v "modeline.*vim:" | aspell --lang=en list | grep -v -F -f spell.ignore | sort | uniq -c | sort -nr
+	echo
 done

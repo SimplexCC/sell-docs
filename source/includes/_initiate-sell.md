@@ -2,7 +2,7 @@
 
 Create a SellCrypto transaction, and have the user start the checkout flow.
 
-A SellCrypto transaction is initiated by the entity representating the end-user, such as a wallet app, an exchange, etc.
+A SellCrypto transaction is initiated by the entity representing the end-user, such as a wallet app, an exchange, etc.
 
 Each transaction has an identifier, which you use when referring to the transaction. This identifier is created by you, for your convenience, and passed to Simplex. It must be unique, so a good practice is to use a UUID4.
 
@@ -96,7 +96,7 @@ Name                 | Type      |              | Description
 ip                   | String    | **required** | IPv4 of end-user's device
 timestamp            | Timestamp | **required** | Timestamp of session start
 user_agent           | String    |              | The `User-Agent` HTTP header from the end-user
-uaid                 | String    |              | The value of a per-device tracking cookie that is managed by you; two equal`uaid`'s mean the same end-user device.
+uaid                 | String    |              | The value of a per-device tracking cookie that is managed by you; two equal `uaid`'s mean the same end-user device.
 http_accept_language | String    |              | The `Accept-Language` HTTP header from the end-user
 
 ### txn_id ###

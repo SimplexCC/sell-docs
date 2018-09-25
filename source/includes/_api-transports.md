@@ -59,7 +59,7 @@ You provide a BASE_URL, and we invoke methods.
 
 ### Responses ###
 
-You responsd synchronously, in the body of the POST reply.
+You respond synchronously, in the body of the POST reply.
 
 ### Errors ###
 

@@ -1,6 +1,6 @@
 # API Types #
 
-We bring here a description of the common types used throught the API.
+We bring here a description of the common types used throughout the API.
 
 ### Integer ###
 

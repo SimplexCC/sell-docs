@@ -1,8 +1,8 @@
 # txn-event-notify #
 
-Notifications about major transaction lifecycle events.
+Notifications about major transaction life cycle events.
 
-You receive notifications when certain events occur during the lifecycle of transactions. You can use these notifications, for example, for analytics; or if you would like the end-user to perform a certain action you may choose to prompt them.
+You receive notifications when certain events occur during the life cycle of transactions. You can use these notifications, for example, for analytics; or if you would like the end-user to perform a certain action you may choose to prompt them.
 
 ## Synopsis ##
 
@@ -36,12 +36,12 @@ Identifier of the Simplex transaction.
 ### timestamp ###
 #### (Timestamp)
 
-Timestamp of when the event occured.
+Timestamp of when the event occurred.
 
 ### event ###
 #### (String)
 
-The type of event that occured in the transaction.
+The type of event that occurred in the transaction.
 
 One of { `"txn-approved"`, `"txn-declined"`, `"txn-refunded"` }.
 
