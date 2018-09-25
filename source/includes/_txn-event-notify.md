@@ -18,7 +18,7 @@ Transports: **MsgQueue**
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "timestamp": 1537540352.012,
-  "event": "approved",
+  "event": "txn-approved"
 }
 ```
 

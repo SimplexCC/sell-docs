@@ -32,7 +32,7 @@ Transports: **p/REST, MsgQueue**
 ```json
 {
   "crypto_currency": "BTC",
-  "n": 100,
+  "n": 100
 }
 ```
 
@@ -43,7 +43,7 @@ Transports: **p/REST, MsgQueue**
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "reason": "delivery",
   "crypto_currency": "BTC",
-  "n": 1,
+  "n": 1
 }
 ```
 
@@ -87,7 +87,7 @@ The number of requested destination crypto addresses.
 
 ```json
 {
-  "crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
+  "crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ]
 }
 ```
 

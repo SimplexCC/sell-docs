@@ -16,7 +16,7 @@ Transports: **p/REST, MsgQueue**
 
 ```json
 {
-  "xo_id": "xo:7791528",
+  "xo_id": "xo:7791528"
 }
 ```
 
@@ -25,7 +25,7 @@ Transports: **p/REST, MsgQueue**
 ```json
 {
   "xo_id": "xo:7791528",
-  "status": "completed",
+  "status": "completed"
 }
 ```
 
@@ -52,7 +52,7 @@ One of { `"completed"`, `"failed"` }.
 
 ```json
 {
-  "status": "completed",
+  "status": "completed"
 }
 ```
 

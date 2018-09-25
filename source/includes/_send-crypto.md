@@ -29,7 +29,7 @@ Transports: **p/REST, MsgQueue**
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "dst_crypto_addr": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp",
   "crypto_currency": "BTC",
-  "amount": 125000, // 0.125 BTC
+  "amount": 125000 // 0.125 BTC
 }
 ```
 
@@ -71,7 +71,7 @@ How much cryptocurrency of type `crypto_currency` to send.
 ```json
 {
   "xo_id": "xo:7791528",
-  "status": "completed",
+  "status": "completed"
 }
 ```
 

@@ -30,7 +30,7 @@ Transports: **REST, JWT**
     "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
     "src_crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
-    "ref_url": "https://www.legit-site.com/pay-with-btc",
+    "ref_url": "https://www.legit-site.com/pay-with-btc"
   },
 
   "account_details": {
@@ -41,13 +41,13 @@ Transports: **REST, JWT**
       "timestamp": 1529055882.223,
       "user_agent": "Mozilla/5.0 (Acme Laptop) AcmeWebKit/128 (KHTML, like Gecko) Chrome/65.0.1024.100",
       "uaid": "VHJhY2tpbmdDb29raWU",
-      "http_accept_language": "en-US,en;q=0.9",
+      "http_accept_language": "en-US,en;q=0.9"
     }, {
       "ip": "74.115.209.61",
       "timestamp": 1536831495.900,
       "user_agent": "Mozilla/5.0 (Acme Laptop) AcmeWebKit/128 (KHTML, like Gecko) Chrome/65.0.1024.100",
       "uaid": "VHJhY2tpbmdDb29raWU",
-      "http_accept_language": "en-US,en;q=0.9",
+      "http_accept_language": "en-US,en;q=0.9"
     }],
 
     "personal_details": {
@@ -61,7 +61,7 @@ Transports: **REST, JWT**
         "city": "San Diego",
         "zip": "22434",
         "country": "US",
-        "state": "CA",
+        "state": "CA"
       }]
     }
 

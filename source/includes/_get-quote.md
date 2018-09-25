@@ -18,7 +18,7 @@ Transports: **REST, JWT**
 {
   "source_currency": "EUR",
   "source_amount": 100000000, // EUR 100.00
-  "requested_currency": "BTC",
+  "requested_currency": "BTC"
 }
 ```
 
@@ -60,7 +60,7 @@ If `source_currency` represents a fiat currency then `requested_currency` must r
 ```json
 {
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
-    "rate": 8000.5,
+    "rate": 8000.5
 }
 ```
 
