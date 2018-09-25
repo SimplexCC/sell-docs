@@ -1,6 +1,6 @@
 # xo-status #
 
-A query from Simplex to you regarding the status of an execution order previously created by `send-crypto`.
+A query from Simplex to you regarding the status of an execution order previously created by a `send-crypto` API.
 
 Alternatively: a notification from you to Simplex that the status of an execution order has changed.
 
@@ -29,10 +29,10 @@ Transports: **p/REST, MsgQueue**
 }
 ```
 
-Name   | Type   | Notes
------- | ------ | -----
+Name   | Type   |   |
+------ | ------ | - |
 xo_id  | String | **required**
-status | String | **required** (you &rarr; Simplex) / **missing** (Simplex &rarr; you)
+status | String | **required** (You &rarr; Simplex) / **missing** (Simplex &rarr; You)
 
 ### xo_id ###
 #### (String, **required**)
@@ -56,9 +56,9 @@ One of { `"completed"`, `"failed"` }.
 }
 ```
 
-Name   | Type   | Notes
------- | ------ | -----
-status | String |
+Name   | Type
+------ | ----
+status | String
 
 ### status ###
 #### (String)
@@ -71,8 +71,13 @@ One of { `"completed"`, `"pending"`, `"failed"` }.
 
 ### p/REST ###
 
-<span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/xo-status/:id`
+<span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/xo-status/:xo-id`
 
 ### MsgQueue ###
+
+You notify Simplex of an execution order status change by  
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/xo-status`
+
+You will not receive `"xo-status"` queries on the MsgQueue transport.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

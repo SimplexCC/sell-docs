@@ -60,13 +60,13 @@ A string representing a crypto address.
 
 An address in the real world:
 
-Name    | Type   | Notes                     | Description
-------- | ------ | ------------------------- | -----------
-line1   | String | **required**              |
-line2   | String |                           |
-city    | String | **required**              |
-zip     | String |                           |
-country | String | **required**              | ISO 3166-1 ALPHA-2
-state   | String | (min. 2 chars if present) |
+Name    | Type   |                             | Description
+------- | ------ | --------------------------- | -----------
+line1   | String | **required**                |
+line2   | String |                             |
+city    | String | **required**                |
+zip     | String |                             |
+country | String | **required**                | ISO 3166-1 ALPHA-2
+state   | String | (Min. 2 letters if present) |
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

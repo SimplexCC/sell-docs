@@ -81,6 +81,10 @@ POST `/msg/:id/ack`
 
 POST `/msg/:id/response`
 
+### Send a message ###
+
+POST `/msg/:msg-name`
+
 ### Errors ###
 
 TODO

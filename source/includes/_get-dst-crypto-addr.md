@@ -47,8 +47,8 @@ Transports: **p/REST, MsgQueue**
 }
 ```
 
-Name            | Type           | Notes
---------------- | -------------- | -----
+Name            | Type           |   |
+--------------- | -------------- | - |
 txn_id          | Id             |
 reason          | String         | **required**
 crypto_currency | CryptoCurrency | **required**
@@ -91,9 +91,9 @@ The number of requested destination crypto addresses.
 }
 ```
 
-Name         | Type               | Notes
------------- | ------------------ | -----
-crypto_addrs | List\<CryptoAddr\> |
+Name         | Type
+------------ | ----
+crypto_addrs | List\<CryptoAddr\>
 
 ### crypto_addrs ###
 #### (List\<CryptoAddr\>)
@@ -108,16 +108,13 @@ An list of destination crypto addresses.
 
 ### MsgQueue ###
 
-You receive the request as a message of type `get-dst-crypto-addr` in
-
+You receive this request as a message of type `"get-dst-crypto-addr"` in  
 <span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
 
-You respond by
-
+You respond by  
 <span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
 
-Don't forget to also acknowledge the receipt of the message, by
-
+You need to also acknowledge receipt of the message, by  
 <span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

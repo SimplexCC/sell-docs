@@ -1,9 +1,8 @@
 [ TO COMPLETE ]
 
-* fill in missing details in "Transpots" sections of all pages
-* transports: only Message Queue, REST and p/REST for now
 * change column name "Notes" to (onthing)
 * typos
+* transports: only Message Queue, REST and p/REST for now
 
 [ P2 ]
 
@@ -64,6 +63,7 @@
 
 * change to active, rather than passive, voice
 * "end-users" ==> "users" where possible
+* backtick around all type names and around all parameter names and all api names
 
 [ PREETIFY ]
 

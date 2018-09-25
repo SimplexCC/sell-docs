@@ -22,8 +22,8 @@ Transports: **MsgQueue**
 }
 ```
 
-Name      | Type      | Notes
---------- | --------- | -----
+Name      | Type      |   |
+--------- | --------- | - |
 txn_id    | Id        |
 timestamp | Timestamp |
 event     | String    |
@@ -45,11 +45,11 @@ The type of event that occured in the transaction.
 
 One of { `"txn-approved"`, `"txn-declined"`, `"txn-refunded"` }.
 
- * `"txn-approved"`: The transaction was approved. The end-user's payment method has either been charged (BuyCrypto) or been credited (SellCrypto; though it may take up to 3 days to show on their statement).
+`"txn-approved"` : The transaction was approved. The end-user's payment method has either been charged (BuyCrypto) or been credited (SellCrypto; it may take up to 3 days to show on their statement).
 
- * `"txn-declined"`: The transaction was declined, for policy or risk reasons. Simplex does not divulge exact reasons to end-users. No fiat has been charged, and any holds on the end-user's card have been released (though some of the users' banks may take time to show that).
+`"txn-declined"` : The transaction was declined, for policy or risk reasons. Simplex does not divulge exact reasons to end-users. No fiat has been charged, and any holds on the end-user's card have been released (some users' banks may take time to reflect that).
 
- * `"txn-refunded"`: The transaction has been refunded. In a BuyCrypto transaction this means the fiat money was returned to the end-user, while in a SellCrypto transaction this means the cryptocurrency has been returned.
+`"txn-refunded"` : The transaction has been refunded. In a BuyCrypto transaction this means the fiat money was returned to the end-user, while in a SellCrypto transaction this means the cryptocurrency has been returned.
 
 ## Response ##
 
@@ -58,5 +58,13 @@ No response is expected.
 ## Transports ##
 
 ### MsgQueue ###
+
+You receive this notification as a message of type `"txn-event-notify"` in  
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+
+You need to acknowledge receipt of the message, by  
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
+
+You do not need to respond.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

@@ -69,8 +69,8 @@ Transports: **REST, JWT**
 }
 ```
 
-Name                      | Type                   | Notes
-------------------------- | ---------------------- | -----
+Name                      | Type                   |   |
+------------------------- | ---------------------- | - |
                           |                        |
 txn_details               |                        |
 &emsp; txn_id             | Id                     | **required**
@@ -91,7 +91,7 @@ account_details           |                        |
 
 Type `WebSessionInfo` :
 
-Name                 | Type      | Notes        | Description
+Name                 | Type      |              | Description
 -------------------- | --------- | ------------ | -----------
 ip                   | String    | **required** | IPv4 of end-user's device
 timestamp            | Timestamp | **required** | Timestamp of session start
@@ -223,10 +223,10 @@ Simplex uses these for policy and risk purposes, allowing your legitimate users 
 }
 ```
 
-Name    | Type   | Notes
-------- | ------ | ---------
-txn_url | String |
-error   | String |
+Name    | Type
+------- | ----
+txn_url | String
+error   | String
 
 ### txn_url ###
 #### (String)
