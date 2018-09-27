@@ -1,19 +1,19 @@
 # get-dst-crypto-addr #
 
-A query from Simplex to you, asking where you would like cryptocurrency sent to.
+A query from Simplex to you, asking where you would like cryptocurrency sent.
 
-If you are the entity:
+If you are:
 
- * Representing the end-user in a BuyCrypto transaction (a wallet app, an exchange, etc.), _or_
- * (In case of a refund) Representing the end-user in a SellCrypto transaction (a wallet app, an exchange, etc.), _or_
- * Buying cryptocurrency from end-users in a SellCrypto transaction (a "Liquidity Receiver")
+ * The App (Wallet / Exchange / etc.) in a BuyCrypto transaction, _or_
+ * The App (Wallet / Exchange / etc.) in a SellCrypto refund, _or_
+ * The Liquidity Receiver in a SellCrypto transaction
 
-... then we need to know where to send the cryptocurrency to.
+... then we need to ask you where to send cryptocurrency.
 
 In either case, you may choose any of the following:
 
- * If you are the entity initiating the Simplex transaction (a wallet app, an exchange, etc.), you can send the relevant destination crypto address as part of `initiate`.
- * Use a preconfigured crypto address.
+ * The App may supply relevant destination crypto addresses as part of `initiate`.
+ * Your Simplex account may have preconfigured destination crypto addresses.
  * We may get a bulk of destination addresses from you ahead of time.
  * We may ask you specifically per transaction.
 
@@ -68,8 +68,8 @@ What the address will be used for.
 
 One of { `"delivery"`, `"refund"` }.
 
- * `"delivery"` : you are buying the cryptocurrency; you are either a Liquidity Receiver in a SellCrypto transaction or a wallet/exchange/etc. in a BuyCrypto transaction.
- * `"refund"` : the reverse of "delivery" -- we want to return cryptocurrency that you have previously sent.
+ * `"delivery"` : you are buying cryptocurrency: either the App (in a BuyCrypto transaction) or a Liquidity Receiver (in a SellCrypto transaction)
+ * `"refund"` : the reverse of "delivery" -- we are retruning cryptocurrency that you have previously sent.
 
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)

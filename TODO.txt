@@ -1,6 +1,11 @@
 [ TO COMPLETE ]
 
+* Remove JWT transport for now
+* Remove MsgQueue for now, including in "REST" as "GetMsg"
 * complete "transports"
+
+* Flow diagram
+* screenshots
 * typos
 
 [ P2 ]

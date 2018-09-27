@@ -14,11 +14,11 @@ This user experience is typically provided by you, in your mobile/web app, using
 
 ## Initiating the Transaction ##
 
-You then create the transaction and start the checkout flow, using the `initiate` API. With this API you can also submit information you have about the end-user, so that Simplex doesn't need to ask for it and the end-user's experience is effortless. Information you can submit includes name, emails, phones, addresses, and KYC documents.
+Next, you create the transaction and direct the end-user to the checkout flow using the `initiate` API. You can also supply information -- such as the end-user's name, email address, KYC documents, etc. -- making the end-user's experience smoother by not requiring them to supply it.
 
 This is called the "Initiate" stage.
 
-Simplex then creates the transaction and returns a transaction URL. You then send your end-user (in your app / an iframe / a browser tab) to the transaction URL, where the checkout flow occurs.
+Simplex returns a transaction URL to which you direct your end-user, and the checkout flow begins.
 
 ## Checkout ##
 

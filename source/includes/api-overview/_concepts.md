@@ -4,8 +4,8 @@
 
 Simplex's API's are designed to be usable in environments with different capabilities. Such environments may or may not be:
 
- * Considered safe, and thus allowed to hold an API key
- * Able to run code for generating requests and processing responses
+ * Considered safe, and thus allowed to hold an API key.
+ * Able to run code for generating requests and processing responses.
  * Able to expose REST endpoints for Simplex to invoke (to notify you when a transaction is approved, e.g.).
 
 To that end it is possible to invoke the API's in several different ways. We call these ways **"Transports"**.
@@ -33,7 +33,7 @@ These are all documented in the section "Transports" (you guessed it!), while th
 
 Simplex provides a sandbox environment, which you use while developing and testing your integration. When you are ready to go live, you simply switch to the production environment.
 
-Environments are accessed with different URLs and require different API keys (see below).
+Environments are accessed with different URLs and require different API keys.
 
 ## API key ##
 

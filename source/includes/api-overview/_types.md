@@ -1,6 +1,6 @@
 # Types #
 
-We bring here a description of the common types used throughout the API.
+This section describes the common types used throughout the API.
 
 ### Integer ###
 
@@ -23,7 +23,7 @@ An opaque string.
 When you receive `Id`'s from Simplex you may only store them and then send them back in subsequent API's.
 
 <aside class="warning">
-"Opaque" as is: assume nothing about the contents; it may change in the future.
+"Opaque" as in "assume nothing about the contents, it may change in the future".
 </aside>
 
 ### FiatCurrency ###
