@@ -1,22 +1,15 @@
 [ TO COMPLETE ]
 
-* Remove JWT transport for now
-* Remove MsgQueue for now, including in "REST" as "GetMsg"
-* complete "transports"
-
-* Flow diagram
-* screenshots
 * typos
 
 [ P2 ]
 
 * add screenshots/illustrations to "sell-txn-flow"
+* Flow diagram
 * incorporate (TM), "Grog" and "Leather Jackets" jokes
 
 [ BETTER API ]
 
-* errors: uniform error response: all responses should have or lack an "_error" field
-* errors: define error transport in JWT, REST, P/REST transports
 * we should be the ones creating the txn_id, and possibly ask them for their number as well?
 * we should be the ones creating the xo_id; we should ask for their number in the response, as optional convenience for them.
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order

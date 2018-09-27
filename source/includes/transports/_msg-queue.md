@@ -1,39 +1,43 @@
 # MsgQueue #
 
-Base URL: `https://api.simplexcc.com/v1/q`
+An alternative to p/REST is MsgQueue, which has message queue semantics: you poll Simplex for messages waiting for you, take action on the message if required, respond to the message if required, and then acknowledge your handling of the message so you don't receive it again.
 
-Auth: \_partner= and \_apikey= on URL ???
+## Polling ##
 
-### Get messages ###
+You poll for messages by periodically issuing:  
 
-GET `/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
 
-### ACK a message ###
+The response is JSON object with a single `"messages"` field containing a list of messages.
 
-POST `/msg/:id/ack`
+Each message has the following fields:
 
-### Respond to a previous message ###
+Name     | Type   |              | Description
+-------- | ------ | -------------| -----------
+msg_id   | Id     | **required** | A unique identifier for this message
+msg_type | String | **required** | The message type (e.g. `"txn-event-notify"`)
+msg      | Object | **required** | The message payload itself, as described in the relevant API section
 
-POST `/msg/:id/response`
+### Responding ###
 
-### Send a message ###
+If a message requires a response, you respond with
 
-POST `/msg/:msg-name`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/response`
 
-### Errors ###
+`:msg-id` is the message identifier returned from `/msg`, and the POST body contains the response.
 
-TODO
+## Acknowledging ##
 
-You receive the request as a message of type `get-dst-crypto-addr` in
+To avoid loss of messages, an explicit acknowledgement from you is required to each message. Until you acknowledge a message you will keep receiving it from `/msg`.
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+To acknowledge that you have handled a particular message and are done with it:
 
-You respond by
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
 
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
+`:msg-id` is the identifier of the message you are acnowledging. There are no other parameters, so no body is expected in the POST.
 
-Don't forget to also acknowledge the receipt of the message, by
-
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
+<aside class="warning">
+Only acknowledge messages after you have completely finished handling them.
+</aside>
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
