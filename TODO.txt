@@ -103,6 +103,11 @@
 
 * In api-overview/_concepts: add "parameter encoding" so allow encoding with JWT, signing with apikey
 
+[ BETTER TRANSPORT ]
+
+* Allow GET for all API's by encoding hierarchical params as "a.b"
+* Allow GET with "jwt" token on query string, and signing
+
 [ NOTES FOR DAN ]
 
 * account_details: all keys inside are optional, as well as inside

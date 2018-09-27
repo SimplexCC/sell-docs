@@ -206,7 +206,7 @@ Simplex uses these for policy and risk purposes, allowing your legitimate users 
 
 ## Response ##
 
-> Example response when a transaction is successfully created:
+> Example response:
 
 ```json
 {
@@ -214,18 +214,9 @@ Simplex uses these for policy and risk purposes, allowing your legitimate users 
 }
 ```
 
-> Example error scenario:
-
-```json
-{
-  "error": "duplicate txn_id"
-}
-```
-
 Name    | Type
 ------- | ----
 txn_url | String
-error   | String
 
 ### txn_url ###
 #### (String)
@@ -234,15 +225,8 @@ The URL where the checkout flow will take place. You should direct the end-user'
 
 In case of an error `txn_url` will not be returned.
 
-### error ###
-#### (String)
-
-In case of an error creating the transaction, `error` will be set to a short string describing the error, and `txn_url` will will not be returned. The error string is short and technical, and is not meant for end-users.
-
-If the transaction was created successfully then `error` will not be returned.
-
 ## REST ##
 
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/initiate-sell`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/initiate-sell`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

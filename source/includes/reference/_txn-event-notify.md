@@ -57,15 +57,15 @@ No response is expected.
 ## p/REST ##
 
 If you supply a p/REST endpoint for this API, Simplex will use  
-<span class="http-verb http-post">POST</span>`https://${YOUR_API_URL}/txn-event-notify`
+<span class="http-verb http-post">POST</span> `https://${YOUR_API_URL}/txn-event-notify`
 
 ## MsgQueue ##
 
 Alternatively, You may receive this notification as a message of type `"txn-event-notify"` in  
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/q/msg`
 
 You need to acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
 
 You do not need to respond.
 

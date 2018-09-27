@@ -24,7 +24,6 @@ includes:
 
   - transports/sep
   - transports/overview
-  - transports/rest
   - transports/prest
   - transports/msg-queue
 

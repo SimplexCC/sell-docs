@@ -15,19 +15,19 @@ Direction: **You &rarr; Simplex**
 
 ```json
 {
-  "source_currency": "EUR",
-  "source_amount": 100000000, // EUR 100.00
-  "requested_currency": "BTC"
+  "src_currency": "EUR",
+  "src_amount": 100000000, // EUR 100.00
+  "dst_currency": "BTC"
 }
 ```
 
-Name               | Type        |   |
------------------- | ----------- | - |
-source_currency    | Currency    | **required**
-source_amount      | MoneyAmount | **required**
-requested_currency | Currency    | **required**
+Name         | Type        |   |
+-------------| ----------- | - |
+src_currency | Currency    | **required**
+src_amount   | MoneyAmount | **required**
+dst_currency | Currency    | **required**
 
-### source_currency ###
+### src_currency ###
 #### (Currency, **required**)
 
 The currency to convert from.
@@ -36,12 +36,12 @@ The currency to convert from.
 SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
-### source_amount ###
+### src_amount ###
 #### (MoneyAmount, **required**)
 
-The amount of `source_currency` units, in millionths of a unit, to convert.
+The amount of `src_currency` units, in millionths of a unit, to convert.
 
-### requested_currency ###
+### dst_currency ###
 #### (Currency, **required**)
 
 The currency to convert to.
@@ -50,7 +50,7 @@ The currency to convert to.
 SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
-If `source_currency` represents a fiat currency then `requested_currency` must represent a crypto currency, and vise versa.
+If `src_currency` represents a fiat currency then `dst_currency` must represent a crypto currency, and vise versa.
 
 ## Response ##
 
@@ -76,10 +76,10 @@ An identifier generated for this quote. Keep this identifier and pass it back to
 ### rate ###
 #### (Float)
 
-The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
+The exchange rate: how much to multiply `src_amount` by in order to get the equivalent amount in `dst_currency`.
 
 ## REST ##
 
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/get-quote`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/get-quote`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

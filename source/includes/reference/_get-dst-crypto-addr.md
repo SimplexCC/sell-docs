@@ -102,17 +102,17 @@ A list of destination crypto addresses.
 ## p/REST ##
 
 If you supply a p/REST endpoint for this API, Simplex will use  
-<span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/get-dst-crypto-addr`
+<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/get-dst-crypto-addr`
 
 ## MsgQueue ##
 
 Alternatively, you may receive this request as a message of type `"get-dst-crypto-addr"` in  
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
 
 You respond by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/response`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/response`
 
 You will need to also acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/ack`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
