@@ -1,9 +1,13 @@
 # p/REST #
 
-You provide a BASE_URL, and we invoke methods.
+### URL ###
 
 * https only
-* auth is a query parameter
+* Preconfigured BASE_URL on your Simplex account
+
+### Auth ###
+
+* query parameter, "\apikey=..."
 
 ### GET ###
 
@@ -11,7 +15,7 @@ You provide a BASE_URL, and we invoke methods.
 
 ### Responses ###
 
-You respond synchronously, in the body of the POST reply.
+You respond synchronously, in the body of the http reply.
 
 ### Errors ###
 

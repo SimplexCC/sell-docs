@@ -22,8 +22,7 @@ Simplex uses `get-dst-crypto-addr` for the latter two cases.
 ## Synopsis ##
 
 API name: **`get-dst-crypto-addr`**  
-Direction: **Simplex &rarr; You**  
-Transports: **p/REST, MsgQueue**
+Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
@@ -57,7 +56,7 @@ n               | Integer        | **required**
 ### txn_id ###
 #### (Id, optional)
 
-The identifier of the Simplex transaction for which the destination crypto address is requested.
+The identifier of the transaction for which the destination crypto address is requested.
 
 If no specific transaction is involved (e.g. Simplex is asking for a bulk of addresses ahead of time), this will not be passed.
 
@@ -98,23 +97,22 @@ crypto_addrs | List\<CryptoAddr\>
 ### crypto_addrs ###
 #### (List\<CryptoAddr\>)
 
-An list of destination crypto addresses.
+A list of destination crypto addresses.
 
-## Transports ##
+## p/REST ##
 
-### p/REST ###
-
+If you supply a p/REST endpoint for this API, Simplex will use  
 <span class="http-verb http-get">GET</span>`https://${YOUR_API_URL}/get-dst-crypto-addr`
 
-### MsgQueue ###
+## MsgQueue ##
 
-You receive this request as a message of type `"get-dst-crypto-addr"` in  
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+Alternatively, you may receive this request as a message of type `"get-dst-crypto-addr"` in  
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/msg`
 
 You respond by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/response`
 
-You need to also acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
+You will need to also acknowledge receipt of the message, by  
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

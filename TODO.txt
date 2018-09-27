@@ -99,6 +99,10 @@
 * define the product types are "Buy", "Sell", and consider "Withdrawal" as possible next
 * define the customer types as "KYC vendor", "Wallet / Exchange", "LQP", "LQR", "Affiliate"
 
+[ RE-ADD JWT ]
+
+* In api-overview/_concepts: add "parameter encoding" so allow encoding with JWT, signing with apikey
+
 [ NOTES FOR DAN ]
 
 * account_details: all keys inside are optional, as well as inside

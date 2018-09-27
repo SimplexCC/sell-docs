@@ -17,8 +17,7 @@ The response includes a transaction URL which you use to send your end-user to t
 ## Synopsis ##
 
 API name: **`initiate-sell`**  
-Direction: **You &rarr; Simplex**  
-Transports: **REST, JWT**
+Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
@@ -242,14 +241,8 @@ In case of an error creating the transaction, `error` will be set to a short str
 
 If the transaction was created successfully then `error` will not be returned.
 
-## Transports ##
+## REST ##
 
-### REST ###
-
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/rest/initiate-sell`
-
-### JWT ###
-
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt`
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/initiate-sell`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

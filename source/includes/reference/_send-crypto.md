@@ -8,17 +8,18 @@ In case of a refund, if you are the entity that received the cryptocurrency you 
 
 This request from Simplex results in a you creating an execution order, or an "xo", for which you generate an identifier. Your response includes an identifier for this execution order, together with its status:
 
- * `"completed"` : you fulfilled the execution order by creating a blockchain transaction.
- * `"pending"` : you haven't yet created the blockchain transaction, but will do so soon.
- * `"failed"` : there was an error creating the blockchain transaction.
+`"completed"` : you fulfilled the execution order by creating a blockchain transaction.
+
+`"pending"` : you haven't yet created the blockchain transaction, but will do so soon.
+
+`"failed"` : there was an error creating the blockchain transaction.
 
 In all cases, your response must include an execution order identifier which Simplex can use to query you about its status.
 
 ## Synopsis ##
 
 API name: **`send-crypto`**  
-Direction: **Simplex &rarr; You**  
-Transports: **p/REST, MsgQueue**
+Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
@@ -45,9 +46,9 @@ amount          | MoneyAmount    |
 
 The identifier of the Simplex transaction involved.
 
-If you the entity that initiated the Simplex transaction then this `txn_id` is known to you, and you can use it for your tracking.
+If you the entity that initiated the Simplex transaction then this `txn_id` is known to you and you can use it for tracking.
 
-Otherwise, if you did not initiate the Simplex transaction but are rather acting as the liquidity provider/receiver, you can use the `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing purposes.
+Otherwise, you can still use `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing.
 
 ### dst_crypto_addr ###
 #### (CryptoAddr, optional)
@@ -75,9 +76,11 @@ How much cryptocurrency of type `crypto_currency` to send.
 }
 ```
 
-Your response includes an `xo_id`, which Simplex will later use to query you regarding the status (in case you respond with a `"pending"` status).
+Your response includes an `xo_id`.
 
-Alternatively, you may notify Simplex (using the `xo-status` API) when the status changes from `"pending"` to either `"completed"` or `"failed"`.
+If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"completed"` or `"failed"`. You do this using the `xo-status-notify` API.
+
+Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `get-xo-status`.
 
 Name   | Type
 ------ | ----
@@ -96,24 +99,20 @@ You may use this identifier to notify Simplex of the status of the execution ord
 
 One of { `"completed"`, `"pending"`, `"failed"` }.
 
-## Transports ##
+## p/REST ##
 
-### p/REST ###
-
+If you supply a p/REST endpoint for this API, Simplex will use  
 <span class="http-verb http-post">POST</span>`https://${YOUR_API_URL}/send-crypto`
 
-### MsgQueue ###
+## MsgQueue ##
 
-You receive this request as a message of type `"send-crypto"` in  
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
+Alternatively, you may receive this request as a message of type `"send-crypto"` in  
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/msg`
 
 You respond by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/response`
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/response`
 
-You need to also acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/msg/:msg-id/ack`
-
-**If you respond with a `"pending"` status** you need to provide the p/REST endpoint `xo-status`, or alternatively send a later `"xo-status"` message by  
-<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/q/xo-status`
+You will need to also acknowledge receipt of the message, by  
+<span class="http-verb http-post">POST</span>`https://api.simplexcc.com/v1/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

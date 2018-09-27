@@ -7,8 +7,7 @@ You receive notifications when certain events occur during the life cycle of tra
 ## Synopsis ##
 
 Message name: **`txn-event-notify`**  
-Direction: **Simplex &rarr; You**  
-Transports: **MsgQueue**
+Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
@@ -55,11 +54,14 @@ One of { `"txn-approved"`, `"txn-declined"`, `"txn-refunded"` }.
 
 No response is expected.
 
-## Transports ##
+## p/REST ##
 
-### MsgQueue ###
+If you supply a p/REST endpoint for this API, Simplex will use  
+<span class="http-verb http-post">POST</span>`https://${YOUR_API_URL}/txn-event-notify`
 
-You receive this notification as a message of type `"txn-event-notify"` in  
+## MsgQueue ##
+
+Alternatively, You may receive this notification as a message of type `"txn-event-notify"` in  
 <span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/q/msg`
 
 You need to acknowledge receipt of the message, by  

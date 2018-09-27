@@ -2,6 +2,7 @@
 
 * Construct a URL
 * Build the request
+* Auth / Sign
 * Interpret response
 * Errors
 

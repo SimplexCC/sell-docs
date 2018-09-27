@@ -7,8 +7,7 @@ In order for you to provide the "Quote" experience described in the "Flow" secti
 ## Synopsis ##
 
 API name: **`get-quote`**  
-Direction: **You &rarr; Simplex**  
-Transports: **REST, JWT**
+Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
@@ -79,14 +78,8 @@ An identifier generated for this quote. Keep this identifier and pass it back to
 
 The exchange rate: how much to multiply `source_amount` by in order to get the equivalent amount in `requested_currency`.
 
-## Transports ##
+## REST ##
 
-### REST ###
-
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/rest/get_quote`
-
-### JWT ###
-
-<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/jwt`
+<span class="http-verb http-get">GET</span>`https://api.simplexcc.com/v1/get-quote`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
