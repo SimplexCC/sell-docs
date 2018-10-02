@@ -86,7 +86,7 @@ Status Code        | Description
 `401 Unauthorized` | Missing or invalid API key
 `404 Not Found`    | Invalid URL
 
-On error, reponse will include an `_error` top-level field with a short error message. That error message is for debugging purposes only and is not meant to be displayed to end-users.
+On error, responses will include an `_error` top-level field with a short error message. That error message is for debugging purposes only and is not meant to be displayed to end-users.
 
 Successful requests do not return an `_error` field.
 

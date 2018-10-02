@@ -46,7 +46,7 @@ amount          | MoneyAmount    |
 
 The identifier of the Simplex transaction involved.
 
-If you the entity that initiated the Simplex transaction then this `txn_id` is known to you and you can use it for tracking.
+If you are the entity that initiated the Simplex transaction then this `txn_id` is known to you and you can use it for tracking.
 
 Otherwise, you can still use `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing.
 

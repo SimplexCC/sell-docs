@@ -2,11 +2,11 @@
 
 ## p/REST and MsgQueue ##
 
-Certain use-cases require that Simplex "reach out" to you in order to notify you of evenst that have occurred, request that you perform certain actions, or get some information.
+Certain use-cases require that Simplex "reach out" to you in order to notify you of events that have occurred, request that you perform certain actions, or get some information.
 
-This is achieved by either you exposing API endpoints for Simplex to invoke or by you perdiocally polling Simplex, asking for any new "messages". Exposing API's for Simplex to invoke is called "p/REST" ("Partner REST"), while polling Simplex for messages is called "MsgQueue".
+This is achieved by either you exposing API endpoints for Simplex to invoke or by you periodically polling Simplex, asking for any new "messages". Exposing API's for Simplex to invoke is called "p/REST" ("Partner REST"), while polling Simplex for messages is called "MsgQueue".
 
-The specifics on p/REST and MsgQueue are documented in a dedicated secion.
+The specifics on p/REST and MsgQueue are documented in a dedicated section.
 
 API's where Simplex reaches out to you are marked as such, and you can choose for each what method to use.
 

@@ -1,6 +1,6 @@
 # initiate-sell #
 
-Create a SellCrypto transaction, and have the user start the checkout flow.
+Create a SellCrypto transaction, and have the end-user start the checkout flow.
 
 A SellCrypto transaction is initiated by the entity representing the end-user, such as a wallet app, an exchange, etc.
 
@@ -10,9 +10,9 @@ Other than `txn_id` and `ref_url` **all parameters are optional**.
 
 When a parameter is required in order to complete the checkout flow, but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much cryptocurrency they wish to sell, and will present an appropriate fiat quote.
 
-Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a wider range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
+Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a broader range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
 
-The response includes a transaction URL which you use to send your end-user to the checkout flow.
+The response includes a transaction URL to which you send your end-user in order to start the checkout flow.
 
 ## Synopsis ##
 
@@ -94,9 +94,9 @@ Name                 | Type      |              | Description
 -------------------- | --------- | ------------ | -----------
 ip                   | String    | **required** | IPv4 of end-user's device
 timestamp            | Timestamp | **required** | Timestamp of session start
-user_agent           | String    |              | The `User-Agent` HTTP header from the end-user
-uaid                 | String    |              | The value of a per-device tracking cookie that is managed by you; two equal `uaid`'s mean the same end-user device.
-http_accept_language | String    |              | The `Accept-Language` HTTP header from the end-user
+user_agent           | String    |              | The `User-Agent` HTTP header sent by the end-user's browser
+uaid                 | String    |              | The value of a per-device tracking cookie that is managed by you. That is to say: equal `uaid`'s mean "same end-user device".
+http_accept_language | String    |              | The `Accept-Language` HTTP header sent by the end-user's browser
 
 ### txn_id ###
 #### (Id, **required**)
@@ -108,9 +108,9 @@ This is a convenience feature: you may use the unique identifier you already hav
 ### ref_url ###
 #### (String, **required**)
 
-The value of the `Referer` HTTP header with which the user first landed on your site.
+The value of the `Referer` HTTP header with which the end-user first landed at your site.
 
-We're asking: where did the user arrive at your site from?
+We're really asking: "where did the end-user arrive at your site from?" (or, in case you're feeling fancy: "whence did the end-user arrive at your site?")
 
 ### quote_id ###
 #### (Id, optional)
@@ -139,7 +139,7 @@ If this is not provided, and only in case a refund is required, Simplex will inv
 The identifier you use for the end-user's account.
 
 <aside class="notice">
-Make sure to pass this parameter; your users will thank you.
+Make sure to pass this parameter -- your users will thank you.
 </aside>
 
 Simplex uses `account_id` to identify returning users, and to afford them the smoothest possible experience. They won't need to fill-in nor verify their email or billing information, for example.
@@ -221,7 +221,7 @@ txn_url | String
 ### txn_url ###
 #### (String)
 
-The URL where the checkout flow will take place. You should direct the end-user's browser there, either in a new tab, an iframe, or a webview in your app.
+The URL where the checkout flow will take place. You should direct the end-user's browser there, in either a new tab, an iframe, or a webview in your app.
 
 In case of an error `txn_url` will not be returned.
 

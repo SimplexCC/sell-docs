@@ -4,17 +4,17 @@ Here is a description of all the stages involved in a SellCrypto transaction. Th
 
 ## Deciding How Much To Sell ##
 
-SellCrypto transactions are transactions in which your end-users sell their cryptocurrency and receive fiat money in exchange. The first thing your end-users need to do, then, is to decide how much cryptocurrency they wish to sell.
+SellCrypto transactions are transactions in which your end-users sell their cryptocurrency and receive fiat money in exchange. The first thing end-users need to do, then, is to decide how much cryptocurrency they wish to sell.
 
-In order to do that, your end-users are presented with a screen where they can choose a cryptocurrency amount (e.g. 1.5 BTC) and see how much fiat money they will receive for it (e.g. 12,000 USD), or alternatively choose a fiat amount and see how much cryptocurrency they need to sell in order to receive that fiat amount.
+In order to do that, end-users are presented with a screen where they can choose a cryptocurrency amount (e.g. 1.5 BTC) and see how much fiat money they will receive for it (e.g. 12,000 USD), or alternatively choose a fiat amount and see how much cryptocurrency they need to sell in order to receive that fiat amount.
 
 This is called the "Quote" stage.
 
-This user experience is typically provided by you, in your mobile/web app, using the `get-quote` API. If you don not provide this experience for the end-users then Simplex will do this for you, as the very first stage of the checkout flow.
+This user experience is typically provided by you, in your mobile/web app, using the `get-quote` API. If you do not provide this experience to end-users then Simplex will do this for you, as the very first stage of the checkout flow.
 
 ## Initiating the Transaction ##
 
-Next, you create the transaction and direct the end-user to the checkout flow using the `initiate` API. You can also supply information -- such as the end-user's name, email address, KYC documents, etc. -- making the end-user's experience smoother by not requiring them to supply it.
+Next, you create the transaction and direct your end-user to the checkout flow using the `initiate` API. You can also supply information -- such as the end-user's name, email address, KYC documents, etc. -- making the end-user's experience smoother by not requiring them to supply it.
 
 This is called the "Initiate" stage.
 
@@ -22,11 +22,11 @@ Simplex returns a transaction URL to which you direct your end-user, and the che
 
 ## Checkout ##
 
-When your end-user is redirected to the transaction URL the checkout flow starts.
+When the end-user is redirected to the transaction URL the checkout flow begins.
 
-As mentioned, if your end-user arrives without having gone through the "Quote" stage first, they will first choose how much cryptocurrency to sell.
+As mentioned, if the end-user arrives without having gone through the "Quote" stage first, they will first choose how much cryptocurrency to sell.
 
-During the checkout flow the end-user is asked to fill in their email (or simply select it from a list if Simplex already knows them), their credit card details (or again simply select from a list), and their billing details. In some cases the end-user is already also asked for KYC documents.
+During the checkout flow the end-user is asked to fill in their email (or simply select it from a list if Simplex already knows them), their credit card details (or again simply select from a list), and their billing details. In some cases the end-user is also asked for KYC documents.
 
 Simplex then runs its proprietary AI Risk Engine, and verifies that the transaction meets policy guidelines and AML ("Anti Money Laundering") rules. When all checks pass the transaction is approved.
 
@@ -36,6 +36,6 @@ After Simplex has approved the transaction it is time for crypto and fiat money 
 
 Once Simplex detects that blockchain transaction it verifies that the amount is correct (or else the cryptocurrency is returned --- a refund) and then sends the fiat money to your end-user.
 
-Both your end-user and you are notified at this point, and the transaction is finalized.
+Both you and your end-user are notified at this point, and the transaction is complete.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

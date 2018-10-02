@@ -34,7 +34,7 @@ To acknowledge that you have handled a particular message and are done with it:
 
 <span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
 
-`:msg-id` is the identifier of the message you are acnowledging. There are no other parameters, so no body is expected in the POST.
+`:msg-id` is the identifier of the message you are acknowledging. There are no other parameters, so no body is expected in the POST.
 
 <aside class="warning">
 Only acknowledge messages after you have completely finished handling them.

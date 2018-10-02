@@ -68,7 +68,7 @@ What the address will be used for.
 One of { `"delivery"`, `"refund"` }.
 
  * `"delivery"` : you are buying cryptocurrency: either the App (in a BuyCrypto transaction) or a Liquidity Receiver (in a SellCrypto transaction)
- * `"refund"` : the reverse of "delivery" -- we are retruning cryptocurrency that you have previously sent.
+ * `"refund"` : the reverse of "delivery" -- we are returning cryptocurrency that you have previously sent.
 
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
