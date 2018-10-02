@@ -1,4 +1,4 @@
-_api-concepts.md
-_api-transports.md
-_roles.md
-_sep.md
+./api-overview/_sep.md
+./introduction/_roles.md
+./reference/_sep.md
+./transports/_sep.md

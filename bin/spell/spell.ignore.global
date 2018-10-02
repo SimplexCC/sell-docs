@@ -6,6 +6,7 @@ AML
 API's
 BCH
 BTC
+HTTPS
 BuyCrypto
 CryptoAddr
 CryptoCurrency
@@ -36,3 +37,7 @@ onboarding
 preconfigured
 url
 src
+xo
+apikey
+auth
+Auth

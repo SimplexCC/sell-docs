@@ -1,20 +1,26 @@
 #!/bin/bash
 
-files_to_check=$(comm -23 <(find . -name \*.md | sort) <(cat spell/spell.ignore.files | sort))
+SPELL_BASE_DIR=bin/spell
+SRC_BASE_DIR=source/includes
+
+files_to_check=$(comm -23 <(cd ${SRC_BASE_DIR} ; find . -name \*.md | sort) <(cat ${SPELL_BASE_DIR}/spell.ignore.files | sort))
 
 for f in ${files_to_check}
 do
-	echo "===== ${f}"
+	echo "${f}"
 
-	ign_file=spell/spell.ignore.in-file.${f}
+	f_norm=$(echo "${f}" | cut -c3- | sed 's|/|__|g')
+	ign_file=${SPELL_BASE_DIR}/spell.ignore.in-file.${f_norm}
 	if [[ ! -e ${ign_file} ]]
 	then
 		touch ${ign_file}
 	fi
 
-	cat ${f} |\
+	cat $SRC_BASE_DIR/${f} |\
 		## html entities
 		perl -pe 's/&emsp;//g' |\
+		## api keys
+		perl -pe 's/8d20e7bd89064cd4a9c379d66c53efc8//g' |\
 		## crypto addresses
 		perl -pe 's/1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh//g' |\
 		perl -pe 's/1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp//g' |\
@@ -30,7 +36,7 @@ do
 		grep -v '\bmodeline\b.*vim:' |\
 		aspell --lang=en list |\
 		## global ignore word list
-		grep -v -F -f spell/spell.ignore.global |\
+		grep -v -F -f ${SPELL_BASE_DIR}/spell.ignore.global |\
 		## per-file ignore word list
 		grep -v -F -f ${ign_file} |\
 		## print
@@ -38,6 +44,3 @@ do
 
 	echo
 done
-
-
-#perl -pe 's/[[:xdigit:]]{8}-[[:xdigit:]]{4}-[[:xdigit:]]{4}-[[:xdigit:]]{4}-[[:xdigit:]]{12}//g' |\
