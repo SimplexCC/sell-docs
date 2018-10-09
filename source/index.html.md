@@ -19,10 +19,12 @@ includes:
   - reference/initiate-sell
   - reference/get-dst-crypto-addr
   - reference/send-crypto
-  - reference/xo-status-notify
-  - reference/get-xo-status
+  - reference/send-crypto-notify
+  - reference/send-crypto-get-status
   - reference/txn-event-notify
-  - reference/kyc-poid-req
+  - reference/poid
+  - reference/poid-notify
+  - reference/poid-get-status
 
   - transports/sep
   - transports/overview
