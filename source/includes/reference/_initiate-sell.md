@@ -28,7 +28,7 @@ Direction: **You &rarr; Simplex**
   "txn_details": {
     "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
-    "src_crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
+    "src_crypto_addresses": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ],
     "ref_url": "https://www.legit-site.com/pay-with-btc"
   },
 
@@ -54,7 +54,7 @@ Direction: **You &rarr; Simplex**
       "last_name": "Coyote",
       "emails": [ "wile.e@rr.com" ],
       "phones": [ "+16085559103" ],
-      "addrs": [{
+      "addresses": [{
         "line1": "42 Desert Road",
         "line2": "Apt. 314",
         "city": "San Diego",
@@ -68,25 +68,25 @@ Direction: **You &rarr; Simplex**
 }
 ```
 
-Name                      | Type                   |   |
-------------------------- | ---------------------- | - |
-                          |                        |
-txn_details               |                        |
-&emsp; txn_id             | Id                     | **required**
-&emsp; ref_url            | String                 | **required**
-&emsp; quote_id           | Id                     |
-&emsp; src_crypto_addrs   | List\<CryptoAddr\>     |
-&emsp; refund_crypto_addr | CryptoAddr             |
-                          |                        |
-account_details           |                        |
-&emsp; account_id         | String                 |
-&emsp; web_sessions       | List\<WebSessionInfo\> |
-&emsp; personal_details   |                        |
-&emsp; &emsp; first_name  | String                 |
-&emsp; &emsp; last_name   | String                 |
-&emsp; &emsp; emails      | List\<String\>         |
-&emsp; &emsp; phones      | List\<String\>         |
-&emsp; &emsp; addrs       | List\<Addr\>           |
+Name                         | Type                   |   |
+---------------------------- | ---------------------- | - |
+                             |                        |
+txn_details                  |                        |
+&emsp; txn_id                | Id                     | **required**
+&emsp; ref_url               | String                 | **required**
+&emsp; quote_id              | Id                     |
+&emsp; src_crypto_addresses  | List\<CryptoAddress\>  |
+&emsp; refund_crypto_address | CryptoAddress          |
+                             |                        |
+account_details              |                        |
+&emsp; account_id            | String                 |
+&emsp; web_sessions          | List\<WebSessionInfo\> |
+&emsp; personal_details      |                        |
+&emsp; &emsp; first_name     | String                 |
+&emsp; &emsp; last_name      | String                 |
+&emsp; &emsp; emails         | List\<String\>         |
+&emsp; &emsp; phones         | List\<String\>         |
+&emsp; &emsp; addresses      | List\<Address\>        |
 
 Type `WebSessionInfo` :
 
@@ -119,15 +119,15 @@ The `quote_id` returned by `get-quote`.
 
 If this is missing then Simplex will provide the "Quote" user experience as the first stage in the checkout flow.
 
-### src_crypto_addrs ###
-#### (List\<CryptoAddr\>, optional)
+### src_crypto_addresses ###
+#### (List\<CryptoAddress\>, optional)
 
 The source crypto address(es) from which, when transaction is approved, the cryptocurrency will be sent on the blockchain.
 
 Simplex uses these to run preliminary risk, policy and compliance checks.
 
-### refund_crypto_addr ###
-#### (CryptoAddr, optional)
+### refund_crypto_address ###
+#### (CryptoAddress, optional)
 
 The crypto address to which sent cryptocurrency will be returned in case of a refund.
 
@@ -191,8 +191,8 @@ Specify the primary phone number first, followed by any other phone numbers asso
 
 Simplex uses these for policy and risk purposes, allowing your legitimate users to enjoy the credibility of their identity.
 
-### addrs ###
-#### (List\<Addr\>, optional)
+### addresses ###
+#### (List\<Address\>, optional)
 
 A list of account mailing addresses, starting with the account's primary address.
 

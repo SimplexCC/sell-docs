@@ -52,11 +52,11 @@ The integer counts _millionths of a whole currency unit_.
 An amount of 100.0 (a hundred "somethings") is represented as the integer 100,000,000 (one hundred million), while the integer 30,000 (thirty thousand) represents the amount 0.03 of "something".
 </aside>
 
-### CryptoAddr ###
+### CryptoAddress ###
 
 A string representing a crypto address.
 
-### Addr ###
+### Address ###
 
 An address in the real world:
 

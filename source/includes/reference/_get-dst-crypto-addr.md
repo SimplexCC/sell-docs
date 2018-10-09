@@ -86,16 +86,16 @@ The number of requested destination crypto addresses.
 
 ```json
 {
-  "crypto_addrs": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ]
+  "crypto_addresses": [ "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh" ]
 }
 ```
 
-Name         | Type
------------- | ----
-crypto_addrs | List\<CryptoAddr\>
+Name             | Type
+---------------- | ----
+crypto_addresses | List\<CryptoAddress\>
 
-### crypto_addrs ###
-#### (List\<CryptoAddr\>)
+### crypto_addresses ###
+#### (List\<CryptoAddress\>)
 
 A list of destination crypto addresses.
 

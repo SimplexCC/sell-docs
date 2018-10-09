@@ -22,6 +22,7 @@ includes:
   - reference/xo-status-notify
   - reference/get-xo-status
   - reference/txn-event-notify
+  - reference/kyc-poid-req
 
   - transports/sep
   - transports/overview
