@@ -69,4 +69,14 @@ zip     | String |                             |
 country | String | **required**                | ISO 3166-1 ALPHA-2
 state   | String | (Min. 2 letters if present) |
 
+### Date ###
+
+A date on the Gregorian calendar:
+
+Name    | Type    |              | Description
+------- | ------- | -------------| -----------
+day     | Integer | **required** | day of the month (1-31)
+month   | Integer | **required** | month (1-12)
+year    | Integer | **required** | full year (e.g. 2019)
+
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

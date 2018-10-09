@@ -59,7 +59,7 @@ If `src_currency` represents a fiat currency then `dst_currency` must represent 
 ```json
 {
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
-    "rate": 8000.5
+    "rate": 0.000125
 }
 ```
 

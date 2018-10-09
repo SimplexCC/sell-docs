@@ -14,6 +14,7 @@ includes:
   - api-overview/types
 
   - reference/sep
+  - reference/get-quote-lq
   - reference/get-quote
   - reference/initiate-sell
   - reference/get-dst-crypto-addr
