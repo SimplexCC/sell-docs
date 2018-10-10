@@ -1,6 +1,9 @@
 [ TO COMPLETE ]
 
-* typos
+* add "refund_addr" to example in initiate
+* initiate -- params order between table and example
+* add "return_url" to initiate
+* rename "xo" to "execution_order" (?)
 
 [ P2 ]
 
@@ -21,8 +24,16 @@
 
 [ BETTER DOC -- CONTENT ]
 
+* add a "limitations" section, which discusses product-speecific limitations:
+	* min and max in get-quote
+	* limited currencies in get-quote
+	* quote_id being mandatory in sell
+
+* rephrease uaid explanation
+* more rigirous spec of MsgQueue
+* explanation about xo_id
 * add actual Transport examples to each API
-* more API's
+
 * add "roles"
 * diff "intro" and "flow" for kyc_broker, lqp, lqr
     * they need to include flow of only events that matter to them

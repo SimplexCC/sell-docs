@@ -30,6 +30,7 @@ Direction: **Simplex &rarr; You**
 
 ```json
 {
+  "reason": "delivery",
   "crypto_currency": "BTC",
   "n": 100
 }

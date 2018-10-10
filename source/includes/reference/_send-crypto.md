@@ -6,7 +6,7 @@ If you are the entity providing liquidity for a Simplex transaction, then after 
 
 In case of a refund, if you are the entity that received the cryptocurrency you will be asked to send it back (albeit to a possibly different crypto address from which it was sent).
 
-This request from Simplex results in a you creating an execution order, or an "xo", for which you generate an identifier. Your response includes an identifier for this execution order, together with its status:
+This request from Simplex results in you creating an execution order, or an "xo", for which you generate an identifier. Your response includes an identifier for this execution order, together with its status:
 
 `"completed"` : you fulfilled the execution order by creating a blockchain transaction.
 

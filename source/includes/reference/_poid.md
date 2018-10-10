@@ -4,7 +4,7 @@ A request from Simplex to you, asking you to verify a KYC proof-of-identity docu
 
 The request includes data entered by an end-user and images of a document in support. Simplex is asking that you verify that the data in the images indeed matches that entered by the end-user.
 
-This request from Simplex results in a you starting "KYC POID verification process", for which you also generate an identifier. Your response includes this identifier, together with the status of that verification process:
+This request from Simplex results in you starting "KYC POID verification process", for which you also generate an identifier. Your response includes this identifier, together with the status of that verification process:
 
 `"completed"` : you completed the verification process, and the outcome is included in this response.
 
