@@ -15,19 +15,19 @@ Direction: **You &rarr; Simplex**
 
 ```json
 {
-  "src_currency": "EUR",
-  "src_amount": 100000000, // EUR 100.00
-  "dst_currency": "BTC"
+  "base_currency": "EUR",
+  "base_amount": 100000000, // EUR 100.00
+  "_currency": "BTC"
 }
 ```
 
-Name         | Type        |   |
--------------| ----------- | - |
-src_currency | Currency    | **required**
-src_amount   | MoneyAmount | **required**
-dst_currency | Currency    | **required**
+Name           | Type        |   |
+-------------- | ----------- | - |
+base_currency  | Currency    | **required**
+base_amount    | MoneyAmount | **required**
+quote_currency | Currency    | **required**
 
-### src_currency ###
+### base_currency ###
 #### (Currency, **required**)
 
 The currency to convert from.
@@ -36,12 +36,12 @@ The currency to convert from.
 SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
-### src_amount ###
+### base_amount ###
 #### (MoneyAmount, **required**)
 
-The amount of `src_currency` units, in millionths of a unit, to convert.
+The amount of `base_currency` units, in millionths of a unit, to convert.
 
-### dst_currency ###
+### quote_currency ###
 #### (Currency, **required**)
 
 The currency to convert to.
@@ -50,7 +50,7 @@ The currency to convert to.
 SellCrypto currently supports only EUR as a fiat currency.
 </aside>
 
-If `src_currency` represents a fiat currency then `dst_currency` must represent a crypto currency, and vise versa.
+If `base_currency` represents a fiat currency then `quote_currency` must represent a crypto currency, and vise versa.
 
 ## Response ##
 
@@ -76,7 +76,7 @@ An identifier generated for this quote. Keep this identifier and pass it back to
 ### rate ###
 #### (Float)
 
-The exchange rate: how much to multiply `src_amount` by in order to get the equivalent amount in `dst_currency`.
+The exchange rate: how much to multiply `base_amount` by in order to get the equivalent amount in `quote_currency`.
 
 ## REST ##
 

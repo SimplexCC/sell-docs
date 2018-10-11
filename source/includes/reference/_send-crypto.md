@@ -28,18 +28,18 @@ Direction: **Simplex &rarr; You**
 ```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
-  "dst_crypto_address": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp",
+  "destination_crypto_address": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp",
   "crypto_currency": "BTC",
   "amount": 125000 // 0.125 BTC
 }
 ```
 
-Name               | Type           |   |
------------------- | -------------- | - |
-txn_id             | Id             |
-dst_crypto_address | CryptoAddress  |
-crypto_currency    | CryptoCurrency |
-amount             | MoneyAmount    |
+Name                       | Type           |   |
+-------------------------- | -------------- | - |
+txn_id                     | Id             |
+destination_crypto_address | CryptoAddress  |
+crypto_currency            | CryptoCurrency |
+amount                     | MoneyAmount    |
 
 ### txn_id ###
 #### (Id, optional)
@@ -50,7 +50,7 @@ If you are the entity that initiated the Simplex transaction then this `txn_id` 
 
 Otherwise, you can still use `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing.
 
-### dst_crypto_address ###
+### destination_crypto_address ###
 #### (CryptoAddress, optional)
 
 The destination crypto address to which to send the cryptocurrency.

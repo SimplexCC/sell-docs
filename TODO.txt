@@ -1,9 +1,3 @@
-[ TO COMPLETE ]
-
-* add "refund_addr" to example in initiate
-* initiate -- params order between table and example
-* add "return_url" to initiate
-* rename "xo" to "execution_order" (?)
 
 [ P2 ]
 
@@ -14,8 +8,8 @@
 [ BETTER API ]
 
 * rename "send-crypto" (and associated msgs) to "xo"
+* rename "xo" to "execution_order" (?)
 * unify get-quote and get-quote-lq
-* we should be the ones creating the txn_id, and possibly ask them for their number as well?
 * we should be the ones creating the xo_id; we should ask for their number in the response, as optional convenience for them.
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
 * timestamp: uniform handling in msgs/transports in order to sequence events

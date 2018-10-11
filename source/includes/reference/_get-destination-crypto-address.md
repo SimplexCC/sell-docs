@@ -1,4 +1,4 @@
-# get-dst-crypto-addr #
+# get-destination-crypto-address #
 
 A query from Simplex to you, asking where you would like cryptocurrency sent.
 
@@ -17,11 +17,11 @@ In either case, you may choose any of the following:
  * We may get a bulk of destination addresses from you ahead of time.
  * We may ask you specifically per transaction.
 
-Simplex uses `get-dst-crypto-addr` for the latter two cases.
+Simplex uses `get-destination-crypto-address` for the latter two cases.
 
 ## Synopsis ##
 
-API name: **`get-dst-crypto-addr`**  
+API name: **`get-destination-crypto-address`**  
 Direction: **Simplex &rarr; You**
 
 ## Parameters ##
@@ -103,11 +103,11 @@ A list of destination crypto addresses.
 ## p/REST ##
 
 If you supply a p/REST endpoint for this API, Simplex will use  
-<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/get-dst-crypto-addr`
+<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/get-destination-crypto-address`
 
 ## MsgQueue ##
 
-Alternatively, you may receive this request as a message of type `"get-dst-crypto-addr"` in  
+Alternatively, you may receive this request as a message of type `"get-destination-crypto-address"` in  
 <span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
 
 You respond by  
