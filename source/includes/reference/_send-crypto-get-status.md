@@ -13,15 +13,15 @@ Direction: **Simplex &rarr; You**
 
 ```json
 {
-  "xo_id": "xo:7791528"
+  "execution_order_id": "xo:7791528"
 }
 ```
 
-Name   | Type   |   |
------- | ------ | - |
-xo_id  | String | **required**
+Name               | Type   |   |
+------------------ | ------ | - |
+execution_order_id | String | **required**
 
-### xo_id ###
+### execution_order_id ###
 #### (String, **required**)
 
 The identifier of an execution order previously created by you in response to `send-crypto`.

@@ -13,17 +13,17 @@ Direction: **You &rarr; Simplex**
 
 ```json
 {
-  "xo_id": "xo:7791528",
+  "execution_order_id": "xo:7791528",
   "status": "completed"
 }
 ```
 
-Name   | Type   |   |
------- | ------ | - |
-xo_id  | String | **required**
-status | String | **required**
+Name               | Type   |   |
+------------------ | ------ | - |
+execution_order_id | String | **required**
+status             | String | **required**
 
-### xo_id ###
+### execution_order_id ###
 #### (String, **required**)
 
 The identifier of an execution order previously created by you in response to `send-crypto`.

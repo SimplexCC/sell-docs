@@ -1,16 +1,9 @@
 
-[ P2 ]
-
-* add screenshots/illustrations to "sell-txn-flow"
-* Flow diagram
-* incorporate (TM), "Grog" and "Leather Jackets" jokes
-
 [ BETTER API ]
 
 * rename "send-crypto" (and associated msgs) to "xo"
 * rename "xo" to "execution_order" (?)
 * unify get-quote and get-quote-lq
-* we should be the ones creating the xo_id; we should ask for their number in the response, as optional convenience for them.
 * add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
 * timestamp: uniform handling in msgs/transports in order to sequence events
 * transport: make same URL for GET and POST in REST; ==> will require auth change
@@ -18,6 +11,7 @@
 
 [ BETTER DOC -- CONTENT ]
 
+* add screenshots/illustrations to "sell-txn-flow"
 * add a "limitations" section, which discusses product-speecific limitations:
 	* min and max in get-quote
 	* limited currencies in get-quote
@@ -37,23 +31,17 @@
 * add "FAQ" section
 * add diagram to "flow" section
 
-[ BETTER DOC -- CONTENT ]
-
-* Shorten names:
-	* "address"/"Address" --> "addr"/"Addr"
-	* "source" --> "src"
-	* "destination" --> "dst"
-	* "referrer"/"referer" --> "ref"
-	* "end-users" ==> "users" where possible
-
 [ BETTER DOC -- EASY READ ]
 
+* Shorten names:
+	* "end-users" ==> "users" where possible
 * backtick around all type names and around all parameter names and all api names
 * incorporate (TM), "Grog" and "Leather Jackets" jokes
 * find a name for "wallet app / exchange / affiliate / etc."
 * change to active, rather than passive, voice
 * find a way to explain "currency of cryptocurrency"; maybe "currency of crypto coins" or "... of crypto money"?
 * find a way to diffrentiate between a "Simplex txn" and a "Blockchain txn" (for e.g. send-crypto)
+* incorporate (TM), "Grog" and "Leather Jackets" jokes
 
 [ BETTER DOC -- NAVIGATION ]
 
