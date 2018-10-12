@@ -24,7 +24,7 @@ poid_id | String | **required**
 ### poid_id ###
 #### (String, **required**)
 
-The identifier of the proof-of-identitiy verification process previously created by you in response to `poid`.
+The identifier of the proof-of-identity verification process previously created by you in response to `poid`.
 
 ## Response ##
 

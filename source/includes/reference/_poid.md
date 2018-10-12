@@ -4,7 +4,7 @@ A request from Simplex to you, asking that you verify a KYC proof-of-identity do
 
 The request includes data entered by an end-user, and scanned images of a document in support of the data. Simplex is asking that you verify that the images and legitimate and that the data in them matches that entered by the end-user.
 
-This request from Simplex results in you starting "KYC POID verification process", for which you also generate an identifier. Your response includes this identifier, together with the status of the verification process:
+This request from Simplex results in you starting "KYC proof-of-identity verification process", for which you also generate an identifier. Your response includes this identifier, together with the status of the verification process:
 
 `"pending"` : the verification process is underway.
 
@@ -27,7 +27,40 @@ Direction: **Simplex &rarr; You**
 
 ```json
 {
-  // TODO
+  "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+
+  "claimed_personal_details": {
+    "first_name": "Wile",
+    "last_name": "Coyote",
+    "gender": "male",
+    "date_of_birth": {
+      "day": 17,
+      "month": 9,
+      "year": 1949
+    }
+  },
+
+  "claimed_address": {
+    "line1": "42 Desert Road",
+    "city": "San Diego",
+    "country": "US"
+  },
+
+  "claimed_document": {
+    "type": "id_card",
+    "number": "AT-83428798",
+    "expiration": {
+      "day": 16,
+      "month": 9,
+      "year": 2020
+    },
+    "issuing_country": "US"
+  },
+
+  "document_images": [{
+    "page": "front",
+    "url": "https://images.simplex.com/poid/67873999-9472-4b04-b419-12f2004309b1.jpg"
+  }]
 }
 ```
 
@@ -57,7 +90,7 @@ Type `DocumentPageImage` :
 Name | Type   |              | Description
 -----| ------ | ------------ | -----------
 page | String | **required** | Which page of the document is this image. One of { `"front"`, `"back"` }.
-url  | String | **required** | URL for image data. May be a data URI.
+url  | String | **required** | URL to image.
 
 ### txn_id ###
 #### (Id, **required**)
@@ -155,7 +188,7 @@ Alternatively, Simplex may poll you for the status, again via either p/REST or M
 
 Name    | Type   |   |
 ------- | ------ | - |
-poid_id | Id     | **requried**
+poid_id | Id     | **required**
 status  | String | **required**
 
 ### poid_id ###

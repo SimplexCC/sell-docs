@@ -24,13 +24,14 @@ do
 		## crypto addresses
 		perl -pe 's/1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh//g' |\
 		perl -pe 's/1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp//g' |\
-		## a quote_id
+		## quote_id's
 		perl -pe 's/4c52ecda-e40e-4f94-89da-adc4e2e78b45//g' |\
-		## a txn_id
+		perl -pe 's/bb4fbdef-9abc-41c1-94d9-a670413c4d02//g' |\
+		## txn_id's
 		perl -pe 's/af492cb2-5b07-4318-8ece-be34f479e23b//g' |\
-		## a uaid value
+		## uaid's
 		perl -pe 's/VHJhY2tpbmdDb29raWU//g' |\
-		## account_id
+		## account_id's
 		perl -pe 's/39cb996a-6cc8-43b9-ad37-1102a958ff38//g' |\
 		## vim mode line
 		grep -v '\bmodeline\b.*vim:' |\

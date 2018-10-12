@@ -1,6 +1,6 @@
 # poid-notify-status #
 
-A notification, from you to Simplex, that the status of a proof-of-identitiy verification process has changed.
+A notification, from you to Simplex, that the status of a proof-of-identity verification process has changed.
 
 ## Synopsis ##
 
@@ -26,7 +26,7 @@ status  | String | **required**
 ### poid_id ###
 #### (String, **required**)
 
-The identifier of the proof-of-identitiy verification process previously created by you in response to `poid`.
+The identifier of the proof-of-identity verification process previously created by you in response to `poid`.
 
 ### status ###
 #### (String, **required**)
