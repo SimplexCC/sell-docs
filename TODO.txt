@@ -1,11 +1,7 @@
 
 [ BETTER API ]
 
-* rename "send-crypto" (and associated msgs) to "xo"
-* rename "xo" to "execution_order" (?)
 * unify get-quote and get-quote-lq
-* add "serial_num" to payload of notifications (send-coins, txn-event-notify), or even to all, so client can re-order
-* timestamp: uniform handling in msgs/transports in order to sequence events
 * transport: make same URL for GET and POST in REST; ==> will require auth change
 * transport: allow client-only integrations in REST? In JWT? ==> requires _msg to be part of payload as well, so that it's signed
 

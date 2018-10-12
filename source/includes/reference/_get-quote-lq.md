@@ -11,7 +11,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> The end-user wishes to sell you 0.5 BTC and wishes to know how many EUR they will get in exchange:
+> The end-user wishes to sell 0.5 BTC and wishes to know how many EUR they will get in exchange:
 
 ```json
 {
@@ -22,7 +22,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user is asking how many BTC's they need to sell you in order to receive EUR 1,000:
+> The end-user is asking how many BTC's they need to sell in order to receive EUR 1,000:
 
 ```json
 {
@@ -33,7 +33,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user wishes to buy 0.5 BTC from you and wishes to know how many USD they need for that:
+> The end-user wishes to buy 0.5 BTC and wishes to know how many USD they need to sell for that:
 
 ```json
 {
@@ -44,7 +44,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user is asking how many BTC's they can receive for $16,000 USD:
+> The end-user is asking how many BTC's they will receive in exchange for $16,000 USD:
 
 ```json
 {
@@ -65,16 +65,16 @@ quote_amount   | MoneyAmount | **required** if `base_amount` is missing, or miss
 ### base_currency ###
 #### (Currency, **required**)
 
-The currency to convert from: this is the currency you are buying from the end-user.
+The currency to convert from: this is the currency the end-user wishes to sell.
 
 ### base_amount ###
 #### (MoneyAmount, **required** if `quote_amount` is missing, or missing otherwise)
 
 The amount of `base_currency` units, in millionths of a unit, the end-user wishes to sell.
 
-If this is present then `quote_amount` is missing, and the end-user is asking how many `quote_currency` units they will receive for selling you `base_amount` units of `base_currency`.
+If this is present then `quote_amount` is missing, and the end-user is asking how many `quote_currency` units they will receive for selling `base_amount` units of `base_currency`.
 
-If this is missing then `quote_amount` is present, and the end-user is asking many `base_currency` units they need to sell you in order to receive `quote_amount` units of `quote_currency`.
+If this is missing then `quote_amount` is present, and the end-user is asking how many `base_currency` units they need to sell in order to receive `quote_amount` units of `quote_currency`.
 
 ### quote_currency ###
 #### (Currency, **required**)
@@ -88,9 +88,9 @@ If `base_currency` represents a fiat currency then `quote_currency` will represe
 
 The amount of `quote_currency` units, in millionths of a unit, the end-user wishes to receive.
 
-If this is present then `base_amount` is missing, and the end-user is asking how many `quote_currency` units they need to sell you in order to receive `quote_amount` units of `quote_currency`.
+If this is present then `base_amount` is missing, and the end-user is asking how many `quote_currency` units they need to sell in order to receive `quote_amount` units of `quote_currency`.
 
-If this is missing then `base_amount` is present, and the end-user is asking many `quote_currency` units they will receive for selling you `base_amount` units of `base_currency`.
+If this is missing then `base_amount` is present, and the end-user is asking many `quote_currency` units they will receive for selling `base_amount` units of `base_currency`.
 
 ## Response ##
 
@@ -116,9 +116,9 @@ An identifier for this quote. Simplex will use this identifier when referencing 
 ### rate ###
 #### (Float)
 
-The exchange rate: how many units of `quote_currency` will you pay for one unit of `base_currency`.
+The exchange rate: how many units of `quote_currency` equal one unit of `base_currency`.
 
-The rate provided may take the amount into consideration: Simplex will use this rate for this particular quote only, and will not assume that the rate holds for different amounts.
+The rate you provide may take the amount into consideration: Simplex will use this rate for this particular quote only, and will not assume that the rate holds for different amounts.
 
 ## p/REST ##
 
