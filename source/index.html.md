@@ -14,17 +14,17 @@ includes:
   - api-overview/types
 
   - reference/sep
-  - reference/get-quote-lq
   - reference/get-quote
+  - reference/get-quote-lq
   - reference/initiate-sell
-  - reference/get-dst-crypto-addr
+  - reference/get-destination-crypto-address
   - reference/send-crypto
-  - reference/send-crypto-notify
+  - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
-  - reference/txn-event-notify
   - reference/poid
-  - reference/poid-notify
+  - reference/poid-notify-status
   - reference/poid-get-status
+  - reference/txn-event-notify
 
   - transports/sep
   - transports/overview

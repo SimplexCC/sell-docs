@@ -78,7 +78,7 @@ How much cryptocurrency of type `crypto_currency` to send.
 
 Your response includes an `xo_id`.
 
-If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"completed"` or `"failed"`. You do this using the `send-crypto-notify` API.
+If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"completed"` or `"failed"`. You do this using the `send-crypto-notify-status` API.
 
 Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `send-crypto-get-status`.
 
