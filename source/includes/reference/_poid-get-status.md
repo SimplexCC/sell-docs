@@ -9,7 +9,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> Simplex querying you for the status of a proof-of-identity verification process:
+> Example: Simplex querying you for the status of a proof-of-identity verification process:
 
 ```json
 {
@@ -28,7 +28,7 @@ The identifier of the proof-of-identity verification process previously created 
 
 ## Response ##
 
-> You responding to a Simplex query:
+> Example: you responding to the Simplex query:
 
 ```json
 {

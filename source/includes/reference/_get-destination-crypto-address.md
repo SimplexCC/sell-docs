@@ -26,7 +26,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> Simplex querying you ahead of time for a bulk of addresses:
+> Example: Simplex querying you, ahead of time, for a bulk of addresses:
 
 ```json
 {
@@ -36,7 +36,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> Simplex querying you for a destination crypto address for a specific transaction:
+> Example: Simplex querying you for a destination crypto address for a specific transaction:
 
 ```json
 {
@@ -83,7 +83,7 @@ The number of requested destination crypto addresses.
 
 ## Response ##
 
-> You responding to a Simplex query:
+> Example: you respond to the Simplex query:
 
 ```json
 {

@@ -23,7 +23,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> Example:
+> Example request:
 
 ```json
 {
@@ -67,7 +67,7 @@ How much cryptocurrency of type `crypto_currency` to send.
 
 ## Response ##
 
-> An example response:
+> Example response:
 
 ```json
 {

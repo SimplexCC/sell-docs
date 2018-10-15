@@ -10,14 +10,14 @@ The base URL for Simplex API's is:
 
 All API's must be authenticated. To authenticate, supply your API key as the value of either the `_apikey` query parameter or the `X-Simplex-Auth` HTTP header.
 
-> Using a query parameter:
+> Example authentication using a query parameter:
 
 ```bash
 curl \
   'https://api.simplexcc.com/v1/get-quote?_apikey=8d20e7bd89064cd4a9c379d66c53efc8&...'
 ```
 
-> Using an HTTP header:
+> Example authentication using an HTTP header:
 
 ```bash
 curl \
@@ -29,7 +29,7 @@ curl \
 
 For API's that use POST, set the request's `Content-Type` header to `"application/json"` and supply an appropriate JSON object in the request body.
 
-> Example:
+> Example parameter passing in POST:
 
 ```bash
 curl \
@@ -42,7 +42,7 @@ curl \
 
 For API's that use GET, specify each request parameter as a properly-escaped query parameter.
 
-> Example:
+> Example parameter passing in GET:
 
 ```bash
 curl \
@@ -62,7 +62,7 @@ When an API has no response an empty HTTP response is returned.
 $ curl \
   -i \
   -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?src_currency=EUR&src_amount=100000000&dst_currency=BTC'
+  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 200 OK
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 {
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
-    "rate": 8000.5
+    "rate": 0.000125
 }
 ```
 
@@ -96,7 +96,7 @@ Successful requests do not return an `_error` field.
 $ curl \
   -i \
   -H 'X-Simplex-Auth: BAD_API_KEY' \
-  'https://api.simplexcc.com/v1/get-quote?src_currency=EUR&src_amount=100000000&dst_currency=BTC'
+  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 401 Unauthorized
@@ -113,14 +113,14 @@ Content-Type: application/json
 $ curl \
   -i \
   -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?src_currency=GOLD&src_amount=100000000&dst_currency=BTC'
+  'https://api.simplexcc.com/v1/get-quote?base_currency=GOLD&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
 
 {
-    "_error": "Invalid src_currency"
+    "_error": "Invalid base_currency"
 }
 ```
 

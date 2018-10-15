@@ -2,8 +2,6 @@
 [ BETTER API ]
 
 * unify get-quote and get-quote-lq
-* transport: make same URL for GET and POST in REST; ==> will require auth change
-* transport: allow client-only integrations in REST? In JWT? ==> requires _msg to be part of payload as well, so that it's signed
 
 [ BETTER DOC -- CONTENT ]
 
@@ -35,14 +33,10 @@
 * incorporate (TM), "Grog" and "Leather Jackets" jokes
 * find a name for "wallet app / exchange / affiliate / etc."
 * change to active, rather than passive, voice
+* navigation: add internal links
+* navigation: change H2 in API chapters to h3, so they don't show up in TOC
 * find a way to explain "currency of cryptocurrency"; maybe "currency of crypto coins" or "... of crypto money"?
 * find a way to diffrentiate between a "Simplex txn" and a "Blockchain txn" (for e.g. send-crypto)
-* incorporate (TM), "Grog" and "Leather Jackets" jokes
-
-[ BETTER DOC -- NAVIGATION ]
-
-* add internal links
-* change H2 in API chapters to h3, so they don't show up in TOC
 
 [ PREETIFY ]
 
@@ -83,19 +77,10 @@
 * define the product types are "Buy", "Sell", and consider "Withdrawal" as possible next
 * define the customer types as "KYC vendor", "Wallet / Exchange", "LQP", "LQR", "Affiliate"
 
-[ RE-ADD JWT ]
-
-* In api-overview/_concepts: add "parameter encoding" so allow encoding with JWT, signing with apikey
-
 [ BETTER TRANSPORT ]
 
 * Allow GET for all API's by encoding hierarchical params as "a.b"
 * Allow GET with "jwt" token on query string, and signing
-
-[ NOTES FOR DAN ]
-
-* account_details: all keys inside are optional, as well as inside
-* don't require E.164 format for phone numbers
-* your examples of "US" state is wrong
-* renamed fields (source->src, transaction->txn, source->src, address->addr, referer->ref, ...)
-* added refund_crypto_addr
+* make same URL for GET and POST in REST; ==> will require auth change
+* allow client-only integrations in REST? In JWT? ==> requires _msg to be part of payload as well, so that it's signed
+* re-add JWT: In api-overview/_concepts: add "parameter encoding" so allow encoding with JWT, signing with apikey

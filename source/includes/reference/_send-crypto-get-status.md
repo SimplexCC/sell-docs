@@ -9,7 +9,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> Simplex querying you for the status of an execution order:
+> Example: Simplex querying you for the status of an execution order:
 
 ```json
 {
@@ -28,7 +28,7 @@ The identifier of an execution order previously created by you in response to `s
 
 ## Response ##
 
-> You responding to a Simplex query:
+> Example: you responding to the Simplex query:
 
 ```json
 {

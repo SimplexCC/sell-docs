@@ -9,7 +9,7 @@ Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
-> You notifying Simplex of an execution order status change:
+> Example: you notifying Simplex of an execution order status change:
 
 ```json
 {

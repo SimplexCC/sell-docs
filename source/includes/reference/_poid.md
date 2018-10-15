@@ -173,7 +173,7 @@ You are asked to verify that these images are authentic, and that the informatio
 
 ## Response ##
 
-> An example response:
+> Example response:
 
 ```json
 {

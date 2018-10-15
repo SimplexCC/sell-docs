@@ -21,7 +21,7 @@ Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
-> Example request
+> Example request:
 
 ```json
 {

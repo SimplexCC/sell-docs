@@ -9,7 +9,7 @@ Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
-> You notifying Simplex of a proof-of-identity verification process status change:
+> Example: you notifying Simplex of a proof-of-identity verification process status change:
 
 ```json
 {

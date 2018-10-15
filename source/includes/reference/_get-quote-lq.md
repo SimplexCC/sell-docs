@@ -11,7 +11,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> The end-user wishes to sell 0.5 BTC and wishes to know how many EUR they will get in exchange:
+> Example: the end-user wishes to sell 0.5 BTC and wishes to know how many EUR they will get in exchange:
 
 ```json
 {
@@ -22,7 +22,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user is asking how many BTC's they need to sell in order to receive EUR 1,000:
+> Example: the end-user is asking how many BTC's they need to sell in order to receive EUR 1,000:
 
 ```json
 {
@@ -33,7 +33,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user wishes to buy 0.5 BTC and wishes to know how many USD they need to sell for that:
+> Example: the end-user wishes to buy 0.5 BTC and wishes to know how many USD they need to sell for that:
 
 ```json
 {
@@ -44,7 +44,7 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-> The end-user is asking how many BTC's they will receive in exchange for $16,000 USD:
+> Example: the end-user is asking how many BTC's they will receive in exchange for $16,000 USD:
 
 ```json
 {
