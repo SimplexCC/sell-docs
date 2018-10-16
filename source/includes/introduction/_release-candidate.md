@@ -1,4 +1,4 @@
-# This is a release candidate #
+# Disclaimer #
 
 <aside class="warning">
 You are reading a <strong>Release Candidate</strong>. Usual caveats apply.
