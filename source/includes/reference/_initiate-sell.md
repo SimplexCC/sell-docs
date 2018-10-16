@@ -4,7 +4,7 @@ Create a SellCrypto transaction, and have the end-user start the checkout flow.
 
 A SellCrypto transaction is initiated by the entity representing the end-user, such as a wallet app, an exchange, etc.
 
-Each transaction has an identifier, which you use when referring to the transaction. This identifier is created by you, for your convenience, and passed to Simplex. It must be unique, so a good practice is to use a UUID4.
+Each transaction has an identifier, which you use when referring to the transaction. This identifier is created by Simplex and returned in the response.
 
 Other than `referer_url` **all parameters are optional**.
 

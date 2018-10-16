@@ -17,8 +17,7 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "BTC",
   "base_amount": 500000, // BTC 0.5
-  "quote_currency": "EUR",
-  "quote_amount": null,
+  "quote_currency": "EUR"
 }
 ```
 
@@ -27,9 +26,8 @@ Direction: **You &rarr; Simplex**
 ```json
 {
   "base_currency": "BTC",
-  "base_amount": null,
   "quote_currency": "EUR",
-  "quote_amount": 1000000000 // EUR 1,000.0
+  "quote_amount": 1000000000 // EUR 1000.0
 }
 ```
 
@@ -38,7 +36,6 @@ Direction: **You &rarr; Simplex**
 ```json
 {
   "base_currency": "USD",
-  "base_amount": null,
   "quote_currency": "BTC",
   "quote_amount": 500000 // BTC 0.5
 }
@@ -50,8 +47,7 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "USD",
   "base_amount": 16000000000, // USD $16,000
-  "quote_currency": "BTC",
-  "quote_amount": null
+  "quote_currency": "BTC"
 }
 ```
 
