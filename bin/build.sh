@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bundle exec middleman build
+vagrant ssh -c "cd /vagrant ; ./bin/vagrant-build.sh"
