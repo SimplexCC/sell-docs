@@ -1,0 +1,141 @@
+body {
+  color: #333;
+}
+
+/*****************************************************************************/
+
+/**
+ ** LOGO
+ **/
+
+#logo {
+  padding-right: 4px;
+  height: 60px;
+  position: relative;
+  top: -1px;
+}
+
+/*****************************************************************************/
+
+/**
+ ** BANNER
+ **/
+
+.banner {
+  color: #666;
+}
+
+.banner h1 {
+  font-weight: 800;
+}
+
+/**
+ ** BANNER BG IMAGE WITH FILTER
+ **/
+
+.banner {
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../images/about-us-1.jpg");
+  filter: opacity(45%) brightness(100%);
+}
+
+.banner-inside {
+  position: relative;
+}
+
+/*****************************************************************************/
+
+/**
+ ** CARD
+ **/
+
+.card {
+  color: #777;
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-body {
+  padding: 2em 1em;
+  font-size: 110%;
+  line-height: 150%;
+}
+
+.card-title {
+  color: #484;
+  padding-bottom: 0.3em;
+}
+
+/**
+ ** CARD HOVER EFFECT
+ **/
+
+.card {
+  transition-duration: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  color: #000;
+}
+
+.card:hover::before {
+  filter: opacity(100%);
+}
+
+/**
+ ** CARD BG IMAGE
+ **/
+
+.card {
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: 15%;
+  background-position: bottom 4px right 4px;
+  filter: opacity(50%);
+}
+
+.card a {
+  position: relative;
+}
+
+.card-icon-wallet::before {
+  background-image: url("../images/wallet.svg");
+}
+
+.card-icon-bitcoin::before {
+  background-image: url("../images/bitcoin.svg");
+}
+
+.card-icon-id-card::before {
+  background-image: url("../images/id-card.svg");
+}
+
+
+/*****/
+
+
+
