@@ -18,9 +18,6 @@ includes:
   - reference/send-crypto
   - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
-  - reference/poid
-  - reference/poid-notify-status
-  - reference/poid-get-status
   - reference/txn-event-notify
 
   - transports/sep
