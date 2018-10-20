@@ -1,6 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 body {
   color: #333;
+  font-family: "Montserrat", "Helvetiva Neue", "Helvetica", sans-serif;
 }
+
 
 /*****************************************************************************/
 
@@ -77,6 +82,7 @@ body {
 .card-title {
   color: #484;
   padding-bottom: 0.3em;
+  font-weight: 800;
 }
 
 /**
@@ -84,16 +90,16 @@ body {
  **/
 
 .card {
-  transition-duration: 0.25s;
+  transition-duration: 0.40s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   color: #000;
 }
 
 .card:hover::before {
-  filter: opacity(100%);
+  filter: opacity(100%) grayscale(0%);
 }
 
 /**
@@ -112,10 +118,12 @@ body {
   width: 100%;
   height: 100%;
 
+  transition-duration: 0.40s;
+
   background-repeat: no-repeat;
   background-size: 15%;
   background-position: bottom 4px right 4px;
-  filter: opacity(50%);
+  filter: opacity(50%) grayscale(25%);
 }
 
 .card a {
