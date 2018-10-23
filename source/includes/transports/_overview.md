@@ -8,7 +8,7 @@ The base URL for Simplex API's is:
 
 ## Authentication ##
 
-All API's must be authenticated. To authenticate, supply your API key as the value of either the `_apikey` query parameter or the `X-Simplex-Auth` HTTP header.
+All API's must be authenticated. To authenticate, supply your API key as the value of either the `_apikey` query parameter or the `Authorization` HTTP header with the `apikey` authorization scheme.
 
 > Example authentication using a query parameter:
 
@@ -21,7 +21,7 @@ curl \
 
 ```bash
 curl \
-  -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
   'https://api.simplexcc.com/v1/get-quote?...'
 ```
 
@@ -35,9 +35,9 @@ For API's that use POST, set the request's `Content-Type` header to `"applicatio
 curl \
   -X POST \
   -H 'Content-Type: application/json' \
-  -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
-  -d '{"xo_id": "xo:7791528", "status": "completed"}' \
-  'https://api.simplexcc.com/v1/xo-status-notify'
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
+  -d '{"execution_order_id": "xo:7791528", "status": "completed"}' \
+  'https://api.simplexcc.com/v1/send-crypto-status-notify'
 ```
 
 For API's that use GET, specify each request parameter as a properly-escaped query parameter.
@@ -46,8 +46,8 @@ For API's that use GET, specify each request parameter as a properly-escaped que
 
 ```bash
 curl \
-  -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?src_currency=EUR&src_amount=100000000&dst_currency=BTC'
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
+  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&src_amount=100000000&quote_currency=BTC'
 ```
 
 ## Response ##
@@ -61,7 +61,7 @@ When an API has no response an empty HTTP response is returned.
 ```bash
 $ curl \
   -i \
-  -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
   'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
@@ -95,7 +95,7 @@ Successful requests do not return an `_error` field.
 ```bash
 $ curl \
   -i \
-  -H 'X-Simplex-Auth: BAD_API_KEY' \
+  -H 'Authorization: apikey BAD_API_KEY' \
   'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
@@ -112,7 +112,7 @@ Content-Type: application/json
 ```bash
 $ curl \
   -i \
-  -H 'X-Simplex-Auth: 8d20e7bd89064cd4a9c379d66c53efc8' \
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
   'https://api.simplexcc.com/v1/get-quote?base_currency=GOLD&base_amount=100000000&quote_currency=BTC'
 ```
 ```
