@@ -1,7 +1,6 @@
 #!/bin/bash
 
-build_date=$(date "+%Y%m%d")
-build_dir="build/${build_date}"
+build_dir="build"
 
 rm -rf ${build_dir}
 mkdir -p ${build_dir}
