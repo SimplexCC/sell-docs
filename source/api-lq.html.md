@@ -18,6 +18,9 @@ includes:
   - reference/send-crypto
   - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
+# - reference/expect-txn
+# - reference/expect-txn-notify-status
+# - reference/expect-txn-get-status
   - reference/txn-event-notify
 
   - transports/sep
