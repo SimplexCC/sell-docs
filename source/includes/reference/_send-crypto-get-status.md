@@ -36,12 +36,12 @@ The identifier of an execution order previously created by you in response to `s
 }
 ```
 
-Name   | Type
------- | ----
-status | String
+Name   | Type   |   |
+------ | ------ | - |
+status | String | **required**
 
 ### status ###
-#### (String)
+#### (String, **required**)
 
 The status of the execution order.
 

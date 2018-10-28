@@ -36,9 +36,9 @@ The identifier of the proof-of-identity verification process previously created 
 }
 ```
 
-Name   | Type
------- | ----
-status | String
+Name   | Type   |   |
+------ | ------ | - |
+status | String | **required**
 
 ### status ###
 #### (String, **required**)

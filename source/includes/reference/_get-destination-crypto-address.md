@@ -91,12 +91,12 @@ The number of requested destination crypto addresses.
 }
 ```
 
-Name             | Type
----------------- | ----
-crypto_addresses | List\<CryptoAddress\>
+Name             | Type                  |   |
+---------------- | --------------------- | - |
+crypto_addresses | List\<CryptoAddress\> | **required**
 
 ### crypto_addresses ###
-#### (List\<CryptoAddress\>)
+#### (List\<CryptoAddress\>, **required**)
 
 A list of destination crypto addresses.
 

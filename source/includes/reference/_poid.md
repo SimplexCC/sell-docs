@@ -182,7 +182,7 @@ You are asked to verify that these images are authentic, and that the informatio
 }
 ```
 
-If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"success"`, `"soft_fail"` or `"hard_fail"`. You do this using the `poid-notify-status` API.
+If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"success"`, `"soft_fail"` or `"hard_fail"`. You do this using the `poid-notify-status` message.
 
 Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `poid-get-status`.
 
@@ -206,7 +206,7 @@ One of { `"pending"`, `"success"`, `"soft_fail"`, `"hard_fail"` }.
 ## p/REST ##
 
 If you supply a p/REST endpoint for this API, Simplex will use  
-<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/poid`
+<span class="http-verb http-post">POST</span> `https://${YOUR_API_URL}/poid`
 
 ## MsgQueue ##
 

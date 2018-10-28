@@ -216,10 +216,10 @@ Simplex uses these for policy and risk purposes, allowing your legitimate users 
 }
 ```
 
-Name    | Type
-------- | ----
-txn_id  | Id
-txn_url | String
+Name    | Type   |   |
+------- | ------ | - |
+txn_id  | Id     | **required**
+txn_url | String | **required**
 
 ### txn_id ###
 #### (Id, **required**)
@@ -227,7 +227,7 @@ txn_url | String
 The identifier for the newly-created transaction. Simplex will use this identifier when referencing the transaction in subsequent API's.
 
 ### txn_url ###
-#### (String)
+#### (String, **required**)
 
 The URL where the checkout flow will take place. You should direct the end-user's browser there, in either a new tab, an iframe, or a webview in your app.
 

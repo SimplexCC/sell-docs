@@ -94,23 +94,23 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 
 ```json
 {
-    "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
-    "rate": 8000
+  "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
+  "rate": 8000
 }
 ```
 
-Name     | Type
--------- | ----
-quote_id | Id
-rate     | Float
+Name     | Type  |   |
+-------- | ----- | - |
+quote_id | Id    | **required**
+rate     | Float | **required**
 
 ### quote_id ###
-#### (Id)
+#### (Id, **required**)
 
 An identifier for this quote. Simplex will use this identifier when referencing this particular quote in subsequent API's.
 
 ### rate ###
-#### (Float)
+#### (Float, **required**)
 
 The exchange rate: how many units of `quote_currency` equal one unit of `base_currency`.
 
@@ -118,18 +118,11 @@ The rate you provide may take the amount into consideration: Simplex will use th
 
 ## p/REST ##
 
-If you supply a p/REST endpoint for this API, Simplex will use  
+`get-quote-lq` is only supported as a p/REST endpoint. You must supply an endpoint for it, and Simplex will use  
 <span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/get-quote-lq`
 
 ## MsgQueue ##
 
-Alternatively, you may receive this request as a message of type `"get-quote-lq"` in  
-<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
-
-You respond by  
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/response`
-
-You will need to also acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
+`get-quote-lq` is not supported in MsgQueue. You must supply a p/REST endpoint for it.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

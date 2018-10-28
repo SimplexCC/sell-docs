@@ -28,21 +28,21 @@ Direction: **Simplex &rarr; You**
 ```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
-  "destination_crypto_address": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp",
   "crypto_currency": "BTC",
-  "amount": 125000 // 0.125 BTC
+  "crypto_amount": 125000, // 0.125 BTC
+  "destination_crypto_address": "1GzW2M6L54DGMUUv2DTrdPTt8PX6ck5SYp"
 }
 ```
 
 Name                       | Type           |   |
 -------------------------- | -------------- | - |
-txn_id                     | Id             |
-destination_crypto_address | CryptoAddress  |
-crypto_currency            | CryptoCurrency |
-amount                     | MoneyAmount    |
+txn_id                     | Id             | **required**
+crypto_currency            | CryptoCurrency | **required**
+crypto_amount              | MoneyAmount    | **required**
+destination_crypto_address | CryptoAddress  | **required**
 
 ### txn_id ###
-#### (Id, optional)
+#### (Id, **required**)
 
 The identifier of the Simplex transaction involved.
 
@@ -50,20 +50,20 @@ If you are the entity that initiated the Simplex transaction then this `txn_id` 
 
 Otherwise, you can still use `txn_id` to correlate `send-crypto`'s with their corresponding `txn-event-notify`'s, as well as for auditing.
 
-### destination_crypto_address ###
-#### (CryptoAddress, optional)
-
-The destination crypto address to which to send the cryptocurrency.
-
 ### crypto_currency ###
-#### (CryptoCurrency, optional)
+#### (CryptoCurrency, **required**)
 
 The crypto currency (the currency, not the amount) to send.
 
-### amount ###
-#### (MoneyAmount, optional)
+### crypto_amount ###
+#### (MoneyAmount, **required**)
 
 How much cryptocurrency of type `crypto_currency` to send.
+
+### destination_crypto_address ###
+#### (CryptoAddress, **required**)
+
+The destination crypto address to which to send the cryptocurrency.
 
 ## Response ##
 
@@ -78,7 +78,7 @@ How much cryptocurrency of type `crypto_currency` to send.
 
 Your response includes an `execution_order_id`.
 
-If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"completed"` or `"failed"`. You do this using the `send-crypto-notify-status` API.
+If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"completed"` or `"failed"`. You do this using the `send-crypto-notify-status` message.
 
 Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `send-crypto-get-status`.
 

@@ -99,18 +99,18 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 }
 ```
 
-Name     | Type
--------- | ----
-quote_id | Id
-rate     | Float
+Name     | Type  |   |
+-------- | ----- | - |
+quote_id | Id    | **required**
+rate     | Float | **required**
 
 ### quote_id ###
-#### (Id)
+#### (Id, **required**)
 
 An identifier for this quote. Keep this identifier and pass it back to Simplex when creating a transaction based on this quote.
 
 ### rate ###
-#### (Float)
+#### (Float, **required**)
 
 The exchange rate: how many units of `quote_currency` equal one unit of `base_currency`.
 

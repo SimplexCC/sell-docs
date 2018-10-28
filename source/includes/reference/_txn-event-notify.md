@@ -23,22 +23,22 @@ Direction: **Simplex &rarr; You**
 
 Name      | Type      |   |
 --------- | --------- | - |
-txn_id    | Id        |
-timestamp | Timestamp |
-event     | String    |
+txn_id    | Id        | **required**
+timestamp | Timestamp | **required**
+event     | String    | **required**
 
 ### txn_id ###
-#### (Id)
+#### (Id, **required**)
 
 Identifier of the Simplex transaction.
 
 ### timestamp ###
-#### (Timestamp)
+#### (Timestamp, **required**)
 
 Timestamp of when the event occurred.
 
 ### event ###
-#### (String)
+#### (String, **required**)
 
 The type of event that occurred in the transaction.
 
