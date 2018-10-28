@@ -118,11 +118,9 @@ The rate you provide may take the amount into consideration: Simplex will use th
 
 ## p/REST ##
 
-`get-quote-lq` is only supported as a p/REST endpoint. You must supply an endpoint for it, and Simplex will use  
+`get-quote-lq` is only supported as a p/REST endpoint: you must supply an endpoint for it.
+
+Simplex will use  
 <span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/get-quote-lq`
-
-## MsgQueue ##
-
-`get-quote-lq` is not supported in MsgQueue. You must supply a p/REST endpoint for it.
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
