@@ -22,7 +22,8 @@ Direction: **You &rarr; Simplex**
 Name         | Type   |   |
 ------------ | ------ | - |
 txn_check_id | String | **required**
-status       | String |
+status       | String | **required**
+reason       | String |
 
 ### txn_check_id ###
 #### (String, **required**)

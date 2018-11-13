@@ -12,7 +12,7 @@ This request from Simplex results in you starting "KYC proof-of-identity verific
 
 `"soft_fail"` : the verification process cannot proceed (e.g. images are blurry, country is not supported, etc.). This is not necessarily an indication of data mismatch.
 
-`"hard_fail"` : mismatch between entered data and the images provided, or the images are not trustworthy.
+`"hard_fail"` : mismatch between entered data and the images provided, images are not trustworthy, or person did not pass screening.
 
 In all cases, your response must include a verification process identifier which Simplex can use to query you about its status.
 
@@ -28,6 +28,7 @@ Direction: **Simplex &rarr; You**
 ```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+  "user_id": "595b88bea687c5dd444f99e0004a45d3",
 
   "claimed_personal_details": {
     "first_name": "Wile",
@@ -68,6 +69,7 @@ Name                      | Type                      |              | Descripti
 ------------------------- | ------------------------- | ------------ | -----------
                           |                           |              |
 txn_id                    | Id                        | **required** |
+user_id                   | Id                        | **required** |
                           |                           |              |
 claimed_personal_details  |                           | **required** |
 &emsp; first_name         | String                    | **required** |
@@ -96,6 +98,13 @@ url  | String | **required** | URL to image.
 #### (Id, **required**)
 
 The identifier of the Simplex transaction involved.
+
+### user_id ###
+#### (Id, **required**)
+
+A unique identifier, created by Simplex, for the end-user performing the transaction.
+
+Same `user_id` as a previous message means same end-user.
 
 ### claimed_personal_details.first_name ###
 #### (String, **required**)

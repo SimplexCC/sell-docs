@@ -23,7 +23,10 @@ Direction: **Simplex &rarr; You**
 
 ```json
 {
+  "reason": "delivery",
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
+  "user_id": "595b88bea687c5dd444f99e0004a45d3",
+  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38",
   "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
   "crypto_currency": "BTC",
   "crypto_amount": 125000, // 0.125 BTC
@@ -33,21 +36,46 @@ Direction: **Simplex &rarr; You**
 
 Name                       | Type           |   |
 -------------------------- | -------------- | - |
+reason                     | String         | **required**
 txn_id                     | Id             | **required**
+user_id                    | Id             | **required**
+account_id                 | String         |
 quote_id                   | Id             | **required**
 crypto_currency            | CryptoCurrency | **required**
 crypto_amount              | MoneyAmount    | **required**
 destination_crypto_address | CryptoAddress  | **required**
+
+### reason ###
+#### (String, **required**)
+
+The reason you are receiving cryptocurrency.
+
+One of { `"delivery"`, `"refund"` }.
+
+ * `"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction)
+ * `"refund"` : the reverse of "delivery" -- we need to return, to the original sender, cryptocurrency that you previously received.
 
 ### txn_id ###
 #### (Id, **required**)
 
 The identifier of the Simplex transaction involved.
 
+### user_id ###
+#### (Id, **required**)
+
+A unique identifier, crearted by Simplex, for the end-user performing the transaction.
+
+Same `user_id` as a previous message means same end-user.
+
+### account_id ###
+#### (String, optional)
+
+For wallets/exchanges: the end-user's account id on your system. This is what you sent Simplex in `initiate-sell`.
+
 ### quote_id ###
 #### (Id, **required**)
 
-The identifier of a quote you previously supplied Simplex as a response to a `get-quote-lq` message, and on which this transaction is based.
+The identifier of the quote on which this transactino is based.
 
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
