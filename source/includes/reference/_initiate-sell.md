@@ -82,7 +82,7 @@ txn_details                    |                        |
 &emsp; refund_crypto_address   | CryptoAddress          |
                                |                        |
 account_details                |                        |
-&emsp; account_id              | String                 |
+&emsp; account_id              | Id                     |
 &emsp; web_sessions            | List\<WebSessionInfo\> |
 &emsp; personal_details        |                        |
 &emsp; &emsp; first_name       | String                 |
@@ -135,7 +135,7 @@ The crypto address to which sent cryptocurrency will be returned in case of a re
 If this is not provided, and only in case a refund is required, Simplex will invoke the `get-destination-crypto-address` API with `"reason": "refund"`.
 
 ### account_details.account_id ###
-#### (String, optional)
+#### (Id, optional)
 
 The identifier you use for the end-user's account.
 

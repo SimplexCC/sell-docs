@@ -28,7 +28,8 @@ Direction: **Simplex &rarr; You**
 ```json
 {
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
-  "user_id": "595b88bea687c5dd444f99e0004a45d3",
+  "user_id": "1504241c7d83476aa3adcd54e2272d25",
+  "user_aka_ids": [],
 
   "claimed_personal_details": {
     "first_name": "Wile",
@@ -70,6 +71,7 @@ Name                      | Type                      |              | Descripti
                           |                           |              |
 txn_id                    | Id                        | **required** |
 user_id                   | Id                        | **required** |
+user_aka_ids              | List<Id>                  | **required** |
                           |                           |              |
 claimed_personal_details  |                           | **required** |
 &emsp; first_name         | String                    | **required** |
@@ -105,6 +107,11 @@ The identifier of the Simplex transaction involved.
 A unique identifier, created by Simplex, for the end-user performing the transaction.
 
 Same `user_id` as a previous message means same end-user.
+
+### user_aka_ids ###
+#### (List<Id>, **required**)
+
+A list of unique identifiers, on top of `user_id`, by which the user is also known.
 
 ### claimed_personal_details.first_name ###
 #### (String, **required**)

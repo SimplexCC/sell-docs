@@ -20,11 +20,11 @@ Direction: **You &rarr; Simplex**
 
 Name    | Type   |   |
 ------- | ------ | - |
-poid_id | String | **required**
+poid_id | Id     | **required**
 status  | String | **required**
 
 ### poid_id ###
-#### (String, **required**)
+#### (Id, **required**)
 
 The identifier of the proof-of-identity verification process previously created by you in response to `poid`.
 

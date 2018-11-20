@@ -17,12 +17,12 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-Name         | Type   |   |
------------- | ------ | - |
-txn_check_id | String | **required**
+Name         | Type |   |
+------------ | ---- | - |
+txn_check_id | Id   | **required**
 
 ### txn_check_id ###
-#### (String, **required**)
+#### (Id, **required**)
 
 The identifier of a transaction check process previously created by you in response to `expect-crypto`.
 

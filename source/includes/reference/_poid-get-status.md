@@ -17,12 +17,12 @@ Direction: **Simplex &rarr; You**
 }
 ```
 
-Name    | Type   |   |
-------- | ------ | - |
-poid_id | String | **required**
+Name    | Type |   |
+------- | -----| - |
+poid_id | Id   | **required**
 
 ### poid_id ###
-#### (String, **required**)
+#### (Id, **required**)
 
 The identifier of the proof-of-identity verification process previously created by you in response to `poid`.
 

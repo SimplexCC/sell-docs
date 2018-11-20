@@ -26,6 +26,7 @@ Direction: **Simplex &rarr; You**
   "reason": "delivery",
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "user_id": "595b88bea687c5dd444f99e0004a45d3",
+  "user_aka_ids": ["1504241c7d83476aa3adcd54e2272d25", "38b583c7ccd246ffaed4ab0232b71647"],
   "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38",
   "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
   "crypto_currency": "BTC",
@@ -39,7 +40,8 @@ Name                       | Type           |   |
 reason                     | String         | **required**
 txn_id                     | Id             | **required**
 user_id                    | Id             | **required**
-account_id                 | String         |
+user_aka_ids               | List<Id>       | **required**
+account_id                 | Id             |
 quote_id                   | Id             | **required**
 crypto_currency            | CryptoCurrency | **required**
 crypto_amount              | MoneyAmount    | **required**
@@ -67,8 +69,13 @@ A unique identifier, crearted by Simplex, for the end-user performing the transa
 
 Same `user_id` as a previous message means same end-user.
 
+### user_aka_ids ###
+#### (List<Id>, **required**)
+
+A list of unique identifiers, on top of `user_id`, by which the user is also known.
+
 ### account_id ###
-#### (String, optional)
+#### (Id, optional)
 
 For wallets/exchanges: the end-user's account id on your system. This is what you sent Simplex in `initiate-sell`.
 

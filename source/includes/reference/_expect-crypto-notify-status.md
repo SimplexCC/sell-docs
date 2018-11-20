@@ -21,12 +21,12 @@ Direction: **You &rarr; Simplex**
 
 Name         | Type   |   |
 ------------ | ------ | - |
-txn_check_id | String | **required**
+txn_check_id | Id     | **required**
 status       | String | **required**
 reason       | String |
 
 ### txn_check_id ###
-#### (String, **required**)
+#### (Id, **required**)
 
 The identifier of the transaction check process previously created by you in response to `expect-crypto`.
 

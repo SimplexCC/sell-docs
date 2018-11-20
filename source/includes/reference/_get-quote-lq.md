@@ -99,15 +99,21 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 }
 ```
 
-Name     | Type  |   |
--------- | ----- | - |
-quote_id | Id    | **required**
-rate     | Float | **required**
+Name      | Type      |   |
+--------- | --------- | - |
+quote_id  | Id        | **required**
+expiry_ts | Timestamp | **required**
+rate      | Float     | **required**
 
 ### quote_id ###
 #### (Id, **required**)
 
 An identifier for this quote. Simplex will use this identifier when referencing this particular quote in subsequent API's.
+
+### expiry_ts ###
+#### (Timestamp, **required**)
+
+Timestamp at which this quote expires.
 
 ### rate ###
 #### (Float, **required**)
