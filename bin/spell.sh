@@ -33,6 +33,12 @@ do
 		perl -pe 's/VHJhY2tpbmdDb29raWU//g' |\
 		## account_id's
 		perl -pe 's/39cb996a-6cc8-43b9-ad37-1102a958ff38//g' |\
+		## user id's
+		perl -pe 's/38b583c7ccd246ffaed4ab0232b71647//g' |\
+		perl -pe 's/1504241c7d83476aa3adcd54e2272d25//g' |\
+		perl -pe 's/595b88bea687c5dd444f99e0004a45d3//g' |\
+		# blockchain_txn_hash's
+		perl -pe 's/f1eddb27fced47de0684f913714b43e589f23fbb9ef17ceaa9f75e290f1541af//g' |\
 		## vim mode line
 		grep -v '\bmodeline\b.*vim:' |\
 		aspell --lang=en list |\

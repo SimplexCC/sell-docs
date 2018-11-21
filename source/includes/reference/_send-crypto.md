@@ -69,7 +69,7 @@ The identifier of the Simplex transaction involved.
 ### user_id ###
 #### (Id, **required**)
 
-A unique identifier, crearted by Simplex, for the end-user performing the transaction.
+A unique identifier, created by Simplex, for the end-user performing the transaction.
 
 Same `user_id` as a previous message means same end-user.
 
@@ -86,7 +86,7 @@ For wallets/exchanges: the end-user's account id on your system. This is what yo
 ### quote_id ###
 #### (Id, **required**)
 
-The identifier of the quote on which this transactino is based.
+The identifier of the quote on which this transaction is based.
 
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
