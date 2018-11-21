@@ -14,7 +14,8 @@ Direction: **You &rarr; Simplex**
 ```json
 {
   "poid_id": "poid:3209830",
-  "status": "success"
+  "status": "soft_fail",
+  "reason": "Not all 4 corners of your ID card are visible"
 }
 ```
 
@@ -22,6 +23,7 @@ Name    | Type   |   |
 ------- | ------ | - |
 poid_id | Id     | **required**
 status  | String | **required**
+reason  | String | **required** if `status == "soft_fail"` or `status == "hard_fail"`
 
 ### poid_id ###
 #### (Id, **required**)
@@ -34,6 +36,13 @@ The identifier of the proof-of-identity verification process previously created 
 The status of the proof-of-identity verification process.
 
 One of { `"success"`, `"soft_fail"`, `"hard_fail"` }.
+
+### reason ###
+#### (String, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
+
+A short, descriptive reason for the status.
+
+**Note**: the string will be displayed to the end-user, and thus needs to be in English, short, descriptive, and proper.
 
 ## Response ##
 

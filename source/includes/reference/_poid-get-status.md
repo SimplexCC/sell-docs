@@ -39,6 +39,7 @@ The identifier of the proof-of-identity verification process previously created 
 Name   | Type   |   |
 ------ | ------ | - |
 status | String | **required**
+reason | String | **required** if `status == "soft_fail"` or `status == "hard_fail"`
 
 ### status ###
 #### (String, **required**)
@@ -46,6 +47,13 @@ status | String | **required**
 The status of the proof-of-identity verification process.
 
 One of { `"pending"`, `"success"`, `"soft_fail"`, `"hard_fail"` }.
+
+### reason ###
+#### (String, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
+
+A short, descriptive reason for the status.
+
+**Note**: the string will be displayed to the end-user, and thus needs to be in English, short, descriptive, and proper.
 
 ## p/REST ##
 

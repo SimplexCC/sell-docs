@@ -206,6 +206,7 @@ Name    | Type   |   |
 ------- | ------ | - |
 poid_id | Id     | **required**
 status  | String | **required**
+reason  | String | **required** if `status == "soft_fail"` or `status == "hard_fail"`
 
 ### poid_id ###
 #### (Id, **required**)
@@ -218,6 +219,13 @@ You may use this identifier to notify Simplex of the status of the verification 
 #### (String, **required**)
 
 One of { `"pending"`, `"success"`, `"soft_fail"`, `"hard_fail"` }.
+
+### reason ###
+#### (String, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
+
+A short, descriptive reason for the status.
+
+**Note**: the string will be displayed to the end-user, and thus needs to be in English, short, descriptive, and proper.
 
 ## p/REST ##
 
