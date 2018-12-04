@@ -95,6 +95,7 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 ```json
 {
   "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
+  "expiry_ts": 1552576166.0,
   "rate": 8000
 }
 ```

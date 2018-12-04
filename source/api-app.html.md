@@ -21,6 +21,9 @@ includes:
   - reference/send-crypto
   - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
+  - reference/expect-crypto
+  - reference/expect-crypto-notify-status
+  - reference/expect-crypto-get-status
   - reference/txn-event-notify
 
   - transports/sep
