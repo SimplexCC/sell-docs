@@ -1,6 +1,6 @@
 # expect-crypto-get-status #
 
-A query from Simplex to you regarding the status of a proof-of-identity verification process previously created by you in response to a `expect-crypto` API.
+A query from Simplex to you regarding the status of a transaction check process previously created by you in response to a `expect-crypto` API.
 
 ## Synopsis ##
 
