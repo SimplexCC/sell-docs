@@ -2,15 +2,15 @@
 
 A request from Simplex to you, asking that you run your internal AML/regulatory/otherwise checks before accepting cryptocurrency from an end-user.
 
-This request from Simplex allows you to start monitoring the blockchain. Once you detect the blockchain transaction that transfers cryptocurrency to your destination crypto address you may wish to run your own checks on that blockchain transaction.
+The cryptocurrency may or may not already be in the destination address; you should monitor the blockchain for transactions with the specified destination address (which, again, may have happened in the past as far as your code is concerned). Once you detect the blockchain transaction that transfers cryptocurrency to the specified destination crypto address you may wish to run your own checks on that blockchain transaction.
 
 Your response includes an identifier for this "crypto check" process which Simplex can use to query you about its status.
 
 The result of a wcrypto check can be:
 
-`"accept"` : you received the cryptocurrency and all your checks passed. Simplex will continue to finalize the transaction.
+`"accept"` : you received the cryptocurrency and all your checks passed. You are fine with keeping this cryptocurrency, subject to Simplex providing an approriate quote that was previously received from you.
 
-`"reject"` : you received the cryptocurrency but wish to reject the transaction for reasons such as failed AML checks, amount does not match the quote agreed upon, etc. Simplex will proceed with a refund process, and you can expect a subsequent `send-crypto` request, specifying the crypto address to which you are to return the cryptocurrency (which may be different from the one it was sent from).
+`"reject"` : you received the cryptocurrency but cannot keep it due to it violating your AML or other regulatory policies. Simplex will proceed with a refund process, and you can expect a subsequent `send-crypto` request, specifying the crypto address to which you are to return the cryptocurrency (which may be different from the one it was sent from).
 
 ## Synopsis ##
 
