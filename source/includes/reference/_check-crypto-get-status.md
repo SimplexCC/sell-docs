@@ -1,10 +1,10 @@
-# expect-crypto-get-status #
+# check-crypto-get-status #
 
-A query from Simplex to you regarding the status of a transaction check process previously created by you in response to a `expect-crypto` API.
+A query from Simplex to you regarding the status of a transaction check process previously created by you in response to a `check-crypto` API.
 
 ## Synopsis ##
 
-Message name: **`expect-crypto-get-status`**  
+Message name: **`check-crypto-get-status`**  
 Direction: **Simplex &rarr; You**
 
 ## Parameters ##
@@ -13,18 +13,18 @@ Direction: **Simplex &rarr; You**
 
 ```json
 {
-  "txn_check_id": "txnchk:09163938"
+  "crypto_check_id": "da8f72d2-d1c6-4468-89da-37f6d87f0cdf"
 }
 ```
 
-Name         | Type |   |
------------- | ---- | - |
-txn_check_id | Id   | **required**
+Name            | Type |   |
+--------------- | ---- | - |
+crypto_check_id | Id   | **required**
 
-### txn_check_id ###
+### crypto_check_id ###
 #### (Id, **required**)
 
-The identifier of a transaction check process previously created by you in response to `expect-crypto`.
+The identifier of a crypto-check process previously created by you in response to `check-crypto`.
 
 ## Response ##
 
@@ -32,7 +32,7 @@ The identifier of a transaction check process previously created by you in respo
 
 ```json
 {
-  "status": "success"
+  "status": "accept"
 }
 ```
 
@@ -46,7 +46,7 @@ reason | String |
 
 The status of the transaction check process.
 
-One of { `"pending"`, `"success"`, `"reject"` }.
+One of { `"pending"`, `"accept"`, `"reject"` }.
 
 ### reason ###
 #### (String, optional)
@@ -55,12 +55,12 @@ If you reply with a `"reject"` status, this is a short description of the reason
 
 ## p/REST ##
 
-If you respond with a `"pending"` status to a `expect-crypto` API, and you supply a p/REST endpoint for this API, then in order to poll for the status of the transaction check process Simplex will use  
-<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/expect-crypto-get-status`
+If you respond with a `"pending"` status to a `check-crypto` API, and you supply a p/REST endpoint for this API, then in order to poll for the status of the transaction check process Simplex will use  
+<span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/check-crypto-get-status`
 
 ## MsgQueue ##
 
-Alternatively, you may receive this request as a message of type `"expect-crypto-get-status"` in  
+Alternatively, you may receive this request as a message of type `"check-crypto-get-status"` in  
 <span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
 
 You respond by  

@@ -15,7 +15,7 @@ Each message has the following fields:
 Name     | Type   |              | Description
 -------- | ------ | -------------| -----------
 msg_id   | Id     | **required** | A unique identifier for this message
-msg_type | String | **required** | The message type (e.g. `"txn-event-notify"`)
+msg_type | String | **required** | The message type (e.g. `"send-crypto"`)
 msg      | Object | **required** | The message payload itself, as described in the relevant API section
 
 ### Responding ###

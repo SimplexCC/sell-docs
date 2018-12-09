@@ -1,9 +1,6 @@
 ---
 title: Simplex API Documentation
 
-#language_tabs:
-#  - json
-
 includes:
 
   - introduction/release-candidate

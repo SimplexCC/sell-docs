@@ -1,12 +1,12 @@
-# expect-crypto #
+# check-crypto #
 
-A request from Simplex to you, asking that you run final checks before accepting cryptocurrency from an end-user.
+A request from Simplex to you, asking that you run your internal AML/regulatory/otherwise checks before accepting cryptocurrency from an end-user.
 
 This request from Simplex allows you to start monitoring the blockchain. Once you detect the blockchain transaction that transfers cryptocurrency to your destination crypto address you may wish to run your own checks on that blockchain transaction.
 
-Your response includes an identifier for this "transaction check" process which Simplex can use to query you about its status.
+Your response includes an identifier for this "crypto check" process which Simplex can use to query you about its status.
 
-The result of a transaction check can be:
+The result of a wcrypto check can be:
 
 `"accept"` : you received the cryptocurrency and all your checks passed. Simplex will continue to finalize the transaction.
 
@@ -14,7 +14,7 @@ The result of a transaction check can be:
 
 ## Synopsis ##
 
-API name: **`expect-crypto`**  
+API name: **`check-crypto`**  
 Direction: **Simplex &rarr; You**
 
 ## Parameters ##
@@ -27,10 +27,7 @@ Direction: **Simplex &rarr; You**
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
   "user_id": "595b88bea687c5dd444f99e0004a45d3",
   "user_aka_ids": ["1504241c7d83476aa3adcd54e2272d25", "38b583c7ccd246ffaed4ab0232b71647"],
-  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38",
-  "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
   "crypto_currency": "BTC",
-  "crypto_amount": 125000, // 0.125 BTC
   "destination_crypto_address": "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh"
 }
 ```
@@ -41,10 +38,7 @@ reason                     | String         | **required**
 txn_id                     | Id             | **required**
 user_id                    | Id             | **required**
 user_aka_ids               | List<Id>       | **required**
-account_id                 | Id             |
-quote_id                   | Id             | **required**
 crypto_currency            | CryptoCurrency | **required**
-crypto_amount              | MoneyAmount    | **required**
 destination_crypto_address | CryptoAddress  | **required**
 
 ### reason ###
@@ -54,8 +48,8 @@ The reason you are receiving cryptocurrency.
 
 One of { `"delivery"`, `"refund"` }.
 
- * `"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction)
- * `"refund"` : the reverse of "delivery" -- we need to return, to the original sender, cryptocurrency that you previously received.
+ * `"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction).
+ * `"refund"` : the reverse of "delivery" -- we need to return to you, the original sender, cryptocurrency that you previously sent.
 
 ### txn_id ###
 #### (Id, **required**)
@@ -74,25 +68,10 @@ Same `user_id` as a previous message means same end-user.
 
 A list of unique identifiers, on top of `user_id`, by which the user is also known.
 
-### account_id ###
-#### (Id, optional)
-
-For wallets/exchanges: the end-user's account id on your system. This is what you sent Simplex in `initiate-sell`.
-
-### quote_id ###
-#### (Id, **required**)
-
-The identifier of the quote on which this transaction is based.
-
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
 
 The crypto currency (the currency, not the amount) to expect to receive.
-
-### crypto_amount ###
-#### (MoneyAmount, **required**)
-
-How much cryptocurrency of type `crypto_currency` to expect to receive.
 
 ### destination_crypto_address ###
 #### (CryptoAddress, **required**)
@@ -107,32 +86,32 @@ This is an address you previously supplied to Simplex in response to a `get-dest
 
 ```json
 {
-  "txn_check_id": "txnchk:09163938",
+  "crypto_check_id": "da8f72d2-d1c6-4468-89da-37f6d87f0cdf",
   "status": "pending"
 }
 ```
 
-If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"success"` or `"reject"`. You do this using the `expect-crypto-notify-status` message.
+If you respond with a `"pending"` status, via either p/REST or MsgQueue, you will need to later notify Simplex when the status changes to either `"accept"` or `"reject"`. You do this using the `check-crypto-notify-status` message.
 
-Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `expect-crypto-get-status`.
+Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `check-crypto-get-status`.
 
-Name         | Type   |   |
------------- | ------ | - |
-txn_check_id | Id     | **required**
-status       | String | **required**
-reason       | String |
+Name            | Type   |   |
+--------------- | ------ | - |
+crypto_check_id | Id     | **required**
+status          | String | **required**
+reason          | String |
 
-### txn_check_id ###
+### crypto_check_id ###
 #### (Id, **required**)
 
 An opaque string generated by you and stored by Simplex.
 
-You may use this identifier to notify Simplex of the status of the transaction check process once it changes (e.g. moves from `"pending"` to `"success"`), and Simplex may use this identifier to query you regarding the status of the transaction check.
+You may use this identifier to notify Simplex of the status of the crypto-check process once it changes (e.g. moves from `"pending"` to `"accept"`), and Simplex may use this identifier to query you regarding the status of the crypto-check.
 
 ### status ###
 #### (String, **required**)
 
-One of { `"pending"`, `"success"`, `"reject"` }.
+One of { `"pending"`, `"accept"`, `"reject"` }.
 
 ### reason ###
 #### (String, optional)
@@ -142,11 +121,11 @@ If you reply with a `"reject"` status, this is a short description of the reason
 ## p/REST ##
 
 If you supply a p/REST endpoint for this API, Simplex will use  
-<span class="http-verb http-post">POST</span> `https://${YOUR_API_URL}/expect-crypto`
+<span class="http-verb http-post">POST</span> `https://${YOUR_API_URL}/check-crypto`
 
 ## MsgQueue ##
 
-Alternatively, you may receive this request as a message of type `"expect-crypto"` in  
+Alternatively, you may receive this request as a message of type `"check-crypto"` in  
 <span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
 
 You respond by  

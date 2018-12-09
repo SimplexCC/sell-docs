@@ -1,9 +1,6 @@
 ---
 title: Simplex API Documentation
 
-#language_tabs:
-#  - json
-
 includes:
 
   - introduction/release-candidate
@@ -15,13 +12,12 @@ includes:
   - reference/sep
   - reference/get-quote-lq
   - reference/get-destination-crypto-address
+  - reference/check-crypto
+  - reference/check-crypto-notify-status
+  - reference/check-crypto-get-status
   - reference/send-crypto
   - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
-  - reference/expect-crypto
-  - reference/expect-crypto-notify-status
-  - reference/expect-crypto-get-status
-  - reference/txn-event-notify
 
   - transports/sep
   - transports/overview
