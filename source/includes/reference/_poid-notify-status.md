@@ -15,15 +15,15 @@ Direction: **You &rarr; Simplex**
 {
   "poid_id": "poid:3209830",
   "status": "soft_fail",
-  "reason": "Not all 4 corners of your ID card are visible"
+  "reasons": [ "Not all 4 corners of your ID card are visible" ]
 }
 ```
 
-Name    | Type   |   |
-------- | ------ | - |
-poid_id | Id     | **required**
-status  | String | **required**
-reason  | String | **required** if `status == "soft_fail"` or `status == "hard_fail"`
+Name    | Type           |   |
+------- | -------------- | - |
+poid_id | Id             | **required**
+status  | String         | **required**
+reasons | List\<String\> | **required** if `status == "soft_fail"` or `status == "hard_fail"`
 
 ### poid_id ###
 #### (Id, **required**)
@@ -37,12 +37,12 @@ The status of the proof-of-identity verification process.
 
 One of { `"success"`, `"soft_fail"`, `"hard_fail"` }.
 
-### reason ###
-#### (String, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
+### reasons ###
+#### (List\<String\>, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
 
-A short, descriptive reason for the status.
+A list of short, descriptive reasons for the status.
 
-**Note**: the string will be displayed to the end-user, and thus needs to be in English, short, descriptive, and proper.
+**Note**: the strings will be displayed to the end-user, and thus need to be in English, short, descriptive, and proper.
 
 ## Response ##
 

@@ -202,11 +202,11 @@ If you respond with a `"pending"` status, via either p/REST or MsgQueue, you wil
 
 Alternatively, Simplex may poll you for the status, again via either p/REST or MsgQueue, using `poid-get-status`.
 
-Name    | Type   |   |
-------- | ------ | - |
-poid_id | Id     | **required**
-status  | String | **required**
-reason  | String | **required** if `status == "soft_fail"` or `status == "hard_fail"`
+Name    | Type           |   |
+------- | -------------- | - |
+poid_id | Id             | **required**
+status  | String         | **required**
+reasons | List\<String\> | **required** if `status == "soft_fail"` or `status == "hard_fail"`
 
 ### poid_id ###
 #### (Id, **required**)
@@ -220,12 +220,12 @@ You may use this identifier to notify Simplex of the status of the verification 
 
 One of { `"pending"`, `"success"`, `"soft_fail"`, `"hard_fail"` }.
 
-### reason ###
-#### (String, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
+### reasons ###
+#### (List\<String\>, **required** if `status == "soft_fail"` or `status == "hard_fail"`)
 
-A short, descriptive reason for the status.
+A list of short, descriptive reasons for the status.
 
-**Note**: the string will be displayed to the end-user, and thus needs to be in English, short, descriptive, and proper.
+**Note**: the strings will be displayed to the end-user, and thus need to be in English, short, descriptive, and proper.
 
 ## p/REST ##
 
