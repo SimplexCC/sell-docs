@@ -1,6 +1,6 @@
 # crypto-check-get-status #
 
-A query from Simplex to you regarding the status of a crypto-check process previously created by you (e.g. in response to `receive-crypto`).
+A query from Simplex to you regarding the status of a crypto-check previously created by you (e.g. in response to `receive-crypto`).
 
 ## Synopsis ##
 
@@ -24,7 +24,7 @@ crypto_check_id | Id   | **required**
 ### crypto_check_id ###
 #### (Id, **required**)
 
-The identifier of a crypto-check process previously created by you (e.g. in response to `receive-crypto`).
+The identifier of a crypto-check previously created by you (e.g. in response to `receive-crypto`).
 
 ## Response ##
 
@@ -50,7 +50,7 @@ crypto_check | CryptoCheck | **required**
 
 ## p/REST ##
 
-If you supply a p/REST endpoint for this API, then in order to poll for the status of crypto-check's Simplex will use  
+If you supply a p/REST endpoint for this API, then in order to poll for the status of crypto-checks Simplex will use  
 <span class="http-verb http-get">GET</span> `https://${YOUR_API_URL}/crypto-check-get-status`
 
 ## MsgQueue ##

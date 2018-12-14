@@ -1,6 +1,6 @@
 # poid-notify-status #
 
-A notification, from you to Simplex, that the status of a proof-of-identity verification process has changed.
+A notification, from you to Simplex, that the status of a proof-of-identity verification has changed.
 
 ## Synopsis ##
 
@@ -9,7 +9,7 @@ Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
-> Example: you notifying Simplex of a proof-of-identity verification process status change:
+> Example: you notifying Simplex of a proof-of-identity verification status change:
 
 ```json
 {

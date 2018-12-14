@@ -6,7 +6,7 @@ The cryptocurrency may or may not already be in the destination address; you sho
 
 Your response includes an identifier for the crypto-check process, which Simplex can use to query you about its status. Your response also includes the actual amount you received.
 
-The result of a crypto-check can be:
+The result of a crypto-check may be:
 
 `"accept"` : you received the cryptocurrency, all your checks pass, and you wish to keep the cryptocurrency. This will become a settlement item between Simplex and you, based on the quote supplied and the actual amount received.
 

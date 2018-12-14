@@ -16,8 +16,8 @@ includes:
   - reference/crypto-check-notify-status
   - reference/crypto-check-get-status
   - reference/send-crypto
-  - reference/send-crypto-notify-status
-  - reference/send-crypto-get-status
+  - reference/execution-order-notify-status
+  - reference/execution-order-get-status
 
   - transports/sep
   - transports/overview

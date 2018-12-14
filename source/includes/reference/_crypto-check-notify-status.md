@@ -1,6 +1,6 @@
 # crypto-check-notify-status #
 
-A notification, from you to Simplex, that the status of a crypto-check process has changed.
+A notification, from you to Simplex, that the status of a crypto-check has changed.
 
 ## Synopsis ##
 
@@ -9,7 +9,7 @@ Direction: **You &rarr; Simplex**
 
 ## Parameters ##
 
-> Example: you notifying Simplex of a crypto-check process status change:
+> Example: you notifying Simplex of a crypto-check status change:
 
 ```json
 {

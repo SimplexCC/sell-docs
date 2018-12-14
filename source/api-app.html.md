@@ -16,8 +16,8 @@ includes:
   - reference/initiate-sell
   - reference/get-destination-crypto-address
   - reference/send-crypto
-  - reference/send-crypto-notify-status
-  - reference/send-crypto-get-status
+  - reference/execution-order-notify-status
+  - reference/execution-order-get-status
 
   - transports/sep
   - transports/overview
