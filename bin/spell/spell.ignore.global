@@ -34,6 +34,7 @@ auth
 blockchain
 crypto
 cryptocurrency
+deeplink
 dst
 http
 https
@@ -42,6 +43,7 @@ json
 jwt
 lq
 onboarding
+params
 poid
 preconfigured
 rarr

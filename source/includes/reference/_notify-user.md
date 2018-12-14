@@ -41,12 +41,12 @@ The identifier of the Simplex transaction involved.
 ### template_name ###
 #### (String, **required**)
 
-The name of the template containing the messaging to the user. The available names, and the meaning of their params, are pre-configured for you by your account manager.
+The name of the template containing the messaging to the user. The available names, and the meaning of their params, are preconfigured for you by your account manager.
 
 ### template_params ###
 #### (map\<String, String\>, **required**)
 
-Parameters to fill into the commnication template. The meaning of each of those parameters is template-dependent.
+Parameters to fill into the communications template. The meaning of each of those parameters is template-dependent.
 
 ## Response ##
 
