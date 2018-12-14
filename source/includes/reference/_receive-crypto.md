@@ -1,16 +1,18 @@
 # receive-crypto #
 
-A request from Simplex to you, asking that you run your internal AML, regulatory other checks before accepting cryptocurrency from an end-user.
+A request from Simplex asking that you run your AML, regulatory other checks before accepting cryptocurrency from an end-user.
 
 The cryptocurrency may or may not already be in the destination address; you should monitor the blockchain for a transaction with the specified destination address (a transaction which, as mentioned, may have already happened). Once you detect that blockchain transaction you may wish to run your own checks. We call such checks a "crypto-check" process.
 
-Your response includes an identifier for the crypto-check process, which Simplex can use to query you about its status. Your response also includes the actual amount you received.
+Your response includes an identifier for the crypto-check process, which Simplex can use to query you about its status.
+
+Your response also includes the actual amount you received.
 
 The result of a crypto-check may be:
 
-`"accept"` : you received the cryptocurrency, all your checks pass, and you wish to keep the cryptocurrency. This will become a settlement item between Simplex and you, based on the quote supplied and the actual amount received.
+ * `"accept"` : you received the cryptocurrency, all your checks pass, and you wish to keep the cryptocurrency. This will become a settlement item between Simplex and you, based on the quote supplied and the actual amount received.
 
-`"reject"` : you received the cryptocurrency but cannot complete the transaction for various reason, which you specify. For some reasons Simplex may have a "fix" (e.g. an expired quote can fixed by getting a new quote from you and getting the end-user's approval for the new quote), in which cases Simplex will send another `receive-crypto`. If Simplex does not have such a "fix" it will initiate a refund process (and ask you to `send-crypto`) and decline the transaction.
+ * `"reject"` : you received the cryptocurrency but cannot complete the transaction for various reasons, which you specify. For some reasons Simplex may have a "fix" (e.g. an expired quote can fixed by getting a new quote from you and getting the end-user's approval for the new quote), in which cases Simplex will send another `receive-crypto`. If Simplex does not have such a "fix" it will initiate a refund process (and ask you to `send-crypto`) and will subsequently cancel the transaction.
 
 Unless you reply with an explicit `"accept"` to a crypto-check no settlement items will be created, and naturally you may not liquidate the received cryptocurrency.
 
@@ -42,6 +44,7 @@ reason                     | String         | **required**
 txn_id                     | Id             | **required**
 user_id                    | Id             | **required**
 user_aka_ids               | List<Id>       | **required**
+account_id                 | Id             |
 quote_id                   | Id             | **required**
 crypto_currency            | CryptoCurrency | **required**
 crypto_amount              | MoneyAmount    | **required**
@@ -54,8 +57,9 @@ The reason you are receiving cryptocurrency.
 
 One of { `"delivery"`, `"refund"` }.
 
- * `"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction).
- * `"refund"` : the reverse of "delivery" -- we need to return to you, the original sender, cryptocurrency that you previously sent.
+`"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction).
+
+`"refund"` : the reverse of "delivery" -- we need to return to you, the original sender, cryptocurrency that you previously sent.
 
 ### txn_id ###
 #### (Id, **required**)
@@ -73,6 +77,11 @@ Same `user_id` as a previous message means same end-user.
 #### (List<Id>, **required**)
 
 A list of unique identifiers, on top of `user_id`, by which the user is also known.
+
+### account_id ###
+#### (Id, optional)
+
+For wallets/exchanges: the end-user's account id in your system. This is what you sent Simplex in `initiate-sell`.
 
 ### quote_id ###
 #### (Id, **required**)
@@ -106,7 +115,7 @@ In any case, settlements between Simplex and you and always based on actual amou
 
 The crypto address to which the cryptocurrency will be sent.
 
-This is an address you previously supplied to Simplex in response to a `get-destination-crypto-address` message.
+This is an address you previously supplied Simplex in response to a `get-destination-crypto-address` message.
 
 ## Type CryptoCheck ###
 
@@ -114,7 +123,7 @@ Name                   | Type           |   |
 ---------------------- | -------------- | - |
 id                     | Id             | **required**
 status                 | String         | **required**
-crypto_amount_received | MoneyAmount    | **required** if `status == "completed"`, may be present even when not
+crypto_amount_received | MoneyAmount    | **required** if `status == "completed"`, may be present even otherwise
 result                 | String         | **required** if `status == "completed"`, missing otherwise
 reasons                | List\<String\> | **required** if `result == "reject"`
 
@@ -123,7 +132,7 @@ reasons                | List\<String\> | **required** if `result == "reject"`
 
 An opaque string generated by you and stored by Simplex.
 
-You may use this identifier to notify Simplex of the status of the crypto-check process once it changes, and Simplex may use this identifier to query you regarding the status of the crypto-check.
+You may use this identifier to notify Simplex of the status of the crypto-check process once it changes, and Simplex may use it identifier to query you for the same.
 
 ### status ###
 #### (String, **required**)
@@ -131,7 +140,7 @@ You may use this identifier to notify Simplex of the status of the crypto-check 
 One of { `"pending"`, `"completed"` }.
 
 ### crypto_amount_received ###
-#### (MoneyAmount, **required** if `status == "completed"`, may be present even when not)
+#### (MoneyAmount, **required** if `status == "completed"`, may be present even otherwise)
 
 The actual amount received.
 
@@ -147,21 +156,21 @@ If you reply with a `"reject"` result, this is a list of all the reason codes wh
 
 Each reason code is one of:
 
- * `quote_expired` : the quote supplied is no longer valid.
+ * `"quote_expired"` : the quote supplied is no longer valid.
 
- * `quote_invalid` : the quote supplied is not valid.
+ * `"quote_invalid"` : the quote supplied is not valid.
 
- * `amount_mismatch` : the actual crypto amount you received is "too different" from the one specified in the quote, and you cannot honor the quote rate for the actual amount.
+ * `"amount_mismatch"` : the actual crypto amount you received is "too different" from the one specified in the quote, and you cannot honor the quote rate for the actual amount.
 
- * `txn_needs_poid` : according to your AML policy this transaction requires that the user have a valid proof-of-identity, but you do not have a valid proof-of-identity for the user.
+ * `"txn_needs_poid"` : according to your AML policy this transaction requires that the user have a valid proof-of-identity, but you do not have a valid proof-of-identity for the user.
 
- * `user_banned` : the user is on your blacklist and you are cannot accept any transaction from this user.
+ * `"user_banned"` : the user is on your blacklist and you are cannot accept any transaction from this user.
 
- * `bad_crypto_address_reputation` : you checked the reputation of crypto address that is the source of the blockchain transaction, and concluded you do not wish to perform this transaction.
+ * `"bad_crypto_address_reputation"` : you checked the reputation of crypto address that is the source of the blockchain transaction, and concluded you do not wish to perform this transaction.
 
- * `aml_reject` : you cannot accept the cryptocurrency due to an AML-related reason not specified above.
+ * `"aml_reject"` : you cannot accept the cryptocurrency due to an AML-related reason not specified above.
 
- * `other_reject` : you cannot accept the cryptocurrency due to a reason not specified above.
+ * `"other_reject"` : you cannot accept the cryptocurrency due to a reason not specified above.
 
 ## Response ##
 

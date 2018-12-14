@@ -11,8 +11,8 @@ includes:
 
   - reference/sep
   - reference/poid
-  - reference/poid-notify-status
-  - reference/poid-get-status
+  - reference/poid-check-notify-status
+  - reference/poid-check-get-status
 
   - transports/sep
   - transports/overview

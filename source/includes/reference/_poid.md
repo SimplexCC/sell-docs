@@ -1,22 +1,22 @@
 # poid #
 
-A request from Simplex to you, asking that you verify a KYC proof-of-identity document.
+A request from Simplex to you, asking that you verify a KYC proof-of-identity ("poid") document.
 
 The request includes data entered by an end-user and scanned images of a document in support of the data. Simplex is asking that you verify that the images are legitimate and that the data in them matches that entered by the end-user.
 
-This request from Simplex results in you creating a "proof-of-identity check".
+This request from Simplex results in you creating a "poid-check".
 
-Your response includes an identifier for the proof-of-identity check, which Simplex can use to query you about its status.
+Your response includes an identifier for the poid-check, which Simplex can use to query you about its status.
 
-`"pending"` : the check is underway.
+The status of a poid-check may be:
 
-`"success"` : you completed the verification process, the images are authentic, and all details entered by the end-user match those in the images.
+ * `"pending"` : the check is underway.
 
-`"soft_fail"` : the verification process cannot proceed (e.g. images are blurry, country is not supported, etc.). This is not necessarily an indication of data mismatch.
+ * `"success"` : you completed the verification process, the images are authentic, and all details entered by the end-user match those in the images.
 
-`"hard_fail"` : mismatch between entered data and the images provided, images are not trustworthy, or person did not pass screening.
+ * `"soft_fail"` : the verification process cannot proceed (e.g. images are blurry, country is not supported, etc.). This is not necessarily an indication of data mismatch.
 
-In all cases, your response must include a verification process identifier which Simplex can use to query you about its status.
+ * `"hard_fail"` : mismatch between entered data and the images provided, images are not trustworthy, or person did not pass screening.
 
 ## Synopsis ##
 

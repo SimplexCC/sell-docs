@@ -6,17 +6,17 @@ If you are the entity providing liquidity for a Simplex transaction, then after 
 
 In case of a refund, if you are the entity that received the cryptocurrency you will be asked to send it back (albeit to a possibly different crypto address from which it was sent).
 
-This request from Simplex results in you creating an "execution order" process, which on your end is responsible for generate the blockchain transaction.
+This request from Simplex results in you creating an "execution order" process, which on your end is responsible for generating the blockchain transaction.
 
 Your response includes an identifier for this execution order, which Simplex can use to query you about its status.
 
 The status of an execution order may be:
 
-`"pending"` : you haven't yet created the blockchain transaction, but are in the process of doing so.
+ * `"pending"` : you haven't yet created the blockchain transaction, but are in the process of doing so.
 
-`"completed"` : you fulfilled the execution order by creating a blockchain transaction.
+ * `"completed"` : you fulfilled the execution order by creating a blockchain transaction.
 
-`"failed"` : there was an error creating the blockchain transaction.
+ * `"failed"` : there was an error creating the blockchain transaction.
 
 ## Synopsis ##
 

@@ -1,6 +1,6 @@
 # poid-check-get-status #
 
-A query from Simplex to you regarding the status of a proof-of-identity check previously created by you (e.g. in response to `poid`).
+A query from Simplex to you regarding the status of a poid-check previously created by you (e.g. in response to `poid`).
 
 ## Synopsis ##
 
@@ -9,7 +9,7 @@ Direction: **Simplex &rarr; You**
 
 ## Parameters ##
 
-> Example: Simplex querying you for the status of a proof-of-identity check:
+> Example: Simplex querying you for the status of a poid-check:
 
 ```json
 {
@@ -24,7 +24,7 @@ poid_check_id | Id   | **required**
 ### poid_check_id ###
 #### (Id, **required**)
 
-The identifier of a proof-of-identity check previously created by you (e.g. in response to `poid`).
+The identifier of a poid-check previously created by you (e.g. in response to `poid`).
 
 ## Response ##
 
