@@ -12,9 +12,9 @@ includes:
   - reference/sep
   - reference/get-quote-lq
   - reference/get-destination-crypto-address
-  - reference/check-crypto
-  - reference/check-crypto-notify-status
-  - reference/check-crypto-get-status
+  - reference/receive-crypto
+  - reference/crypto-check-notify-status
+  - reference/crypto-check-get-status
   - reference/send-crypto
   - reference/send-crypto-notify-status
   - reference/send-crypto-get-status
