@@ -132,7 +132,7 @@ Simplex uses these to run preliminary risk, policy and compliance checks.
 
 The crypto address to which sent cryptocurrency will be returned in case of a refund.
 
-If this is not provided, and only in case a refund is required, Simplex will invoke the `get-destination-crypto-address` API with `"reason": "refund"`.
+If this is not provided, and only in case a refund is required, Simplex will invoke the `get-destination-crypto-address` API with `reason == "refund"`.
 
 ### account_details.account_id ###
 #### (Id, optional)

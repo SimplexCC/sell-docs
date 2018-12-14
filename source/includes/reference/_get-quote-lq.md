@@ -90,7 +90,7 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 
 ## Response ##
 
-> An example response:
+> Example response:
 
 ```json
 {

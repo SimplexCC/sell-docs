@@ -61,6 +61,7 @@ The reason you are sending cryptocurrency.
 One of { `"delivery"`, `"refund"` }.
 
  * `"delivery"` : you are selling cryptocurrency: you are either the Liquidity Provider (in a BuyCrypto transaction) or the App (in a SellCrypto transaction)
+
  * `"refund"` : the reverse of "delivery" -- we need to return, to the original sender, cryptocurrency that you previously received.
 
 ### txn_id ###

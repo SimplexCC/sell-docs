@@ -57,9 +57,9 @@ The reason you are receiving cryptocurrency.
 
 One of { `"delivery"`, `"refund"` }.
 
-`"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction).
+ * `"delivery"` : you are buying cryptocurrency: you are either the App (in a BuyCrypto transaction) or the Liquidity Receiver (in a SellCrypto transaction).
 
-`"refund"` : the reverse of "delivery" -- we need to return to you, the original sender, cryptocurrency that you previously sent.
+ * `"refund"` : the reverse of "delivery" -- we need to return to you, the original sender, cryptocurrency that you previously sent.
 
 ### txn_id ###
 #### (Id, **required**)
