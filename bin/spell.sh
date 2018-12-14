@@ -39,6 +39,8 @@ do
 		perl -pe 's/595b88bea687c5dd444f99e0004a45d3//g' |\
 		# blockchain_txn_hash's
 		perl -pe 's/f1eddb27fced47de0684f913714b43e589f23fbb9ef17ceaa9f75e290f1541af//g' |\
+		# crypto-check's
+		perl -pe 's/da8f72d2-d1c6-4468-89da-37f6d87f0cdf//g' |\
 		## vim mode line
 		grep -v '\bmodeline\b.*vim:' |\
 		aspell --lang=en list |\

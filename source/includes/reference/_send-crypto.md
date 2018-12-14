@@ -157,7 +157,7 @@ Alternatively, Simplex may poll you for the status, via either p/REST or MsgQueu
 
 Name            | Type           |   |
 --------------- | -------------- | - |
-execution_order | ExeuctionOrder | **required**
+execution_order | ExecutionOrder | **required**
 
 ## p/REST ##
 
