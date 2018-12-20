@@ -15,10 +15,13 @@ includes:
   - reference/get-quote
   - reference/initiate-sell
   - reference/get-destination-crypto-address
+  - reference/notify-user
   - reference/send-crypto
   - reference/execution-order-notify-status
   - reference/execution-order-get-status
-  - reference/notify-user
+  - reference/receive-crypto
+  - reference/crypto-check-notify-status
+  - reference/crypto-check-get-status
 
   - transports/sep
   - transports/overview

@@ -1,6 +1,8 @@
 # receive-crypto #
 
-A request from Simplex asking that you run your AML, regulatory other checks before accepting cryptocurrency from an end-user.
+A request from Simplex asking that you run checks before accepting cryptocurrency.
+Apps will receive cryptocurrency in a BuyCrypto transaction, or as a refund in a SellCrypto transaction.
+Liquidity partners will receive cryptocurrency in a SellCrypto transaction, or as a refund in a BuyCrypto transaction.
 
 The cryptocurrency may or may not already be in the destination address; you should monitor the blockchain for a transaction with the specified destination address (a transaction which, as mentioned, may have already happened). Once you detect that blockchain transaction you may wish to run your own checks. We call such checks a "crypto-check" process.
 
@@ -10,11 +12,11 @@ Your response also includes the actual amount you received.
 
 The result of a crypto-check may be:
 
- * `"accept"` : you received the cryptocurrency, all your checks pass, and you wish to keep the cryptocurrency. This will become a settlement item between Simplex and you, based on the quote supplied and the actual amount received.
+ * `"accept"` : you received the cryptocurrency, all your checks pass, and you wish to keep the cryptocurrency.
 
- * `"reject"` : you received the cryptocurrency but cannot complete the transaction for various reasons, which you specify. For some reasons Simplex may have a "fix" (e.g. an expired quote can fixed by getting a new quote from you and getting the end-user's approval for the new quote), in which cases Simplex will send another `receive-crypto`. If Simplex does not have such a "fix" it will initiate a refund process (and ask you to `send-crypto`) and will subsequently cancel the transaction.
+ * `"reject"` : you received the cryptocurrency but cannot keep it for various reasons, which you specify. For some reasons Simplex may have a "fix" (e.g. an expired quote can fixed by getting a new quote from you and getting the end-user's approval for the new quote), in which cases Simplex will send another `receive-crypto`. If Simplex does not have such a "fix" it will initiate a refund process (and ask you to `send-crypto`) and will subsequently cancel the transaction.
 
-Unless you reply with an explicit `"accept"` to a crypto-check no settlement items will be created, and naturally you may not liquidate the received cryptocurrency.
+Unless you reply with an explicit `"accept"` to a crypto-check no settlement items will be created, and naturally you may not keep/liquidate the received cryptocurrency.
 
 ## Synopsis ##
 
