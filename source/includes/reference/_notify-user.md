@@ -30,7 +30,7 @@ Direction: **You &rarr; Simplex**
 Name            | Type                  |   |
 --------------- | --------------------- | - |
 txn_id          | Id                    | **required**
-template_name   | CryptoCheck           | **required**
+template_name   | String                | **required**
 template_params | map\<String, String\> | **required**
 
 ### txn_id ###
