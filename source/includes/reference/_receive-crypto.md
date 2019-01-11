@@ -158,6 +158,8 @@ If you reply with a `"reject"` result, this is a list of all the reason codes wh
 
 Each reason code is one of:
 
+ * `"timeout"` : no cryptocurrency received and too much time has elapsed.
+
  * `"quote_expired"` : the quote supplied is no longer valid.
 
  * `"quote_invalid"` : the quote supplied is not valid.

@@ -213,7 +213,15 @@ One of { `"pending"`, `"completed"` }.
 ### result ###
 #### (String, **required** if `status == "completed"`)
 
-One of { `"success"`, `"soft_fail"`, `"hard_fail"` }.
+One of { `"success"`, `"error"`, `"soft_fail"`, `"hard_fail"` }.
+
+`"success"` : the POID check is approved.
+
+`"error"` : a technical error has occurred, and there is no decision on the on the POID check.
+
+`"soft_fail"` : the POID check cannot be approved, but it is possible to rectify the situation and try again.
+
+`"hard_fail"` : the POID check is declined.
 
 ### reasons ###
 #### (List\<String\>, **required** if `result != "success"`)
