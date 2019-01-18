@@ -78,7 +78,7 @@ user_aka_ids              | List<Id>                  | **required** |
 claimed_personal_details  |                           | **required** |
 &emsp; first_name         | String                    | **required** |
 &emsp; last_name          | String                    | **required** |
-&emsp; gender             | String                    | **required** | One of { `"male"`, `"female"` }
+&emsp; gender             | String                    |              | One of { `"male"`, `"female"` }
 &emsp; date_of_birth      | Date                      | **required** |
                           |                           |              |
 claimed_address           | Address                   | **required** |
@@ -130,7 +130,7 @@ Entered by the end-user, this is supposedly the last name appearing on the docum
 This is a _claim_, not fact, until you have verified that indeed this field matches the images supplied.
 
 ### claimed_personal_details.gender ###
-#### (String, **required**)
+#### (String, optional)
 
 Entered by the end-user, this is supposedly the gender appearing on the document.
 
@@ -149,6 +149,16 @@ This is a _claim_, not fact, until you have verified that indeed this field matc
 Entered by the end-user, this is supposedly the address appearing on the document.
 
 This is a _claim_, not fact, until you have verified that indeed this field matches the images supplied.
+
+Notes:
+
+<p class="indent">
+A state is required in the US, and is optional otherwise.
+</p>
+
+<p class="indent">
+A zip is required, other than when the country does not have postal codes.
+</p>
 
 ### claimed_document.type ###
 #### (String, **required**)
