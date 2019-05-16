@@ -71,10 +71,10 @@ If you supply a p/REST endpoint for this API, Simplex will use
 ## MsgQueue ##
 
 Alternatively, You may receive this notification as a message of type `"txn-event-notify"` in  
-<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v3/msg`
 
 You need to acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/msg/:msg-id/ack`
 
 You do not need to respond.
 

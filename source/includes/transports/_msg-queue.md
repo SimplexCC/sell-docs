@@ -6,7 +6,7 @@ An alternative to p/REST is MsgQueue, which has message queue semantics: you pol
 
 You poll for messages by periodically issuing:  
 
-<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v3/msg`
 
 The response is JSON object with a single `"messages"` field containing a list of messages.
 
@@ -22,7 +22,7 @@ msg      | Object | **required** | The message payload itself, as described in t
 
 If a message requires a response, you respond with
 
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/response`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/msg/:msg-id/response`
 
 `:msg-id` is the message identifier returned from `/msg`, and the POST body contains the response.
 
@@ -32,7 +32,7 @@ To avoid loss of messages, an explicit acknowledgement from you is required to e
 
 To acknowledge that you have handled a particular message and are done with it:
 
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/msg/:msg-id/ack`
 
 `:msg-id` is the identifier of the message you are acknowledging. There are no other parameters, so no body is expected in the POST.
 

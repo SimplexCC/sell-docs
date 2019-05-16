@@ -34,6 +34,6 @@ No response is generated.
 
 ## REST ##
 
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/poid-check-notify-status`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/poid-check-notify-status`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

@@ -123,6 +123,6 @@ The exchange rate: how many units of `quote_currency` equal one unit of `base_cu
 
 ## REST ##
 
-<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/get-quote`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v3/get-quote`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

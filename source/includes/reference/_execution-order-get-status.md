@@ -55,12 +55,12 @@ If you supply a p/REST endpoint for this API, then in order to poll for the stat
 ## MsgQueue ##
 
 Alternatively, you may receive messages of type `"execution-order-get-status"` in  
-<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v1/msg`
+<span class="http-verb http-get">GET</span> `https://api.simplexcc.com/v3/msg`
 
 You respond by  
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/response`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/msg/:msg-id/response`
 
 You will need to also acknowledge receipt of the message, by  
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/msg/:msg-id/ack`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/msg/:msg-id/ack`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

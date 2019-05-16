@@ -235,6 +235,6 @@ In case of an error `txn_url` will not be returned.
 
 ## REST ##
 
-<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v1/initiate-sell`
+<span class="http-verb http-post">POST</span> `https://api.simplexcc.com/v3/initiate-sell`
 
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )

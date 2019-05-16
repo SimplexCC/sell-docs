@@ -14,7 +14,7 @@ All API's must be authenticated. To authenticate, supply your API key as the val
 
 ```bash
 curl \
-  'https://api.simplexcc.com/v1/get-quote?_apikey=8d20e7bd89064cd4a9c379d66c53efc8&...'
+  'https://api.simplexcc.com/v3/get-quote?_apikey=8d20e7bd89064cd4a9c379d66c53efc8&...'
 ```
 
 > Example authentication using an HTTP header:
@@ -22,7 +22,7 @@ curl \
 ```bash
 curl \
   -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?...'
+  'https://api.simplexcc.com/v3/get-quote?...'
 ```
 
 ## Parameters ##
@@ -37,7 +37,7 @@ curl \
   -H 'Content-Type: application/json' \
   -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
   -d '{"execution_order_id": "xo:7791528", "status": "completed"}' \
-  'https://api.simplexcc.com/v1/send-crypto-status-notify'
+  'https://api.simplexcc.com/v3/send-crypto-status-notify'
 ```
 
 For API's that use GET, specify each request parameter as a properly-escaped query parameter.
@@ -47,7 +47,7 @@ For API's that use GET, specify each request parameter as a properly-escaped que
 ```bash
 curl \
   -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&src_amount=100000000&quote_currency=BTC'
+  'https://api.simplexcc.com/v3/get-quote?base_currency=EUR&src_amount=100000000&quote_currency=BTC'
 ```
 
 ## Response ##
@@ -62,7 +62,7 @@ When an API has no response an empty HTTP response is returned.
 $ curl \
   -i \
   -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
+  'https://api.simplexcc.com/v3/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 200 OK
@@ -96,7 +96,7 @@ Successful requests do not return an `_error` field.
 $ curl \
   -i \
   -H 'Authorization: apikey BAD_API_KEY' \
-  'https://api.simplexcc.com/v1/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
+  'https://api.simplexcc.com/v3/get-quote?base_currency=EUR&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 401 Unauthorized
@@ -113,7 +113,7 @@ Content-Type: application/json
 $ curl \
   -i \
   -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
-  'https://api.simplexcc.com/v1/get-quote?base_currency=GOLD&base_amount=100000000&quote_currency=BTC'
+  'https://api.simplexcc.com/v3/get-quote?base_currency=GOLD&base_amount=100000000&quote_currency=BTC'
 ```
 ```
 HTTP/1.1 400 Bad Request
