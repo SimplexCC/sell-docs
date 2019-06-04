@@ -22,6 +22,7 @@ includes:
   - reference/receive-crypto
   - reference/crypto-check-notify-status
   - reference/crypto-check-get-status
+  - reference/txn-event-notify
 
   - transports/sep
   - transports/overview
