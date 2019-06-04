@@ -18,6 +18,7 @@ includes:
   - reference/send-crypto
   - reference/execution-order-notify-status
   - reference/execution-order-get-status
+  - reference/txn-event-notify
 
   - transports/sep
   - transports/overview

@@ -44,7 +44,7 @@ The type of event that occurred in the transaction.
 
 One of { `"txn-payout"`, `"txn-declined"`, `"txn-refunded"` }.
 
-`"txn-payout"` : The transaction was approved. The end-user's payment method has either been charged (in a BuyCrypto transaction) or credited (in a SellCrypto transaction).
+`"txn-payout"` :  The transaction was approved and the payment method was credited (in SellCrypto).
 
 `"txn-declined"` : The transaction was declined, for policy or risk reasons. Simplex does not divulge exact reasons to end-users. No fiat has been charged, and any holds on the end-user's card have been released (some users' banks may take time to reflect that).
 
