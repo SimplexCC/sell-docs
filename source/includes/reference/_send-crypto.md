@@ -17,6 +17,8 @@ The status of an execution order may be:
  * `"completed"` : you fulfilled the execution order by creating a blockchain transaction.
 
  * `"failed"` : there was an error creating the blockchain transaction.
+ 
+ * `"reject"` : the request to send crypto was rejected. e.g. The user refused to send crypto
 
 ## Synopsis ##
 
