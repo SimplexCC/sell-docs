@@ -27,7 +27,9 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "BTC",
   "quote_currency": "EUR",
-  "quote_amount": 1000000000 // EUR 1000.0
+  "quote_amount": 1000000000, // EUR 1000.0
+  "pp_payment_method": "credit_card",
+  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38"
 }
 ```
 
@@ -37,7 +39,10 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "USD",
   "quote_currency": "BTC",
-  "quote_amount": 500000 // BTC 0.5
+  "quote_amount": 500000, // BTC 0.5
+  "pp_payment_method": "credit_card",
+  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38"
+
 }
 ```
 
@@ -47,16 +52,21 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "USD",
   "base_amount": 16000000000, // USD $16,000
-  "quote_currency": "BTC"
+  "quote_currency": "BTC",
+  "pp_payment_method": "credit_card",
+  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38"
 }
 ```
 
-Name           | Type        |   |
--------------- | ----------- | - |
-base_currency  | Currency    | **required**
-base_amount    | MoneyAmount | **required** if `quote_amount` is missing, or missing otherwise
-quote_currency | Currency    | **required**
-quote_amount   | MoneyAmount | **required** if `base_amount` is missing, or missing otherwise
+Name                | Type           |   |
+--------------      | -----------    | - |
+base_currency       | Currency       | **required**
+base_amount         | MoneyAmount    | **required** if `quote_amount` is missing, or missing otherwise
+quote_currency      | Currency       | **required**
+quote_amount        | MoneyAmount    | **required** if `base_amount` is missing, or missing otherwise
+pp_payment_method   | PaymentMethod  | **required** 
+account_id          | Id             | **optional**
+
 
 ### base_currency ###
 #### (Currency, **required**)
@@ -87,6 +97,18 @@ The amount of `quote_currency` units, in millionths of a unit, the end-user wish
 If this is present then `base_amount` is missing, and the end-user is asking how many `quote_currency` units they need to sell in order to receive `quote_amount` units of `quote_currency`.
 
 If this is missing then `base_amount` is present, and the end-user is asking many `quote_currency` units they will receive for selling `base_amount` units of `base_currency`.
+
+
+### pp_payment_method ###
+#### (payment_method **required**)
+
+The payment method that used in the transaction
+
+### account_id ###
+#### (Id, **optional**)
+
+The identifier you use for the end-user's account.
+
 
 ## Response ##
 

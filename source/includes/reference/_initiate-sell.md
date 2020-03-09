@@ -14,6 +14,7 @@ Parameters in `account_details` are optional but allow Simplex's risk algorithms
 
 The response includes a transaction URL to which you send your end-user in order to start the checkout flow.
 
+The payment method (simplex-account / credit-card) of the transaction decide by the payment_method sent on the quote
 ## Synopsis ##
 
 API name: **`initiate-sell`**  
@@ -27,6 +28,7 @@ Direction: **You &rarr; Simplex**
 {
   "referer_url": "https://www.legit-site.com/pay-with-btc",
   "return_url": "https://www.legit-site.com/thank-you",
+  "deep_link": "https://www.legit-site.com/sells/af492cb2-5b07-4318-8ece-be34f479e23b",
 
   "txn_details": {
     "quote_id": "4c52ecda-e40e-4f94-89da-adc4e2e78b45",
@@ -75,6 +77,7 @@ Name                           | Type                   |   |
                                |                        |
 referer_url                    | String                 | **required**
 return_url                     | String                 |
+deep_link                      | String                 |
                                |                        |
 txn_details                    |                        |
 &emsp; quote_id                | Id                     |
@@ -112,6 +115,13 @@ We're really asking: "where did the end-user arrive at your site from?" (or, in 
 #### (String, optional)
 
 A URL to redirect the end-user to when the transaction is finalized.
+
+### deep_link ###
+#### (String, optional)
+
+A deep-link to the transaction page in the wallet
+will be send via email once user could send his crypto.
+If not provide, generic email will sent instead.
 
 ### txn_details.quote_id ###
 #### (Id, optional)
