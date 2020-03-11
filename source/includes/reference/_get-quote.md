@@ -17,7 +17,9 @@ Direction: **You &rarr; Simplex**
 {
   "base_currency": "BTC",
   "base_amount": 500000, // BTC 0.5
-  "quote_currency": "EUR"
+  "quote_currency": "EUR",
+  "pp_payment_method": "credit_card",
+  "account_id": "39cb996a-6cc8-43b9-ad37-1102a958ff38"
 }
 ```
 
