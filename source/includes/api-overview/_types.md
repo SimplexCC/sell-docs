@@ -79,4 +79,10 @@ day     | Integer | **required** | day of the month (1-31)
 month   | Integer | **required** | month (1-12)
 year    | Integer | **required** | full year (e.g. 2019)
 
+### PaymentMethod ###
+
+A PaymentMethod that used on the transaction:
+
+One of { `"simplex_account"`, `"credit_card"` }.
+
 [modeline]: # ( vim: set ts=2 sw=2 expandtab wrap linebreak: )
