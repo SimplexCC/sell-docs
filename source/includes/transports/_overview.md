@@ -4,18 +4,12 @@
 
 The base URL for Simplex API's is:
 
-`https://api.simplexcc.com/v1`
+`https://api.simplexcc.com/v3`
 
 ## Authentication ##
 
-All API's must be authenticated. To authenticate, supply your API key as the value of either the `_apikey` query parameter or the `Authorization` HTTP header with the `apikey` authorization scheme.
+All API's must be authenticated. To authenticate, supply your API key as the `Authorization` HTTP header with the `apikey` authorization scheme.
 
-> Example authentication using a query parameter:
-
-```bash
-curl \
-  'https://api.simplexcc.com/v3/get-quote?_apikey=8d20e7bd89064cd4a9c379d66c53efc8&...'
-```
 
 > Example authentication using an HTTP header:
 
