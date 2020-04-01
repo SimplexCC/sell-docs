@@ -10,13 +10,14 @@ Simplex will only ever make HTTPS requests, never HTTP.
 
 ## Authentication ##
 
-You provide Simplex with a p/REST API key of your own, which Simplex will include as the query parameter `"_apikey"` in all p/REST API calls it makes.
+You provide Simplex with a p/REST API key of your own, which Simplex will include as the `Authorization` HTTP header with the `apikey` authorization scheme in all p/REST API calls it makes.
 
 > Example authentication in p/REST:
 
 ```bash
 curl \
-  'https://${YOUR_API_URL}/send-coins?_apikey=f16b16926976411a8917de3f50c825a4&...'
+  -H 'Authorization: apikey 8d20e7bd89064cd4a9c379d66c53efc8' \
+  'https://${YOUR_API_URL}/send-coins'
 ```
 
 ## Parameters ##
