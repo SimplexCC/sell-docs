@@ -67,7 +67,7 @@ base_amount         | MoneyAmount    | **required** if `quote_amount` is missing
 quote_currency      | Currency       | **required**
 quote_amount        | MoneyAmount    | **required** if `base_amount` is missing, or missing otherwise
 pp_payment_method   | PaymentMethod  | **required** 
-account_id          | Id             | **optional**
+account_id          | Id             | **required**
 
 
 ### base_currency ###
@@ -107,7 +107,7 @@ If this is missing then `base_amount` is present, and the end-user is asking man
 The payment method that used in the transaction
 
 ### account_id ###
-#### (Id, **optional**)
+#### (Id, **required**)
 
 The identifier you use for the end-user's account.
 
