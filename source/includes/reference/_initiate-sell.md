@@ -6,11 +6,7 @@ A SellCrypto transaction is initiated by the entity representing the end-user, s
 
 Each transaction has an identifier, which you use when referring to the transaction. This identifier is created by Simplex and returned in the response.
 
-Other than `referer_url` **all parameters are optional**.
-
-When a parameter is required in order to complete the checkout flow, but is not supplied, Simplex will ask the end-user for it. For example: if `quote_id` is not supplied then Simplex will ask the end-user how much cryptocurrency they wish to sell, and will present an appropriate fiat quote.
-
-Parameters in `account_details` are optional but allow Simplex's risk algorithms to approve a broader range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
+Parameters except `account_id` in `account_details` are optional but allow Simplex's risk algorithms to approve a broader range of end-users. The more information you supply in `account_details` the more accurate Simplex's risk decisions will be, and as a result the happier your users become.
 
 The response includes a transaction URL to which you send your end-user in order to start the checkout flow.
 
@@ -80,12 +76,12 @@ return_url                     | String                 |
 deep_link                      | String                 |
                                |                        |
 txn_details                    |                        |
-&emsp; quote_id                | Id                     |
+&emsp; quote_id                | Id                     | **required**
 &emsp; source_crypto_addresses | List\<CryptoAddress\>  |
-&emsp; refund_crypto_address   | CryptoAddress          |
+&emsp; refund_crypto_address   | CryptoAddress          | **required**
                                |                        |
 account_details                |                        |
-&emsp; account_id              | Id                     |
+&emsp; account_id              | Id                     | **required**
 &emsp; web_sessions            | List\<WebSessionInfo\> |
 &emsp; personal_details        |                        |
 &emsp; &emsp; first_name       | String                 |
@@ -145,7 +141,7 @@ The crypto address to which sent cryptocurrency will be returned in case of a re
 If this is not provided, and only in case a refund is required, Simplex will invoke the `get-destination-crypto-address` API with `reason == "refund"`.
 
 ### account_details.account_id ###
-#### (Id, optional)
+#### (Id, required)
 
 The identifier you use for the end-user's account.
 
