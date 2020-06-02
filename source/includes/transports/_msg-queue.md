@@ -2,6 +2,11 @@
 
 An alternative to p/REST is MsgQueue, which has message queue semantics: you poll Simplex for messages waiting for you, take action on the message if required, respond to the message if required, and then acknowledge your handling of the message so you don't receive it again.
 
+The base URL for Simplex MsgQueue API's is:
+
+* sandbox: `https://api.sandbox.test-simplexcc.com/v3/msg`
+* production: `https://api.simplexcc.com/v3/msg`
+
 ## Polling ##
 
 You poll for messages by periodically issuing:  

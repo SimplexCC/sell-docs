@@ -4,7 +4,8 @@
 
 The base URL for Simplex API's is:
 
-`https://api.simplexcc.com/v3`
+* sandbox: `https://api.sandbox.test-simplexcc.com/v3`
+* production: `https://api.simplexcc.com/v3`
 
 ## Authentication ##
 
