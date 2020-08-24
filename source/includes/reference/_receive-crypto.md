@@ -1,6 +1,6 @@
 # receive-crypto #
 
-A request from Simplex asking that you to watch your crypto destination address.
+A request from Simplex asking you to watch your crypto destination address.
 
 ## Synopsis ##
 
