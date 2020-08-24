@@ -28,15 +28,15 @@ When you receive `Id`'s from Simplex you may only store them and then send them 
 
 ### FiatCurrency ###
 
-A 3-letter upper-case string.
+A 3 letter upper-case string.
 
-One of { `"USD"`, `"EUR"` }.
+Examples: `"USD"`, `"EUR"`, `"GBP"`.
 
 ### CryptoCurrency ###
 
-A 3-letter upper-case string.
+An 3-5 letter upper-case string.
 
-One of { `"BTC"`, `"BCH"`, `"LTC"` }.
+Examples: `"BTC"`, `"ETH"`, `"USDT"`.
 
 ### Currency ###
 

@@ -125,9 +125,9 @@ Name                   | Type           |   |
 ---------------------- | -------------- | - |
 id                     | Id             | **required**
 status                 | String         | **required**
-crypto_amount_received | MoneyAmount    | **required** if `status == "completed"`, may be present even otherwise
 result                 | String         | **required** if `status == "completed"`, missing otherwise
-reasons                | List\<String\> | **required** if `result == "reject"`
+crypto_amount_received | MoneyAmount    | **required** if `result == "success"`, may be present even otherwise
+blockchain_txn_hash    | Id             | **required** if `status == "confirming"` or `result == "success"`
 
 ### id ###
 #### (Id, **required**)
@@ -139,42 +139,18 @@ You may use this identifier to notify Simplex of the status of the crypto-check 
 ### status ###
 #### (String, **required**)
 
-One of { `"pending"`, `"completed"` }.
-
-### crypto_amount_received ###
-#### (MoneyAmount, **required** if `status == "completed"`, may be present even otherwise)
-
-The actual amount received.
+One of { `"pending"`, `"confirming"`, `"completed"` }.
 
 ### result ###
 #### (String, **required** if `status == "completed"`, missing otherwise)
 
-One of { `"accept"`, `"reject"` }.
+One of { `"success"`, `"timeout"` }.
 
-### reasons ###
-#### (List\<String\>, **required** if `result == "reject"`)
+### crypto_amount_received ###
+#### (MoneyAmount, **required** if `result == "success"`, may be present even otherwise)
 
-If you reply with a `"reject"` result, this is a list of all the reason codes why.
+The actual amount received.
 
-Each reason code is one of:
-
- * `"timeout"` : no cryptocurrency received and too much time has elapsed.
-
- * `"quote_expired"` : the quote supplied is no longer valid.
-
- * `"quote_invalid"` : the quote supplied is not valid.
-
- * `"amount_mismatch"` : the actual crypto amount you received is "too different" from the one specified in the quote, and you cannot honor the quote rate for the actual amount.
-
- * `"txn_needs_poid"` : according to your AML policy this transaction requires that the user have a valid proof-of-identity, but you do not have a valid proof-of-identity for the user.
-
- * `"user_banned"` : the user is on your blacklist and you are cannot accept any transaction from this user.
-
- * `"bad_crypto_address_reputation"` : you checked the reputation of crypto address that is the source of the blockchain transaction, and concluded you do not wish to perform this transaction.
-
- * `"aml_reject"` : you cannot accept the cryptocurrency due to an AML-related reason not specified above.
-
- * `"other_reject"` : you cannot accept the cryptocurrency due to a reason not specified above.
 
 ## Response ##
 
