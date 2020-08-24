@@ -15,6 +15,7 @@ includes:
   - reference/receive-crypto
   - reference/crypto-check-notify-status
   - reference/crypto-check-get-status
+  - reference/liquidate
   - reference/send-crypto
   - reference/execution-order-notify-status
   - reference/execution-order-get-status

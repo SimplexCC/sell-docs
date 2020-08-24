@@ -1,12 +1,10 @@
-# get-quote-lq #
+# get-quote #
 
 A request from Simplex to you, asking you for a quote on a fiat/crypto rate.
 
-When you are a "Liquidity Receiver" (i.e. you buy, and thus receive, cryptocurrency from end-users) or a "Liquidity Provider" (i.e. you sell, and thus provide, cryptocurrency to end-users) in a Simplex transaction, Simplex needs to ask you for the rate at which you are willing to buy/sell cryptocurrency. This is what the `get-quote-lq` API is for.
-
 ## Synopsis ##
 
-API name: **`get-quote-lq`**  
+API name: **`get-quote`**  
 Direction: **Simplex &rarr; You**
 
 ## Parameters ##
@@ -57,6 +55,8 @@ base_currency  | Currency    | **required**
 base_amount    | MoneyAmount | **required** if `quote_amount` is missing, or missing otherwise
 quote_currency | Currency    | **required**
 quote_amount   | MoneyAmount | **required** if `base_amount` is missing, or missing otherwise
+pp_skip_poid   | boolean     | **optional**, default `false`
+pp_payment_method | string   | **optional**, default `"simplex_account"`
 
 ### base_currency ###
 #### (Currency, **required**)
