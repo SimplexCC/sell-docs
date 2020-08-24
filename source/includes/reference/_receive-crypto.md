@@ -31,11 +31,7 @@ Direction: **Simplex &rarr; You**
 {
   "reason": "delivery",
   "txn_id": "af492cb2-5b07-4318-8ece-be34f479e23b",
-  "user_id": "595b88bea687c5dd444f99e0004a45d3",
-  "user_aka_ids": ["1504241c7d83476aa3adcd54e2272d25", "38b583c7ccd246ffaed4ab0232b71647"],
-  "quote_id": "bb4fbdef-9abc-41c1-94d9-a670413c4d02",
   "crypto_currency": "BTC",
-  "crypto_amount": 500000, // 0.5 BTC
   "destination_crypto_address": "1EmXYy57z71H8J5jrxXsdjuJXZnPZgHnjh"
 }
 ```
@@ -44,12 +40,7 @@ Name                       | Type           |   |
 -------------------------- | -------------- | - |
 reason                     | String         | **required**
 txn_id                     | Id             | **required**
-user_id                    | Id             | **required**
-user_aka_ids               | List<Id>       | **required**
-account_id                 | Id             |
-quote_id                   | Id             | **required**
 crypto_currency            | CryptoCurrency | **required**
-crypto_amount              | MoneyAmount    | **required**
 destination_crypto_address | CryptoAddress  | **required**
 
 ### reason ###
@@ -68,49 +59,12 @@ One of { `"delivery"`, `"refund"` }.
 
 The identifier of the Simplex transaction involved.
 
-### user_id ###
-#### (Id, **required**)
-
-A unique identifier, created by Simplex, for the end-user performing the transaction.
-
-Same `user_id` as a previous message means same end-user.
-
-### user_aka_ids ###
-#### (List<Id>, **required**)
-
-A list of unique identifiers, on top of `user_id`, by which the user is also known.
-
-### account_id ###
-#### (Id, optional)
-
-For wallets/exchanges: the end-user's account id in your system. This is what you sent Simplex in `initiate-sell`.
-
-### quote_id ###
-#### (Id, **required**)
-
-The identifier of the quote on which this transaction is based.
-
 ### crypto_currency ###
 #### (CryptoCurrency, **required**)
 
 The crypto currency (the currency, not the amount) to be received.
 
 This will match the quote's `quote_currency`, and is supplied as a convenience.
-
-### crypto_amount ###
-#### (MoneyAmount, **required**)
-
-How much cryptocurrency of type `crypto_currency` is to be received.
-
-This will match the quote, and is supplied as a convenience.
-
-**Note:** you should always check the actual amount received, as well as report it back to Simplex. End-users' wallets may, for example, subtract a small "blockchain fee" to help the blockchain transaction go through quickly.
-
-If the amount you receive is only slightly different, and you can still honor the quote's rate with the slightly different amount, then you should do so.
-
-Otherwise, you may reply with an `"amount_mismatch"` to the crypto-check.
-
-In any case, settlements between Simplex and you and always based on actual amounts received.
 
 ### destination_crypto_address ###
 #### (CryptoAddress, **required**)
@@ -170,15 +124,15 @@ The actual amount received.
 
 Your response is a CryptoCheck object. If its status is `"pending"` you will need to later notify Simplex when the status changes to "completed". You do this using the `crypto-check-notify-status` message.
 
-Alternatively, Simplex may poll you for the status, via either p/REST or MsgQueue, using `crypto-check-get-status`.
+Alternatively, Simplex may poll you for the status, via either REST or MsgQueue, using `crypto-check-get-status`.
 
 Name         | Type        |   |
 ------------ | ----------- | - |
 crypto_check | CryptoCheck | **required**
 
-## p/REST ##
+## REST ##
 
-If you supply a p/REST endpoint for this API, Simplex will use  
+If you supply a REST endpoint for this API, Simplex will use  
 <span class="http-verb http-post">POST</span> `https://${YOUR_API_URL}/receive-crypto`
 
 ## MsgQueue ##
